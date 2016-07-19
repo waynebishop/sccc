@@ -11,8 +11,9 @@
 	<!-- Latest compiled and minified CSS 20-Jul-2016-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-	<link href="css/blog-home.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/blog-home.css">
 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 </head>
 <body>
@@ -34,8 +35,8 @@
 	      <li><a href="#">News</a></li>
 	    </ul>
 	    <ul class="nav navbar-nav navbar-right">
-	      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-	      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	      <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Sign Up</a></li>
+	      <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
 	    </ul>
 	  </div>
 	</nav>
@@ -58,7 +59,7 @@
 
 	<!-- main blog post section -->
 
-	<div class="container">
+	<div class="container" id="blogHomeContent">
 
         <div class="row">
 
@@ -69,12 +70,12 @@
                 <!-- Blog Search Well -->
                 
                 <div class="well">
-                    <h4>Blog Search</h4>
+                    <!-- <h4>Blog Search</h4> -->
                     <div class="input-group">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" placeholder="Captains Blog Search">
                         <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <span class="glyphicon glyphicon-search"></span>
+                            <button class="btn btn-default" type="button" >
+                                <span <i class="fa fa-search" aria-hidden="true"></i></span>
                         </button>
                         </span>
                     </div>
@@ -91,14 +92,14 @@
                     <a href="#">Premiere 1 win game One</a>
                 </h2>
                 <p class="lead">
-                    by <a href="index.php">Craig Shanks</a>
+                   <a href="index.php">Match Report </a>for <a href="index.php">Premier 1 </a>by <a href="index.php">Craig Shanks </a>
                 </p>
-                <p><span class="glyphicon glyphicon-time"></span> Posted on October 28, 2016 at 10:00 PM</p>
+                <p><span <i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on October 28, 2016 at 10:00 PM</p>
                 <hr>
                 <img class="img-responsive" src="http://placehold.it/900x300" alt="">
                 <hr>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
-                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" href="#">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 
                 <hr>
 
@@ -107,14 +108,14 @@
                     <a href="#">Premiere 2 win at J'ville</a>
                 </h2>
                 <p class="lead">
-                    by <a href="index.php">Trever Nerk</a>
+                    <a href="index.php">Match Report </a>for <a href="index.php">Premier 2 </a>by <a href="index.php">Trever Nerk</a>
                 </p>
-                <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:45 PM</p>
+                <p><span <i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on August 28, 2013 at 10:45 PM</p>
                 <hr>
                 <img class="img-responsive" src="http://placehold.it/900x300" alt="">
                 <hr>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, quasi, fugiat, asperiores harum voluptatum tenetur a possimus nesciunt quod accusamus saepe tempora ipsam distinctio minima dolorum perferendis labore impedit voluptates!</p>
-                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" href="#">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></span></a>
 
                 <hr>
 
@@ -123,14 +124,14 @@
                     <a href="#">Colts off to great start</a>
                 </h2>
                 <p class="lead">
-                    by <a href="index.php">Some Kid</a>
+                    <a href="index.php">Match Report </a>for <a href="index.php">Colts </a>by <a href="index.php">Master Chief</a>
                 </p>
-                <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:45 PM</p>
+                <p><span <i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on August 28, 2013 at 10:45 PM</p>
                 <hr>
                 <img class="img-responsive" src="http://placehold.it/900x300" alt="">
                 <hr>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptates, voluptas dolore ipsam cumque quam veniam accusantium laudantium adipisci architecto itaque dicta aperiam maiores provident id incidunt autem. Magni, ratione.</p>
-                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" href="#">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></span></a>
 
                 <hr>
 
@@ -148,32 +149,16 @@
 
             <!-- Blog Sidebar Widgets Column - takes up 4 columns. For mobile topnav changes to hamburger & side bar stacks underneath -->
             <div class="col-md-4">
-
-                <!-- Blog Search Well -->
-                <!-- <div class="well">
-                    <h4>Blog Search</h4>
-                    <div class="input-group">
-                        <input type="text" class="form-control">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        </span>
-                    </div> -->
-                    <!-- /.input-group -->
-                <!--</div> -->
-
-                <!-- Blog Categories Wells -->
-                
+               
                 <div class="well">
-                    
+                   
 		            <div class="row">
 		                <div class="col-lg-6">
 		                    <h3>Senior</h3>
 		                    <ul class="list-unstyled">
-		                        <li><a href="#">Match Report</a>
+		                        <li><a href="#">Match Reports</a>
 		                        </li>
-		                        <li><a href="#">Match Preview</a>
+		                        <li><a href="#">Match Previews</a>
 		                        </li>
 		                        <li><a href="#">Good Chat</a>
 		                        </li>
@@ -184,9 +169,9 @@
 		                    <h3>Junior</h3>
 		                   
 		                    <ul class="list-unstyled">
-		                        <li><a href="#">Match Report</a>
+		                        <li><a href="#">Match Reports</a>
 		                        </li>
-		                        <li><a href="#">Match Preview</a>
+		                        <li><a href="#">Match Previews</a>
 		                        </li>
 		                        <li><a href="#">Good Chat</a>
 		                        </li>
@@ -277,7 +262,8 @@
                     <!-- /.row -->
                 </div>
 
-                <!-- Side Widget Well -->
+                <!-- Conduct Well -->
+
                 <div class="well">
                     <h4>Appropriate Conduct</h4>
                     <h5><em>Watch out, kids about!</em></h5>	
