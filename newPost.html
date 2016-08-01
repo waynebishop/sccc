@@ -6,7 +6,7 @@
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">	
-    	<title>SCCC Blog Home</title>
+    	<title>SCCC Blog New Post</title>
 
     	<!-- Latest compiled and minified CSS 20-Jul-2016-->
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -165,7 +165,7 @@
             <ol class="breadcrumb">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="blog-home.html">Captains Blog</a></li>
-                <li><a class="active">Edit Post</a></li>    
+                <li><a class="active">New Blog Post</a></li>    
             </ol>
 
         </div>
@@ -186,30 +186,54 @@
                     
                     <h1 class="page-header">
                         Captains Blog
-                        <small>Edit Post</small>
+                        <small>Create New Post</small>
                     </h1>
 
-                    <!-- First Blog Post -->
-                    <h2>
-                        <a href="#">Premiere 1 win game One</a>
-                    </h2>
-                    <p class="lead">
-                       <a href="index.php">Match Report </a>for team <a href="index.php">Premier 1 </a>by <a href="index.php">Dave Champion </a>Grade: <a href="index.php"> Premier 1</a>
-                    </p>
 
-                    <p><span <i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on September 28, 2016 at 11:30 PM <span><strong>Post ID#101</strong></span></p>
-                    <hr>
-                    <img class="img-responsive" src="img/bruce-600x400.jpg" alt="">
-                    <hr>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
+                    <form>
+                        <div class="form-group">
+                            <label for="postTitle">Title</label>
+                            <input type="text" class="form-control" id="postTitle" placeholder="Title">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="postReportType">Report Type</label>
+                            <input type="text" class="form-control" id="postReportType" placeholder="Match Report">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="team">Team</label>
+                            <input type="text" class="form-control" id="team" placeholder="Tigers, Colts etc">
+                        </div>
+                        <div class="form-group">
+                            <label for="grade">Grade</label>
+                            <input type="text" class="form-control" id="grade" placeholder="Year 6, Colts etc">
+                        </div>
+                        <div class="form-group">
+                            <label for="author">Author</label>
+                            <input type="text" class="form-control" id="author" placeholder="Fred Nerk">
+                        </div>
 
-                    <hr>
+                        <div class="form-group">
+                            <label for="postIntro">Post Introduction</label>
+                            <input type="textarea" class="form-control" id="postIntro" placeholder="Brief post introduction appears below the image on main blog page and as the intro line to the main content.">
+                        </div>
 
-                    
+                        <div class="form-group">
+                            <label for="mainPost">Main Post Content</label>
+                            <input type="textarea" class="form-control" id="mainPost" placeholder="This main content follows on from post intro.">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputFile">Image</label>
+                            <input type="file" id="exampleInputFile">
+                            <p class="help-block">Must be .jpeg, .png or .gif.</p>
+                        </div>
+                     
+                     
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </form>
+
                     
                     <hr>
 
@@ -217,7 +241,7 @@
 
                     <ul class="pager">
                         <li class="previous">
-                            <a href="blog-home.html">&larr; Back to Main Blog</a>
+                            <a href="blog-home.html">&larr; Back </a>
                         </li>        
                     </ul>
 
