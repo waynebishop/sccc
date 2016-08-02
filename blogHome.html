@@ -153,6 +153,57 @@
                             </div> 
                         </div>
 
+                        <!-- My Account Button trigger modal -->
+                        
+                        <li><button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myAccountModal"><i class="fa fa-user" aria-hidden="true"></i> My Account</button></li>
+
+                        <!-- myAccountModal -->
+                        <div class="modal fade" id="myAccountModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel"> My Account - Edit &amp; Add Details</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                        <div class="input-group">
+                                            <span class="input-group-addon" id="FirstName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" placeholder="First name" aria-describedby="First name field">
+                                        </div>
+
+                                        <br>
+
+                                        <div class="input-group">
+                                            <span class="input-group-addon" id="LastName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" placeholder="Last name" aria-describedby="Last name field">
+                                        </div>
+
+                                        <br>
+
+                                        <div class="input-group">
+                                            <span class="input-group-addon" id="Email"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" placeholder="Email address eg name@gmail.com etc" aria-describedby="Email field">
+                                        </div>
+
+                                        <br>
+
+                                        <div class="input-group">
+                                            <span class="input-group-addon" id="PhoneNumber"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" placeholder="Contact phone number" aria-describedby="Contact phone number field">
+                                        </div>
+
+                                        
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+
                     </ul>
                 </div>
             </nav>
@@ -179,10 +230,10 @@
                 <div class="col-md-8">
 
                     <!-- Post Pending Button Alert for Admin only -->
-                    <a href="blogPending.html"><button type="button" class="btn btn-warning btn-md"><i class="fa fa-user" aria-hidden="true"></i> Posts Pending: 4</button></a>
+                    <a href="blogPending.html"><button type="button" class="btn btn-warning btn-md"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Posts Pending: 4</button></a>
 
                     <!-- Create a new post Button -->
-                    <a href="newPost.html"><button type="button" class="btn btn-success btn-md"><i class="fa fa-user" aria-hidden="true"></i> Create New Post</button></a>
+                    <a href="newPost.html"><button type="button" class="btn btn-success btn-md"><i class="fa fa-bullhorn" aria-hidden="true"></i> Create New Post</button></a>
                     
 
 
@@ -193,7 +244,7 @@
                         <small>Reports &amp; Chat</small>
                     </h1>
 
-                    <!-- First Blog Post -->
+                    <!-- First Blog Post NB image size 700 x 550 -->
                     <h2>
                         <a href="#">Premiere 1 win game One</a>
                     </h2>
@@ -203,7 +254,7 @@
 
                     <p><span <i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on September 28, 2016 at 11:30 PM <span><strong>Post ID#101</strong></span></p>
                     <hr>
-                    <img class="img-responsive" src="img/bruce-600x400.jpg" alt="">
+                    <img class="img-responsive" src="img/shaunbat.jpg" alt="">
                     <hr>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
                     <a class="btn btn-primary" href="blogPost.html">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
@@ -219,7 +270,7 @@
                     </p>
                     <p><span <i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on September 28, 2016 at 9:45 PM <span><strong>Post ID#102</strong></span></p>
                     <hr>
-                    <img class="img-responsive" src="img/bruce-600x400.jpg" alt="">
+                    <img class="img-responsive" src="img/shauncatch.jpg" alt="">
                     <hr>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, quasi, fugiat, asperiores harum voluptatum tenetur a possimus nesciunt quod accusamus saepe tempora ipsam distinctio minima dolorum perferendis labore impedit voluptates!</p>
                     <a class="btn btn-primary" href="blogPost.html">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></span></a>
@@ -235,7 +286,7 @@
                     </p>
                     <p><span <i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on September 25, 2016 at 7:00 PM <span><strong>Post ID#103</strong></span></p>
                     <hr>
-                    <img class="img-responsive" src="img/bruce-600x400.jpg" alt="">
+                    <img class="img-responsive" src="img/shauncatch.jpg" alt="">
                     <hr>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptates, voluptas dolore ipsam cumque quam veniam accusantium laudantium adipisci architecto itaque dicta aperiam maiores provident id incidunt autem. Magni, ratione.</p>
                     <a class="btn btn-primary" href="blogPost.html">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></span></a>
@@ -251,7 +302,7 @@
                     </p>
                     <p><span <i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on September 21, 2016 at 9:30 PM <span><strong>Post ID#104</strong></span></p>
                     <hr>
-                    <img class="img-responsive" src="img/bruce-600x400.jpg" alt="">
+                    <img class="img-responsive" src="img/shauncatch.jpg" alt="">
                     <hr>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptates, voluptas dolore ipsam cumque quam veniam accusantium laudantium adipisci architecto itaque dicta aperiam maiores provident id incidunt autem. Magni, ratione.</p>
                     <a class="btn btn-primary" href="blogPost.html">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></span></a>
