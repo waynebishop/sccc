@@ -23,8 +23,7 @@
     	<div class="container">
             <div class="jumbotron">
             <h1>Spin City Cricket Club</h1>
-            <p>The true spirit of cricket in the Capital <i class="fa fa-flag" aria-hidden="true"></i>
-</p>
+            <p>The spirit of cricket in the Capital <i class="fa fa-flag" aria-hidden="true"></i></p>
             </div>
         </div>
 
@@ -240,6 +239,8 @@
                         <small>Edit Post</small>
                     </h1>
 
+                    <p class="politeWarning"><i class="fa fa-heart" aria-hidden="true"></i><em> Watch out, kids about!</em></p>
+
 
                     <form>
                         
@@ -252,13 +253,15 @@
                             <label for="team">Team</label>
                             <input type="text" class="form-control" id="team" placeholder="Tigers, Colts etc">
                         </div>
-                        <div class="form-group">
+
+                        <!-- <div class="form-group">
                             <label for="grade">Grade</label>
                             <input type="text" class="form-control" id="grade" placeholder="Year 6, Colts etc">
-                        </div>
+                        </div> -->
+
                         <div class="form-group">
                             <label for="author">Author</label>
-                            <input type="text" class="form-control" id="author" placeholder="Fred Nerk">
+                            <input type="text" class="form-control" id="author" placeholder="** Pre-populates with User First &amp; Last name. **">
                         </div>
 
                         <div class="form-group">
@@ -266,7 +269,21 @@
                             <input type="text" class="form-control" id="postTitle" placeholder="Title">
                         </div>
 
+                        <!-- UNSURE about Textarea form for Bootstrap  per next 2 textarea inputs-->
+
                         <div class="form-group">
+                            <label for="postIntro">Post Introduction</label>
+                            <textarea class="form-control" rows="3" id="postIntro" placeholder="Brief post introduction appears below the image on main blog page and as the intro line to the main content."></textarea>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label for="mainPost">Main Post Content</label>
+                            <!-- <input type="textarea" class="form-control" id="mainPost" placeholder="This main content follows on from post intro."> -->
+                            <textarea class="form-control" rows="10" id="mainPost" placeholder="This main content follows on from Post Introduction above that becomes the first line of the main post."></textarea>
+                        </div>    
+
+                        <!-- <div class="form-group">
                             <label for="postIntro">Post Introduction</label>
                             <input type="textarea" class="form-control" id="postIntro" placeholder="Brief post introduction appears below the image on main blog page and as the intro line to the main content.">
                         </div>
@@ -274,7 +291,7 @@
                         <div class="form-group">
                             <label for="mainPost">Main Post Content</label>
                             <input type="textarea" class="form-control" id="mainPost" placeholder="This main content follows on from post intro.">
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
                             <label for="exampleInputFile">Image</label>
@@ -354,7 +371,154 @@
 
                 </div>
 
+                <!-- Blog Sidebar Widgets Column - takes up 4 columns. For mobile topnav changes to hamburger & side bar stacks underneath -->
                 
+                <div class="col-md-4">
+                
+                    <div class="well">
+                        <!-- <h4>Blog Search</h4> -->
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Captains Blog Search">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" >
+                                    <span <i class="fa fa-search" aria-hidden="true"></i></span>
+                            </button>
+                            </span>
+                        </div>
+                        <!-- /.input-group -->
+                    </div>
+
+                    <div class="well">
+                       
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h3>Seniors</h3>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">All Reports</a>
+                                    </li>
+                                    <li><a href="#">Match Reports</a>
+                                    </li>
+                                    <li><a href="#">Match Previews</a>
+                                    </li>
+                                    <li><a href="#">Good Chat</a>
+                                    </li>
+                                </ul>      
+                            </div>
+                            <!-- /.col-lg-6 -->
+                            <div class="col-lg-6">
+                                <h3>Juniors</h3>
+                               
+                                <ul class="list-unstyled">
+                                    <li><a href="#">All Reports</a>
+                                    </li>
+                                    <li><a href="#">Match Reports</a>
+                                    </li>
+                                    <li><a href="#">Match Previews</a>
+                                    </li>
+                                    <li><a href="#">Good Chat</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- /.col-lg-6 -->
+                        </div>
+                        <!-- /.row -->
+                    </div>  
+
+
+                    <div class="well">
+                        
+                        <div class="row">
+
+                            <div class="col-lg-6">
+                                <h3>Teams</h3>
+                                <h4>Seniors</h4>  
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Premier 1</a>
+                                    </li>
+                                    <li><a href="#">Premier 2</a>
+                                    </li>
+                                    <li><a href="#">3rd Grade</a>
+                                    </li>
+                                    <li><a href="#">20/20 Tigers</a>
+                                    </li>
+                                    <li><a href="#">20/20 Bobcats</a>
+                                    </li>
+                                    <li><a href="#">20/20 Oldcodgers</a>
+                                    </li>
+                                </ul>
+
+                                <h4>Juniors</h4>  
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Year 5 Thunder</a>
+                                    </li>
+                                    <li><a href="#">Year 5 Roar</a>
+                                    </li>
+                                    <li><a href="#">Year 6 Phoenix</a>
+                                    </li>
+                                    <li><a href="#">Year 6 Superkings</a>
+                                    </li>
+                                    <li><a href="#">Year 7 Hurricanes</a>
+                                    </li>
+                                    <li><a href="#">Year 7 Big-Hitters</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- /.col-lg-6 -->
+                            <div class="col-lg-6">
+                                <h3>Authors</h3>
+                                <h4>Seniors</h4>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Dave Champion</a>
+                                    </li>
+                                    <li><a href="#">Trevor Nerk</a>
+                                    </li>
+                                    <li><a href="#">Jack Sprat</a>
+                                    </li>
+                                    <li><a href="#">Kane Williamson</a>
+                                    </li>
+                                    <li><a href="#">Mahatma Ghandi</a>
+                                    </li>
+                                    <li><a href="#">Ronald MacDondald</a>
+                                    </li>
+                                </ul>
+
+                                <h4>Juniors</h4>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Dave Martin</a>
+                                    </li>
+                                    <li><a href="#">Tracy Smith</a>
+                                    </li>
+                                    <li><a href="#">John Key</a>
+                                    </li>
+                                    <li><a href="#">Tom Selleck</a>
+                                    </li>
+                                    <li><a href="#">Robert Downey</a>
+                                    </li>
+                                    <li><a href="#">Sammy Sparrow</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <!-- /.col-lg-6 -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+
+                    <!-- Conduct Well -->
+
+                    <div class="well">
+                        <h4>Appropriate Conduct</h4>
+                        <h5 class="politeWarning"><i class="fa fa-heart" aria-hidden="true"></i><em> Watch out, kids about!</em></h5>
+
+
+                        <p>Posts and Comments on this site must be appropriate for children and adults and must not contain offensive language and or content that may be considered abusive, discriminatory, inflammatory or offensive in any way. If we become aware of inappropriate content it will be moderated (edited or removed) by us and the Users registration may be revoked at our sole discretion.</p>
+                        
+                        <p>Please see full terms of use here <a href="blogtermsofuse.html">Spin City Cricket Club Blog Terms &amp; Conditions of use</a>.</p>
+
+                        <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Please alert us to any potentially inappropriate content by sending an email with the Post ID# and Comment details to: <a href="mailto:administrator.sccc@xtra.co.nz">admin.sccc@xtra.co.nz</a><em></em></p>
+                    </div>
+
+                </div>
 
             </div>
             <!-- /.row -->

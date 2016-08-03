@@ -6,7 +6,7 @@
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">	
-    	<title>SCCC Edit Comment</title>
+    	<title>SCCC Blog Admin</title>
 
     	<!-- Latest compiled and minified CSS 20-Jul-2016-->
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -214,8 +214,7 @@
             <ol class="breadcrumb">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="blogHome.html">Captains Blog</a></li>
-                <li><a href="blogPost.html">Blog Post</a></li> 
-                <li><a class="active">Edit Comment</a></li>    
+                <li><a class="active" href="blogAdmin.html">Blog Admin</a></li>     
             </ol>
 
         </div>
@@ -236,77 +235,188 @@
                     
                     <h1 class="page-header">
                         Captains Blog
-                        <small>Edit Comment</small>
+                        <small>Blog Administration</small>
                     </h1>
 
-
-                    <form>
+                    <!--  Maintain a User account -->
+                             
+                    <div class="well">
+                        <h2>Maintain a User account</h2>
                         
-                        <div class="well">
-                            <h4>Edit your Comment:</h4>
-                            <p class="politeWarning"><i class="fa fa-heart" aria-hidden="true"></i><em> Watch out, kids about!</em></p>
-                            <form role="form">
-                                <div class="form-group">
-                                    <textarea class="form-control" rows="3" id="editedComment" placeholder="** Pre-populates with existing comment **"></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-success">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                            </form>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Username Search">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" >
+                                    <span <i class="fa fa-search" aria-hidden="true"></i></span>
+                            </button>
+                            </span>
                         </div>
 
-                        <!-- <div class="form-group">
-                            <label for="comment">Comment:</label>
-                            <input type="textarea" class="form-control" id="mainPost" placeholder="Comment text ....">
+                        <br>
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="FirstName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" placeholder="First name" aria-describedby="First name field">
                         </div>
 
-                        <button type="submit" class="btn btn-success">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i></button> -->
+                        <br>
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="LastName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" placeholder="Last name" aria-describedby="Last name field">
+                        </div>
+
+                        <br>
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="Email"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" placeholder="Email address eg name@gmail.com etc" aria-describedby="Email field">
+                        </div>
+
+                        <br>
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="PhoneNumber"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" placeholder="Contact phone number" aria-describedby="Contact phone number field">
+                        </div>
+
+                        <br>
+
+                        <!-- User Status radio buttons-->
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="userStatus" id="userStatus" value="User" checked>
+                                User
+                            </label>
+                        </div>
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="userStatus" id="userStatus" value="Author">
+                                Author
+                            </label>
+                        </div>
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="userStatus" id="userStatus" value="Admin">
+                                Administrator
+                            </label>
+                        </div>
+                            
+                        <div class="inout-group">                 
+                            <button type="button" class="btn btn-success">Submit</button>
+                        </div>
+
+                             
+                    </div>
+
+
+
+                    <div class="well">
+                        <h2>Maintain a Team</h2>
                         
-                        <hr>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Team Search">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" >
+                                    <span <i class="fa fa-search" aria-hidden="true"></i></span>
+                            </button>
+                            </span>
+                        </div>
+
+                        <br>
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="teamName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" placeholder="Team Name" aria-describedby="Team name field">
+                        </div>
+
+                        <br>
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="grade"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" placeholder="Grade - Premier 1, Colts, Year 5 etc" aria-describedby="Grade field">
+                        </div>
+
+                        <br>
+
+                        <!-- Junior OR Senior Status radio buttons-->
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="juniorSenior" id="juniorSenior" value="junior" checked>
+                                Junior
+                            </label>
+                        </div>
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="juniorSenior" id="juniorSenior" value="Senior">
+                                Senior
+                            </label>
+                        </div>
+
+                        <br>
                         
-                        <!-- Comment Delete Button & modal -->
+                        <!-- Close OR Submit -->
 
-                        <!-- Comment Delete Button trigger modal -->
-                        <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#commentDeleteModal"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete </button>
-
-                        <!-- Delete Comment Modal -->
-
-                        <div class="modal fade" id="commentDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="myModalLabel"> Delete Comment Confirmation</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Are you certain that you want to delete this comment?</p>
-                                        
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="commentDeleteConfirm" id="commentDeleteConfirm" value="no" checked>
-                                                NO I want to keep it.
-                                            </label>
-                                        </div>
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="commentDeleteConfirm" id="commentDeleteConfirm" value="yes">
-                                                YES please delete this comment.
-                                            </label>
-                                        </div>
-                   
-                                    </div>
-
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Submit </button>
-                                    </div>
-                                </div>
-                            </div> 
-                        </div> 
-                        <!-- /End Comment Delete Button & Modal-->
+                        <div class="input-group">                            
+                            <button type="button" class="btn btn-success">Submit</button>
+                        </div>
+                             
+                    </div> 
 
 
-                    </form>
+
+                    <div class="well">
+                        <h2>Add a Team</h2>
+
+                        <br>
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="newTeamName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" placeholder="Team Name" aria-describedby="Team name field">
+                        </div>
+
+                        <br>
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="newTeamGrade"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" placeholder="Grade - Premier 1, Colts, Year 5 etc" aria-describedby="Grade field">
+                        </div>
+
+                        <br>
+
+                        <!-- Junior OR Senior Status radio buttons-->
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="newJuniorSenior" id="newTeamJuniorSenior" value="junior" checked>
+                                Junior
+                            </label>
+                        </div>
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="newJuniorSenior" id="newTeamJuniorSenior" value="Senior">
+                                Senior
+                            </label>
+                        </div>
+
+                        <br>
+                                                                    
+                        <div class="input-group">
+                           <button type="button" class="btn btn-success">Submit</button>
+                        </div>
+                             
+                    </div>
+
 
                     
+
+                 
                     <hr>
 
                     <!-- back to Blog Home -->
@@ -322,24 +432,28 @@
                 <!-- Blog Sidebar Widgets Column - takes up 4 columns. For mobile topnav changes to hamburger & side bar stacks underneath -->
                 
                 <div class="col-md-4">
+                
                     <div class="well">
                         <!-- <h4>Blog Search</h4> -->
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Captains Blog Search">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button" >
-                                <span <i class="fa fa-search" aria-hidden="true"></i></span>
+                                    <span <i class="fa fa-search" aria-hidden="true"></i></span>
                             </button>
                             </span>
                         </div>
                         <!-- /.input-group -->
                     </div>
 
-                    <div class="well"> 
+                    <div class="well">
+                       
                         <div class="row">
                             <div class="col-lg-6">
                                 <h3>Seniors</h3>
                                 <ul class="list-unstyled">
+                                    <li><a href="#">All Reports</a>
+                                    </li>
                                     <li><a href="#">Match Reports</a>
                                     </li>
                                     <li><a href="#">Match Previews</a>
@@ -353,6 +467,8 @@
                                 <h3>Juniors</h3>
                                
                                 <ul class="list-unstyled">
+                                    <li><a href="#">All Reports</a>
+                                    </li>
                                     <li><a href="#">Match Reports</a>
                                     </li>
                                     <li><a href="#">Match Previews</a>
@@ -461,8 +577,6 @@
                     </div>
 
                 </div>
-
-                
 
             </div>
             <!-- /.row -->
