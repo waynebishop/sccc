@@ -244,20 +244,50 @@
 
                     <form>
                         
-                        <div class="form-group">
-                            <label for="postReportType">Report Type</label>
-                            <input type="text" class="form-control" id="postReportType" placeholder="Match Report">
+                        <div class="form-group">                        
+                            <label for="selectReport">Report Topic</label>
+                            <select class="form-control" id="selectReport">
+                                <option>Choose...</option>
+                                <option>Match Report - Senior</option>
+                                <option>Match Report - Junior</option>
+                                <option>Match Preview - Senior</option>
+                                <option>Match Preview - Junior</option>
+                                <option>Good Chat - Senior</option>
+                                <option>Good Chat - Junior</option>
+                            </select>
                         </div>
-                              
-                        <div class="form-group">
-                            <label for="team">Team</label>
-                            <input type="text" class="form-control" id="team" placeholder="Tigers, Colts etc">
+                        
+                        <div class="form-group">                        
+                            <label for="selectTeam">Team</label>
+                            <select class="form-control" id="selectTeam">
+                                <option>Choose...</option>
+                                <option>Premier 1</option>
+                                <option>Premier 2</option>
+                                <option>Colts</option>
+                                <option>Year 5</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">                        
+                            <label for="selectLocation">Location</label>
+                            <select class="form-control" id="selectLocation">
+                                <option>Choose...</option>
+                                <option>Home</option>
+                                <option>Away</option>
+                            </select>
                         </div>
 
-                        <!-- <div class="form-group">
-                            <label for="grade">Grade</label>
-                            <input type="text" class="form-control" id="grade" placeholder="Year 6, Colts etc">
-                        </div> -->
+                        <div class="form-group">                        
+                            <label for="selectGameType">Game Type</label>
+                            <select class="form-control" id="selectGameType">
+                                <option>Choose...</option>
+                                <option>One Day</option>
+                                <option>Two Day</option>
+                                <option>20/20</option>
+                                <option>Milo</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
 
                         <div class="form-group">
                             <label for="author">Author</label>
@@ -389,7 +419,7 @@
                     </div>
 
                     <div class="well">
-                        <h3>Report Type</h3>
+                        <h3>Topics</h3>
                         <div class="row">
                             
                             <div class="col-lg-6">
@@ -428,10 +458,11 @@
 
                     <div class="well">
                         
+                        <h3>Teams</h3>
                         <div class="row">
 
                             <div class="col-lg-6">
-                                <h3>Teams</h3>
+                                
                                 <h4>Seniors</h4>  
                                 <ul class="list-unstyled">
                                     <li><a href="#">Premier 1</a>
@@ -448,6 +479,11 @@
                                     </li>
                                 </ul>
 
+                                
+                            </div>
+                            <!-- /.col-lg-6 -->
+                            <div class="col-lg-6">  
+
                                 <h4>Juniors</h4>  
                                 <ul class="list-unstyled">
                                     <li><a href="#">Year 5 Thunder</a>
@@ -463,47 +499,13 @@
                                     <li><a href="#">Year 7 Big-Hitters</a>
                                     </li>
                                 </ul>
-                            </div>
-                            <!-- /.col-lg-6 -->
-                            <div class="col-lg-6">
-                                <h3>Authors</h3>
-                                <h4>Seniors</h4>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">Dave Champion</a>
-                                    </li>
-                                    <li><a href="#">Trevor Nerk</a>
-                                    </li>
-                                    <li><a href="#">Jack Sprat</a>
-                                    </li>
-                                    <li><a href="#">Kane Williamson</a>
-                                    </li>
-                                    <li><a href="#">Mahatma Ghandi</a>
-                                    </li>
-                                    <li><a href="#">Ronald MacDondald</a>
-                                    </li>
-                                </ul>
-
-                                <h4>Juniors</h4>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">Dave Martin</a>
-                                    </li>
-                                    <li><a href="#">Tracy Smith</a>
-                                    </li>
-                                    <li><a href="#">John Key</a>
-                                    </li>
-                                    <li><a href="#">Tom Selleck</a>
-                                    </li>
-                                    <li><a href="#">Robert Downey</a>
-                                    </li>
-                                    <li><a href="#">Sammy Sparrow</a>
-                                    </li>
-                                </ul>
 
                             </div>
                             <!-- /.col-lg-6 -->
                         </div>
                         <!-- /.row -->
-                    </div>
+                    </div>    
+                        
 
                     <!-- Conduct Well -->
 
