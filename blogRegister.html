@@ -5,8 +5,8 @@
     	<meta charset="utf-8">
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">	
-    	<title>SCCC Edit Post</title>
+        <meta name="description" content="Sign up for the SCCC Captains Blog">	
+    	<title>SCCC Blog Sign Up</title>
 
     	<!-- Latest compiled and minified CSS 20-Jul-2016-->
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -16,6 +16,7 @@
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     </head>
+
     <body>
 
     	<!-- Header background image -->
@@ -30,27 +31,26 @@
         <div class="container">
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
-                    
+                
                     <ul class="nav navbar-nav">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="#">Seniors</a></li>
                         <li><a href="#">Juniors</a></li>
                         <li><a href="#">Sponsors</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li class="active"><a href="blogHome.html">Blog</a></li>
+                        <li><a href="blogHome.html">Blog</a></li>
                         <li><a href="#">News</a></li>
                     </ul>
                                     
                     <ul class="nav navbar-nav navbar-right">
-                            
-                       <li><a href="blogLogin.html"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-user" aria-hidden="true"></i> Login</button></a></li>
 
-                        <li><a href="blogRegister.html"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-user" aria-hidden="true"></i> Sign up</button></a></li>
+                        <li><a href="blogLogin.html"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-user" aria-hidden="true"></i> Login</button></a></li>
+
+                        <li class="active"><a href="blogRegister.html"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-user" aria-hidden="true"></i> Sign up</button></a></li>
 
                         <li><a href="blogMyAccount.html"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-user" aria-hidden="true"></i> My Account</button></a></li>
 
                     </ul>
-
                 </div>
             </nav>
         </div>
@@ -61,17 +61,15 @@
             <ol class="breadcrumb">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="blogHome.html">Captains Blog</a></li>
-                <li><a href="blogPending.html">Posts Pending</a></li> 
-                <li><a class="active">Edit Post</a></li>    
+                <li><a class="active" href="blogLogin.html">Sign Up</a></li>     
             </ol>
-
         </div>
 
     	<!-- Content -->
     	
-    	<!-- main blog post section -->
+    	<!-- main section -->
 
-    	<div class="container" id="blogPostContent">
+    	<div class="container" id="blogLoginContent">
 
             <div class="row">
 
@@ -83,159 +81,71 @@
                     
                     <h1 class="page-header">
                         Captains Blog
-                        <small>Edit Post</small>
+                        <small>Sign Up</small>
                     </h1>
 
-                    <p class="politeWarning"><i class="fa fa-heart" aria-hidden="true"></i><em> Watch out, kids about!</em></p>
+                    <!--  Maintain a User account -->
+                             
+                    <div class="well">
+                        <h2>Sign up for the Captains Blog</h2>
+                        <h4>For new Blog members only. Already registered? You can Login <a href="blogLogin.html">here</a>.</h4>
 
-
-                    <form>
+                        <br>
                         
-                        <div class="form-group">                        
-                            <label for="selectReport">Report Topic</label>
-                            <select class="form-control" id="selectReport">
-                                <option>Choose...</option>
-                                <option>Match Report - Senior</option>
-                                <option>Match Report - Junior</option>
-                                <option>Match Preview - Senior</option>
-                                <option>Match Preview - Junior</option>
-                                <option>Good Chat - Senior</option>
-                                <option>Good Chat - Junior</option>
-                            </select>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="userName"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" placeholder="Username - Usually your email address" aria-describedby="First name field">
                         </div>
+
+                        <br>
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="password"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" placeholder="Passsword" aria-describedby="Last name field">
+                        </div>
+
+                        <br>
                         
-                        <div class="form-group">                        
-                            <label for="selectTeam">Team</label>
-                            <select class="form-control" id="selectTeam">
-                                <option>Choose...</option>
-                                <option>Premier 1</option>
-                                <option>Premier 2</option>
-                                <option>Colts</option>
-                                <option>Year 5</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">                        
-                            <label for="selectLocation">Location</label>
-                            <select class="form-control" id="selectLocation">
-                                <option>Choose...</option>
-                                <option>Home</option>
-                                <option>Away</option>
-                            </select>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="FirstName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" placeholder="First name" aria-describedby="First name field">
                         </div>
 
-                        <div class="form-group">                        
-                            <label for="selectGameType">Game Type</label>
-                            <select class="form-control" id="selectGameType">
-                                <option>Choose...</option>
-                                <option>One Day</option>
-                                <option>Two Day</option>
-                                <option>20/20</option>
-                                <option>Milo</option>
-                                <option>Other</option>
-                            </select>
+                        <br>
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="LastName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" placeholder="Last name" aria-describedby="Last name field">
                         </div>
 
-                        <div class="form-group">
-                            <label for="author">Author</label>
-                            <input type="text" class="form-control" id="author" placeholder="** Pre-populates with User First &amp; Last name. **">
+                        <br>
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="Email"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" placeholder="Email address eg name@gmail.com etc" aria-describedby="Email field">
                         </div>
 
-                        <div class="form-group">
-                            <label for="postTitle">Title</label>
-                            <input type="text" class="form-control" id="postTitle" placeholder="Title">
+                        <br>
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="PhoneNumber"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" placeholder="Contact phone number" aria-describedby="Contact phone number field">
                         </div>
 
-                        <!-- UNSURE about Textarea form for Bootstrap  per next 2 textarea inputs-->
+                        <br>
 
-                        <div class="form-group">
-                            <label for="postIntro">Post Introduction</label>
-                            <textarea class="form-control" rows="3" id="postIntro" placeholder="Brief post introduction appears below the image on main blog page and as the intro line to the main content."></textarea>
+                        <span><i class="fa fa-asterisk" aria-hidden="true"></i> Required fields.</span>
+
+                        <br>
+                        <br>
+                                                    
+                        <div class="input-group">                 
+                            <button type="button" class="btn btn-success">Submit</button>
                         </div>
 
-                        
-                        <div class="form-group">
-                            <label for="mainPost">Main Post Content</label>
-                            <!-- <input type="textarea" class="form-control" id="mainPost" placeholder="This main content follows on from post intro."> -->
-                            <textarea class="form-control" rows="10" id="mainPost" placeholder="This main content follows on from Post Introduction above that becomes the first line of the main post."></textarea>
-                        </div>    
-
-                        <!-- <div class="form-group">
-                            <label for="postIntro">Post Introduction</label>
-                            <input type="textarea" class="form-control" id="postIntro" placeholder="Brief post introduction appears below the image on main blog page and as the intro line to the main content.">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="mainPost">Main Post Content</label>
-                            <input type="textarea" class="form-control" id="mainPost" placeholder="This main content follows on from post intro.">
-                        </div> -->
-
-                        <div class="form-group">
-                            <label for="exampleInputFile">Image</label>
-                            <input type="file" id="exampleInputFile">
-                            <p class="help-block">Must be .jpg, .jpeg, .png or .gif.</p>
-                        </div>
-                      
-                        <!--  Pending OR Approved checkboxes -->
-
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="postStatus" id="postStatus" value="pending" checked>
-                                Pending
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="postStatus" id="postStatus" value="approved">
-                                Approved
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-success">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                        <hr>
-                        <!-- <button type="submit" class="btn btn-danger btn-md"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> -->
-
-                        <!-- Delete Button trigger modal -->
-                        <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#postDeleteModal"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-
-                        <!-- Delete Modal -->
-                        <div class="modal fade" id="postDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="myModalLabel"> Delete Post Confirmation</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Are you certain that you want to delete this post?</p>
-                                        
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="deleteConfirm" id="deleteConfirm" value="no" checked>
-                                                NO I want to keep it.
-                                            </label>
-                                        </div>
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="deleteConfirm" id="deleteConfirm" value="yes">
-                                                YES please delete the post.
-                                            </label>
-                                        </div>
-                   
-                                    </div>
-
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Submit </button>
-                                    </div>
-                                </div>
-                            </div> 
-                        </div> 
-                        <!-- /End Delete Button & Modal-->
-
-
-                    </form>
-
-                    
+                             
+                    </div>
+               
                     <hr>
 
                     <!-- back to Blog Home -->
@@ -258,7 +168,7 @@
                             <input type="text" class="form-control" placeholder="Captains Blog Search">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button" >
-                                    <span <i class="fa fa-search" aria-hidden="true"></i></span>
+                                    <span><i class="fa fa-search" aria-hidden="true"></i></span>
                             </button>
                             </span>
                         </div>
@@ -268,7 +178,7 @@
                     <div class="well">
                         <h3>Topics</h3>
                         <div class="row">
-                            
+                                 
                             <div class="col-lg-6">
                                 <h4>Seniors</h4>
                                 <ul class="list-unstyled">
@@ -304,7 +214,7 @@
 
 
                     <div class="well">
-                        
+                    
                         <h3>Teams</h3>
                         <div class="row">
 
@@ -351,7 +261,7 @@
                             <!-- /.col-lg-6 -->
                         </div>
                         <!-- /.row -->
-                    </div>    
+                    </div>        
                         
 
                     <!-- Conduct Well -->
@@ -372,12 +282,10 @@
 
             </div>
             <!-- /.row -->
-        </div>
-            
-        <hr>
 
-        <!-- Footer -->
-        <div class="container">
+            <hr>
+
+            <!-- Footer -->
             <footer>
             
                 <div class="row">
@@ -405,7 +313,7 @@
 
             </footer>
 
-        </div>
+        </div> <!-- Close main content -->
 
         <!-- Scripts -->
 
