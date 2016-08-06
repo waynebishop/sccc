@@ -60,6 +60,27 @@ switch($page) {
 		echo $plates->render('newPost');
 	break;
 
+	// Blog Pending
+	case 'blogPending';
+		echo $plates->render('blogPending');
+	break;
+
+	// Edit Comment
+	case 'editComment';
+		echo $plates->render('editComment');
+	break;
+
+	// Edit Post
+	case 'editPost';
+		echo $plates->render('editPost');
+	break;
+
+	// New Post
+	case 'blogAdmin';
+		echo $plates->render('blogAdmin');
+	break;
+
+
 
 	default:
 		echo $plates->render('error404');

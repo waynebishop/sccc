@@ -125,7 +125,7 @@
 
             <ul class="pager">
                 <li class="previous">
-                    <a href="blogHome.html">&larr; Back </a>
+                    <a href="index.php?page=blogHome">&larr; Back </a>
                 </li>        
             </ul>
 
@@ -154,12 +154,10 @@
                     <div class="col-lg-6">
                         <h4>Seniors</h4>
                         <ul class="list-unstyled">
-                            <li><a href="#">Match Reports</a>
-                            </li>
-                            <li><a href="#">Match Previews</a>
-                            </li>
-                            <li><a href="#">Good Chat</a>
-                            </li>
+                            <li><a href="#">All Reports</a></li>
+                            <li><a href="#">Match Reports</a></li>
+                            <li><a href="#">Match Previews</a></li>
+                            <li><a href="#">Good Chat</a></li>
                         </ul>      
                     </div>
                     <!-- /.col-lg-6 -->
@@ -167,12 +165,10 @@
                         <h4>Juniors</h4>
                        
                         <ul class="list-unstyled">
-                            <li><a href="#">Match Reports</a>
-                            </li>
-                            <li><a href="#">Match Previews</a>
-                            </li>
-                            <li><a href="#">Good Chat</a>
-                            </li>
+                            <li><a href="#">All Reports</a></li>
+                            <li><a href="#">Match Reports</a></li>
+                            <li><a href="#">Match Previews</a></li>
+                            <li><a href="#">Good Chat</a></li>
                         </ul>
                     </div>
                     <!-- /.col-lg-6 -->

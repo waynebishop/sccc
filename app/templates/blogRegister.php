@@ -100,7 +100,7 @@
 
             <ul class="pager">
                 <li class="previous">
-                    <a href="blogHome.html">&larr; Back </a>
+                    <a href="index.php?page=blogHome">&larr; Back </a>
                 </li>        
             </ul>
 

@@ -50,7 +50,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
 
-            <a class="btn btn-warning btn-sm" href="editPost.html" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Post</a>
+            <a class="btn btn-warning btn-sm" href="index.php?page=editPost" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Post</a>
 
             <!-- Post Delete Button trigger modal -->
 
@@ -123,7 +123,7 @@
                     Yabba Dabba Doo! This is the best post I have ever read. Can't wait for the next game.
 
                     <br>
-                    <a class="btn btn-warning btn-xs" href="editComment.html" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit </a>
+                    <a class="btn btn-warning btn-xs" href="index.php?page=editComment" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit </a>
 
                     <!-- Comment Delete Button & modal -->
 
@@ -183,7 +183,7 @@
                     </h4>
                     You're right Fred. I am like totally stoked and loving the cricket.
                     <br>
-                    <a class="btn btn-warning btn-xs" href="editComment.html" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit </a>
+                    <a class="btn btn-warning btn-xs" href="index.php?page=editComment" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit </a>
                     
                     
                     <!-- Comment Delete Button & modal -->
@@ -241,7 +241,7 @@
 
             <ul class="pager">
                 <li class="previous">
-                    <a href="blogHome.html">&larr; Back to Main Blog</a>
+                    <a href="index.php?page=blogHome">&larr; Back to Main Blog</a>
                 </li>        
             </ul>
 

@@ -6,7 +6,7 @@
     <ol class="breadcrumb">
         <li><a href="index.php?page=home">Home</a></li>
         <li><a href="index.php?page=blogHome">Captains Blog</a></li>
-        <li><a class="active" href="index.php?page=myAccount">My Account</a></li>     
+        <li><a class="active" href="index.php?page=blogMyAccount">My Account</a></li>     
     </ol>
 </div>
 
@@ -75,7 +75,7 @@
 
             <ul class="pager">
                 <li class="previous">
-                    <a href="blogHome.html">&larr; Back </a>
+                    <a href="index.php?page=blogHome">&larr; Back </a>
                 </li>        
             </ul>
 

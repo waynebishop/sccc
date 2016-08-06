@@ -23,14 +23,14 @@
         <div class="col-md-8">
 
             <!-- Post Pending Button Alert for Admin only -->
-            <a class="btn btn-warning" href="blogPending.html" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Posts Pending: 4</a>
+            <a class="btn btn-warning" href="index.php?page=blogPending" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Posts Pending: 4</a>
 
             <!-- Admin Maintenance Button for Admin only -->
-            <a class="btn btn-info" href="blogAdmin.html" role="button"><i class="fa fa-cog" aria-hidden="true"></i> Blog Admin</a>
+            <a class="btn btn-info" href="index.php?page=blogAdmin" role="button"><i class="fa fa-cog" aria-hidden="true"></i> Blog Admin</a>
             
             <!-- Create a new post Button -->
 
-            <a class="btn btn-success" href="newPost.html" role="button"><i class="fa fa-pencil" aria-hidden="true"></i> Create New Post</a>
+            <a class="btn btn-success" href="index.php?page=newPost" role="button"><i class="fa fa-pencil" aria-hidden="true"></i> Create New Post</a>
 
             <h1 class="page-header">
                 Captains Blog
@@ -149,14 +149,10 @@
 	                <div class="col-lg-6">
 	                    <h4>Seniors</h4>
 	                    <ul class="list-unstyled">
-	                        <li><a href="#">All Reports</a>
-                            </li>
-                            <li><a href="#">Match Reports</a>
-	                        </li>
-	                        <li><a href="#">Match Previews</a>
-	                        </li>
-	                        <li><a href="#">Good Chat</a>
-	                        </li>
+	                        <li><a href="#">All Reports</a></li>
+                            <li><a href="#">Match Reports</a></li>
+	                        <li><a href="#">Match Previews</a></li>
+	                        <li><a href="#">Good Chat</a></li>
 	                    </ul>      
 	                </div>
 	                <!-- /.col-lg-6 -->
@@ -164,14 +160,10 @@
 	                    <h4>Juniors</h4>
 	                   
 	                    <ul class="list-unstyled">
-	                        <li><a href="#">All Reports</a>
-                            </li>
-                            <li><a href="#">Match Reports</a>
-	                        </li>
-	                        <li><a href="#">Match Previews</a>
-	                        </li>
-	                        <li><a href="#">Good Chat</a>
-	                        </li>
+	                        <li><a href="#">All Reports</a></li>
+                            <li><a href="#">Match Reports</a></li>
+	                        <li><a href="#">Match Previews</a></li>
+	                        <li><a href="#">Good Chat</a></li>
 	                    </ul>
 	                </div>
 	                <!-- /.col-lg-6 -->
