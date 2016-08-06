@@ -42,13 +42,13 @@
                         <li><a href="#">News</a></li>
                     </ul>
                                     
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav nav-pills navbar-right">
 
-                        <li><a href="blogLogin.html"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-user" aria-hidden="true"></i> Login</button></a></li>
+                        <li role="presentation"><a href="blogLogin.html"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>
 
-                        <li><a href="blogRegister.html"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-user" aria-hidden="true"></i> Sign up</button></a></li>
+                        <li role="presentation"><a href="blogRegister.html"><i class="fa fa-user" aria-hidden="true"></i> Sign up</a></li>
 
-                        <li><a href="blogMyAccount.html"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-user" aria-hidden="true"></i> My Account</button></a></li>
+                        <li role="presentation"><a href="blogMyAccount.html"><i class="fa fa-user" aria-hidden="true"></i> My Account</a></li>
                             
                     </ul>
 
@@ -103,28 +103,28 @@
 
                         <div class="input-group">
                             <span class="input-group-addon" id="FirstName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" placeholder="First name" aria-describedby="First name field">
+                            <input type="text" class="form-control" placeholder="First name">
                         </div>
 
                         <br>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="LastName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" placeholder="Last name" aria-describedby="Last name field">
+                            <input type="text" class="form-control" placeholder="Last name">
                         </div>
 
                         <br>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="Email"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" placeholder="Email address eg name@gmail.com etc" aria-describedby="Email field">
+                            <input type="text" class="form-control" placeholder="Email address eg name@gmail.com etc" >
                         </div>
 
                         <br>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="PhoneNumber"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" placeholder="Contact phone number" aria-describedby="Contact phone number field">
+                            <input type="text" class="form-control" placeholder="Contact phone number" >
                         </div>
 
                         <br>
@@ -133,31 +133,31 @@
 
                         <div class="radio">
                             <label>
-                                <input type="radio" name="userStatus" id="userStatus" value="User" checked>
+                                <input type="radio" name="userStatus" value="User" checked>
                                 User
                             </label>
                         </div>
 
                         <div class="radio">
                             <label>
-                                <input type="radio" name="userStatus" id="userStatus" value="Author">
+                                <input type="radio" name="userStatus"  value="Author">
                                 Author
                             </label>
                         </div>
 
                         <div class="radio">
                             <label>
-                                <input type="radio" name="userStatus" id="userStatus" value="Admin">
+                                <input type="radio" name="userStatus" value="Admin">
                                 Administrator
                             </label>
                         </div>
                             
                         <div class="input-group">                 
-                            <button type="button" class="btn btn-success">Submit</button>
+                            <button type="button" class="btn btn-success" >Submit</button>
                         </div>
 
                              
-                    </div>
+                    </div> <!-- EndMaintain a User -->
 
 
 
@@ -177,14 +177,14 @@
 
                         <div class="input-group">
                             <span class="input-group-addon" id="teamName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" placeholder="Team Name" aria-describedby="Team name field">
+                            <input type="text" class="form-control" placeholder="Team Name" >
                         </div>
 
                         <br>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="grade"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" placeholder="Grade - Premier 1, Colts, Year 5 etc" aria-describedby="Grade field">
+                            <input type="text" class="form-control" placeholder="Grade - Premier 1, Colts, Year 5 etc">
                         </div>
 
                         <br>
@@ -193,27 +193,27 @@
 
                         <div class="radio">
                             <label>
-                                <input type="radio" name="juniorSenior" id="juniorSenior" value="junior" checked>
+                                <input type="radio" name="juniorSenior" value="junior" checked>
                                 Junior
                             </label>
                         </div>
 
                         <div class="radio">
                             <label>
-                                <input type="radio" name="juniorSenior" id="juniorSenior" value="Senior">
+                                <input type="radio" name="juniorSenior" value="Senior">
                                 Senior
                             </label>
                         </div>
 
                         <br>
                         
-                        <!-- Close OR Submit -->
+                        <!-- Submit -->
 
                         <div class="input-group">                            
                             <button type="button" class="btn btn-success">Submit</button>
                         </div>
                              
-                    </div> 
+                    </div> <!-- END Maintain a team -->
 
 
 
@@ -224,14 +224,14 @@
 
                         <div class="input-group">
                             <span class="input-group-addon" id="newTeamName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" placeholder="Team Name" aria-describedby="Team name field">
+                            <input type="text" class="form-control" placeholder="Team Name">
                         </div>
 
                         <br>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="newTeamGrade"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" placeholder="Grade - Premier 1, Colts, Year 5 etc" aria-describedby="Grade field">
+                            <input type="text" class="form-control" placeholder="Grade - Premier 1, Colts, Year 5 etc">
                         </div>
 
                         <br>
@@ -240,14 +240,14 @@
 
                         <div class="radio">
                             <label>
-                                <input type="radio" name="newJuniorSenior" id="newTeamJuniorSenior" value="junior" checked>
+                                <input type="radio" name="newJuniorSenior" value="junior" checked>
                                 Junior
                             </label>
                         </div>
 
                         <div class="radio">
                             <label>
-                                <input type="radio" name="newJuniorSenior" id="newTeamJuniorSenior" value="Senior">
+                                <input type="radio" name="newJuniorSenior" value="Senior">
                                 Senior
                             </label>
                         </div>
@@ -258,12 +258,9 @@
                            <button type="button" class="btn btn-success">Submit</button>
                         </div>
                              
-                    </div>
-
-
-                    
-
-                 
+                    </div> <!-- END Add a new team -->
+              
+                
                     <hr>
 
                     <!-- back to Blog Home -->
