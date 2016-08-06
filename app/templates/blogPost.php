@@ -1,12 +1,12 @@
-
+<?php $this->layout('master') ?>
 
 <!-- Breadcrumbs -->
 <div class="container">
 
     <ol class="breadcrumb">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="blogHome.html">Captains Blog</a></li>
-        <li><a class="active">Blog Post</a></li>    
+        <li><a href="index.php?page=home">Home</a></li>
+        <li><a href="index.php?page=blogHome">Captains Blog</a></li>
+        <li><a class="active" href="index.php?page=blogPost" >Blog Post</a></li>    
     </ol>
 
 </div>
@@ -367,8 +367,10 @@
 
         </div>
 
-    </div>
-    <!-- /.row -->
+
+    </div>  <!-- /.row -->
+
+    <hr>
+
 </div> <!-- /.container -->
 
-<hr>

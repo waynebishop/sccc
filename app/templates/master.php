@@ -6,7 +6,7 @@
   	<meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="">	
-  	<title>SCCC Home</title>
+  	<title></title>
 
   	<!-- Latest compiled and minified CSS 20-Jul-2016-->
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -32,23 +32,23 @@
         <div class="container-fluid">
           
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Seniors</a></li>
-            <li><a href="#">Juniors</a></li>
-            <li><a href="#">Sponsors</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">News</a></li>
+            <li class="active"><a href="index.php?page=home">Home</a></li>
+            <li><a href="index.php?page=home">Seniors</a></li>
+            <li><a href="index.php?page=home">Juniors</a></li>
+            <li><a href="index.php?page=home">Sponsors</a></li>
+            <li><a href="index.php?page=home">Contact</a></li>
+            <li><a href="index.php?page=home">News</a></li>
           </ul>
 
           <ul class="nav nav-pills navbar-right">
 
-            <li role="presentation"><a href="blogHome.html"><i class="fa fa-bullhorn" aria-hidden="true"></i> Blog</a></li>
+            <li role="presentation"><a href="index.php?page=blogHome"><i class="fa fa-bullhorn" aria-hidden="true"></i> Blog</a></li>
 
-            <li role="presentation"><a href="blogLogin.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+            <li role="presentation"><a href="index.php?page=blogLogin"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
 
-            <li role="presentation"><a href="blogRegister.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign up</a></li>
+            <li role="presentation"><a href="index.php?page=blogRegister"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign up</a></li>
 
-            <li role="presentation"><a href="blogMyAccount.html"><i class="fa fa-user" aria-hidden="true"></i> My Account</a></li>
+            <li role="presentation"><a href="index.php?page=blogMyAccount"><i class="fa fa-user" aria-hidden="true"></i> My Account</a></li>
 
           </ul>
 
@@ -56,27 +56,28 @@
       </nav>
     </div>
 
+    
     <!-- Content goes here -->
 
+    <?php echo $this->section('content') ?>
 
-
+    
     <!-- Footer -->
     <div class="container">
 
       <footer>
 
-        <div class="row">
-
           <nav class="navbar navbar-inverse">
-            <div class="container">
+            <div class="container-fluid">
+
               <ul class="nav navbar-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Seniors</a></li>
-                <li><a href="#">Juniors</a></li>
-                <li><a href="#">Sponsors</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="blogHome.html">Blog</a></li>
-                <li><a href="#">News</a></li> 
+                <li><a href="index.php?page=home">Home</a></li>
+                <li><a href="index.php?page=home">Seniors</a></li>
+                <li><a href="index.php?page=home">Juniors</a></li>
+                <li><a href="index.php?page=home">Sponsors</a></li>
+                <li><a href="index.php?page=home">Contact</a></li>
+                <li><a href="index.php?page=home">News</a></li>
+                <li><a href="index.php?page=blogHome">Blog</a></li> 
               </ul>
 
               <ul class="nav navbar-nav navbar-right">     
@@ -85,8 +86,6 @@
 
             </div>
           </nav>
-
-        </div>
 
       </footer>
 

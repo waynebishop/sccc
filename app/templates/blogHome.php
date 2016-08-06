@@ -1,11 +1,11 @@
-
+<?php $this->layout('master') ?>
 
 <!-- Breadcrumbs -->
 <div class="container">
     
     <ol class="breadcrumb">
-        <li><a href="index.html">Home</a></li>
-        <li><a class="active">Captains Blog</a></li>    
+        <li><a href="index.php?page=home">Home</a></li>
+        <li><a href="index.php?page=blogHome" class="active">Captains Blog</a></li>    
     </ol>
 
 </div>
@@ -52,7 +52,7 @@
             <img class="img-responsive" src="img/shaunbat.jpg" alt="">
             <hr>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
-            <a class="btn btn-primary" href="blogPost.html">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+            <a class="btn btn-primary" href="index.php?page=blogPost">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 
             <hr>
 
@@ -71,7 +71,7 @@
             <img class="img-responsive" src="img/shauncatch.jpg" alt="">
             <hr>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, quasi, fugiat, asperiores harum voluptatum tenetur a possimus nesciunt quod accusamus saepe tempora ipsam distinctio minima dolorum perferendis labore impedit voluptates!</p>
-            <a class="btn btn-primary" href="blogPost.html">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+            <a class="btn btn-primary" href="index.php?page=blogPost">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 
             <hr>
 
@@ -90,7 +90,7 @@
             <img class="img-responsive" src="img/shaunbowling.jpg" alt="">
             <hr>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptates, voluptas dolore ipsam cumque quam veniam accusantium laudantium adipisci architecto itaque dicta aperiam maiores provident id incidunt autem. Magni, ratione.</p>
-            <a class="btn btn-primary" href="blogPost.html">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+            <a class="btn btn-primary" href="index.php?page=blogPost">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 
             <hr>
 
@@ -109,7 +109,7 @@
             <img class="img-responsive" src="img/shauncatch.jpg" alt="">
             <hr>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptates, voluptas dolore ipsam cumque quam veniam accusantium laudantium adipisci architecto itaque dicta aperiam maiores provident id incidunt autem. Magni, ratione.</p>
-            <a class="btn btn-primary" href="blogPost.html">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+            <a class="btn btn-primary" href="index.php?page=blogPost">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 
             <hr>
 
@@ -245,8 +245,12 @@
 
         </div>
 
-    </div>
-    <!-- /.row -->
-</div>    
+    <hr>    
 
-<hr>
+    </div>    <!-- /.row -->
+
+</div> <!-- /.container -->
+
+
+    
+

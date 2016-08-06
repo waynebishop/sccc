@@ -1,12 +1,12 @@
-
+<?php $this->layout('master') ?>
 
 <!-- Breadcrumbs -->
 <div class="container">
 
     <ol class="breadcrumb">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="blogHome.html">Captains Blog</a></li>
-        <li><a class="active" href="blogLogin.html">Login</a></li>     
+        <li><a href="index.php?page=home">Home</a></li>
+        <li><a href="index.php?page=blogHome">Captains Blog</a></li>
+        <li><a href="index.php?page=blogLogin.html" class="active">Login</a></li>     
     </ol>
 </div>
 
@@ -33,7 +33,7 @@
                      
             <div class="well">
                 <h2>Login to the Captains Blog</h2>
-                <h4>For registered Blog members only. Not registered yet? You can sign up <a href="blogRegister.html">here</a>.</h4>
+                <h4>For registered Blog members only. Not registered yet? You can sign up <a href="index.php?page=blogRegister">here</a>.</h4>
 
                 <br>
                 
@@ -196,3 +196,6 @@
     <!-- /.row -->
 
     <hr>
+
+</div> <!-- /.container -->
+

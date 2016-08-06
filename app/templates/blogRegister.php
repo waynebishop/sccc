@@ -1,12 +1,12 @@
-
+<?php $this->layout('master') ?>
 
 <!-- Breadcrumbs -->
 <div class="container">
 
     <ol class="breadcrumb">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="blogHome.html">Captains Blog</a></li>
-        <li><a class="active" href="blogLogin.html">Sign Up</a></li>     
+        <li><a href="index.php?page=home">Home</a></li>
+        <li><a href="index.php?page=blogHome">Captains Blog</a></li>
+        <li><a class="active" href="index.php?page=blogRegister">Sign Up</a></li>     
     </ol>
 </div>
 
@@ -33,62 +33,65 @@
                      
             <div class="well">
                 <h2>Sign up for the Captains Blog</h2>
-                <h4>For new Blog members only. Already registered? You can Login <a href="blogLogin.html">here</a>.</h4>
+                <h4>For new Blog members only. Already registered? You can Login <a href="index.php?page=login">here</a>.</h4>
 
                 <br>
                 
-                <div class="input-group">
-                    <span class="input-group-addon" id="userName"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="Username - Usually your email address">
-                </div>
+                <form action="index.php?page=blogRegister" method="post">
+                    
+                    <div class="input-group">
+                        <span class="input-group-addon" id="userName"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="userName" placeholder="Username - Usually your email address">
+                    </div>
 
-                <br>
+                    <br>
 
-                <div class="input-group">
-                    <span class="input-group-addon" id="password"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="Passsword">
-                </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="password"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="password" placeholder="Passsword">
+                    </div>
 
-                <br>
-                
-                <div class="input-group">
-                    <span class="input-group-addon" id="FirstName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="First name">
-                </div>
+                    <br>
+                    
+                    <div class="input-group">
+                        <span class="input-group-addon" id="firstName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="firstName" placeholder="First name">
+                    </div>
 
-                <br>
+                    <br>
 
-                <div class="input-group">
-                    <span class="input-group-addon" id="LastName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="Last name">
-                </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="lastName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="lastName" placeholder="Last name">
+                    </div>
 
-                <br>
+                    <br>
 
-                <div class="input-group">
-                    <span class="input-group-addon" id="Email"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="Email address eg name@gmail.com etc">
-                </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="email"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="email" placeholder="Email address eg name@gmail.com etc">
+                    </div>
 
-                <br>
+                    <br>
 
-                <div class="input-group">
-                    <span class="input-group-addon" id="PhoneNumber"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="Contact phone number">
-                </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="phoneNumber"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="phoneNumber" placeholder="Contact phone number">
+                    </div>
 
-                <br>
+                    <br>
 
-                <span><i class="fa fa-asterisk" aria-hidden="true"></i> Required fields.</span>
+                    <span><i class="fa fa-asterisk" aria-hidden="true"></i> Required fields.</span>
 
-                <br>
-                <br>
-                                            
-                <div class="input-group">                 
-                    <button type="button" class="btn btn-success">Submit</button>
-                </div>
+                    <br>
+                    <br>
+                                                
+                    <div class="input-group">                 
+                        <button type="button" class="btn btn-success">Submit</button>
+                    </div>
 
-                     
+                </form>
+
             </div>
        
             <hr>
@@ -228,4 +231,5 @@
     </div>
     <!-- /.row -->
 
-    <hr>
+   
+</div> <!-- /.container -->
