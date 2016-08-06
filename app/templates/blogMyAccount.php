@@ -34,38 +34,42 @@
             <div class="well">
                 <h2>Update your details</h2>
                 
-                <div class="input-group">
-                    <span class="input-group-addon" id="FirstName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="First name">
-                </div>
+                <form action="index.php?page=blogMyAccount" method="post">
 
-                <br>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="FirstName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" placeholder="First name">
+                    </div>
 
-                <div class="input-group">
-                    <span class="input-group-addon" id="LastName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="Last name">
-                </div>
+                    <br>
 
-                <br>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="LastName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" placeholder="Last name">
+                    </div>
 
-                <div class="input-group">
-                    <span class="input-group-addon" id="Email"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="Email address eg name@gmail.com etc">
-                </div>
+                    <br>
 
-                <br>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="Email"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" placeholder="Email address eg name@gmail.com etc">
+                    </div>
 
-                <div class="input-group">
-                    <span class="input-group-addon" id="PhoneNumber"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="Contact phone number">
-                </div>
+                    <br>
 
-                <br>
-                    
-                <div class="input-group">                 
-                    <button type="button" class="btn btn-success">Submit</button>
-                </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="PhoneNumber"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" placeholder="Contact phone number">
+                    </div>
 
+                    <br>
+                        
+                    <div class="input-group">
+                        <input type="submit" name="blogMyAccount" class="btn btn-primary" value="Update">                 
+                        <!-- <button type="button" class="btn btn-success">Submit</button> -->
+                    </div>
+
+                </form>
                      
             </div>
        

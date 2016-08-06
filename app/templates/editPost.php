@@ -34,7 +34,7 @@
             <p class="politeWarning"><i class="fa fa-heart" aria-hidden="true"></i><em> Watch out, kids about!</em></p>
 
 
-            <form>
+            <form action="index.php?page=editPost" method="post">
                 
                 <div class="form-group">                        
                     <label for="selectReport">Report Topic</label>
@@ -125,9 +125,14 @@
                         Approved
                     </label>
                 </div>
-                <button type="submit" class="btn btn-success">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+
+                <input type="submit" name="editPost" class="btn btn-primary" value="Submit">
+                <!--  <button type="submit" class="btn btn-success">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i></button> -->
+                
                 <hr>
                 <!-- <button type="submit" class="btn btn-danger btn-md"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> -->
+
+
 
                 <!-- Delete Button trigger modal -->
                 <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#postDeleteModal"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
@@ -177,7 +182,7 @@
 
             <ul class="pager">
                 <li class="previous">
-                    <a href="blogHome.html">&larr; Back </a>
+                    <a href="index.php?page=blogPost">&larr; Back </a>
                 </li>        
             </ul>
 

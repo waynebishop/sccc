@@ -20,11 +20,11 @@
 
     <div class="row">
 
-        <!-- Blog Entries Column - takes up 8 of 12 columns -->
+        <!-- Blog Edit Section Column - takes up 8 of 12 columns -->
 
         <div class="col-md-8">
 
-            <!-- Blog Search Well -->
+            <!-- Comment Edit Well -->
             
             <h1 class="page-header">
                 Captains Blog
@@ -33,15 +33,20 @@
             <div class="well">
                 <h4>Edit your Comment:</h4>
                 <p class="politeWarning"><i class="fa fa-heart" aria-hidden="true"></i><em> Watch out, kids about!</em></p>
-                <form>
+
+                <form action="index.php?page=editComment" method="post">    
+                
                     <div class="form-group">
-                        <textarea class="form-control" rows="3" id="editedComment" placeholder="** Pre-populates with existing comment **"></textarea>
+                        <textarea class="form-control" rows="3" id="editComment" placeholder="** Pre-populates with existing comment **"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-success">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+
+                    <input type="submit" name="editComment" class="btn btn-primary" value="Submit">
+                    <!-- <button type="submit" name="editComment" class="btn btn-primary">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i></button> -->
+
                 </form>
             </div>
                                     
-            <hr>
+            <hr> <!-- /. edit comment -->
             
             <!-- Comment Delete Button & modal -->
 
@@ -86,11 +91,11 @@
             
             <hr>
 
-            <!-- back to Blog Home -->
+            <!-- back to BlogPost -->
 
             <ul class="pager">
                 <li class="previous">
-                    <a href="blogHome.html">&larr; Back </a>
+                    <a href="index.php?page=blogPost">&larr; Back </a>
                 </li>        
             </ul>
 

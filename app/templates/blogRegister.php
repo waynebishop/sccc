@@ -33,7 +33,7 @@
                      
             <div class="well">
                 <h2>Sign up for the Captains Blog</h2>
-                <h4>For new Blog members only. Already registered? You can Login <a href="index.php?page=login">here</a>.</h4>
+                <h4>For new Blog members only. Already registered? You can Login <a href="index.php?page=blogLogin">here</a>.</h4>
 
                 <br>
                 
@@ -86,8 +86,9 @@
                     <br>
                     <br>
                                                 
-                    <div class="input-group">                 
-                        <button type="button" class="btn btn-success">Submit</button>
+                    <div class="input-group">
+                        <input type="submit" name="login" class="btn btn-primary" value="Sign Up">                 
+                        <!-- <button type="button" class="btn btn-success">Submit</button> -->
                     </div>
 
                 </form>

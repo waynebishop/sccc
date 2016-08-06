@@ -37,23 +37,27 @@
 
                 <br>
                 
-                <div class="input-group">
-                    <span class="input-group-addon" id="userName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="Username - Usually your email address">
-                </div>
-
-                <br>
-
-                <div class="input-group">
-                    <span class="input-group-addon" id="password"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="Passsword">
-                </div>
-
-                <br>
+                <form action="index.php?page=blogLogin" method="post">
                     
-                <div class="input-group">                 
-                    <button type="button" class="btn btn-success">Submit</button>
-                </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="userName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                        <input type="text" name="userName" class="form-control" placeholder="Username - Usually your email address">
+                    </div>
+
+                    <br>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="password"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                        <input type="password" name="password" class="form-control" placeholder="Password">
+                    </div>
+
+                    <br>
+                        
+                    <div class="input-group">
+                        <input type="submit" name="login" class="btn btn-primary" value="Log in">                 
+                    </div>
+
+                </form>
 
                      
             </div>
