@@ -3,9 +3,18 @@
 class BlogLoginController {
 
 	// Properties
+	private $dbc;
 
 
 	// Constructor
+	public function __construct($dbc) {
+
+		// Save the database connection per private $dbc above
+		$this->dbc = $dbc;
+
+		
+
+	}
 
 
 	// Methods (functions)

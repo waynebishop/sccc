@@ -9,6 +9,9 @@
 
 <!-- Breadcrumbs -->
 <div class="container">
+
+    <!-- ***** THIS IS JUST TO SHOW SESSION ID ***** -->
+    <?= $_SESSION['id'] ?>
     
     <ol class="breadcrumb">
         <li><a href="index.php?page=home">Home</a></li>
