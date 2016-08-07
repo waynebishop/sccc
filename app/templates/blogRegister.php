@@ -47,20 +47,30 @@
                 <form action="index.php?page=blogRegister" method="post">
                     
                     <div class="input-group">
-                        <span class="input-group-addon" id="userName"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
-                        <input type="text" class="form-control" name="userName" placeholder="Username - Usually your email address">
+                        <span class="input-group-addon" id="email"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="email" placeholder="E-mail address" value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>">
                     </div>
+
+                    <!-- Email message after form submitted if emailMessage exists -->
+                    <?php if( isset($emailMessage) ) : ?>   
+                    <p class="politeWarning"> <?= $emailMessage ?> </p>
+                    <?php endif; ?>
 
                     <br>
 
                     <div class="input-group">
                         <span class="input-group-addon" id="password"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
-                        <input type="text" class="form-control" name="password" placeholder="Passsword">
+                        <input type="password" class="form-control" name="password" placeholder="Create a password">
                     </div>
+
+                    <!-- Email message after form submitted if emailMessage exists -->
+                    <?php if( isset($passwordMessage) ) : ?>   
+                    <p class="politeWarning"> <?= $passwordMessage ?> </p>
+                    <?php endif; ?>
 
                     <br>
                     
-                    <div class="input-group">
+                    <!-- <div class="input-group">
                         <span class="input-group-addon" id="firstName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
                         <input type="text" class="form-control" name="firstName" placeholder="First name">
                     </div>
@@ -84,7 +94,7 @@
                     <div class="input-group">
                         <span class="input-group-addon" id="phoneNumber"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
                         <input type="text" class="form-control" name="phoneNumber" placeholder="Contact phone number">
-                    </div>
+                    </div> -->
 
                     <br>
 
@@ -92,13 +102,19 @@
 
                     <br>
                     <br>
+
+                    <p><em>Creating an account confirms your acceptance of the </em><a href="index.php?page=blogTC">Spin City Cricket Club Captains Blog Terms &amp; Conditions</a>.</p>
+
+                    <br>
                                                 
                     <div class="input-group">
-                        <input type="submit" name="login" class="btn btn-primary" value="Sign Up">                 
+                        <input type="submit" name="new-account" class="btn btn-primary" value="Sign Up">                 
                         <!-- <button type="button" class="btn btn-success">Submit</button> -->
                     </div>
 
                 </form>
+
+                <br>
 
             </div>
        

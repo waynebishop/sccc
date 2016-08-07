@@ -4,22 +4,8 @@
 // Make verything in the vendor folder available to use
 require 'vendor/autoload.php';
 
-
-
-// Appropriate page
-
-// Has the user requested a page?
-if( isset( $_GET['page'] ) ) {
-
-	// Requested page
-	$page = $_GET['page'];
-
-} else {
-
-	// Home page
-	$page = 'home';
-}
-
+// Check $_GET for page and set page as home if no page
+$page = isset($_GET['page']) ? $_GET['page'] : 'home'; 
 
 // load the appropriate files based on page
 switch($page) {
