@@ -1,4 +1,11 @@
-<?php $this->layout('master') ?>
+<?php
+
+  $this->layout('master', [
+    'title'=> 'Spin City CC - Blog Pending Approval',
+    'desc'=>'SCCC Blog Posts Pending Admin approval'
+  ]); 
+
+?>
 
 <!-- Breadcrumbs -->
 <div class="container">

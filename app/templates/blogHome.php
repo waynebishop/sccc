@@ -1,4 +1,11 @@
-<?php $this->layout('master') ?>
+<?php
+
+  $this->layout('master', [
+    'title'=> 'Spin City CC - Captains Blog',
+    'desc'=>'SCCC cricket blog page'
+  ]); 
+
+?>
 
 <!-- Breadcrumbs -->
 <div class="container">

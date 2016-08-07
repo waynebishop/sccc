@@ -1,4 +1,11 @@
-<?php $this->layout('master') ?>
+<?php
+
+  $this->layout('master', [
+    'title'=> 'Spin City CC - Edit Blog Post',
+    'desc'=>'SCCC Edit a Blog Post'
+  ]); 
+
+?>
 
 <!-- Breadcrumbs -->
 <div class="container">

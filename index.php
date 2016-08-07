@@ -4,8 +4,7 @@
 // Make verything in the vendor folder available to use
 require 'vendor/autoload.php';
 
-// Instantiate Plates Library
-$plates = new League\Plates\Engine('app/templates');
+
 
 // Appropriate page
 
@@ -27,67 +26,81 @@ switch($page) {
 
 	// Home page
 	case 'home';
-		echo $plates->render('home');
+		require 'app/controllers/HomeController.php';
+		$controller = new HomeController();
 	break;
 
 	// Blog Home page 
 	case 'blogHome';
-		echo $plates->render('blogHome');
+		require 'app/controllers/BlogHomeController.php';
+		$controller = new BlogHomeController();
 	break;
 
 	// Blog post
 	case 'blogPost';
-		echo $plates->render('blogPost');
+		require 'app/controllers/BlogPostController.php';
+		$controller = new BlogPostController();
 	break;
 
 	// Blog Register	
 	case 'blogRegister';
-		echo $plates->render('blogRegister');
+		require 'app/controllers/BlogRegisterController.php';
+		$controller = new BlogRegisterController();		
 	break;
 
 	// Blog Login
 	case 'blogLogin';
-		echo $plates->render('blogLogin');
+		require 'app/controllers/BlogLoginController.php';
+		$controller = new BlogLoginController();
 	break;
 
 	// Blog My Account
 	case 'blogMyAccount';
-		echo $plates->render('blogMyAccount');
+		require 'app/controllers/BlogMyAccountController.php';
+		$controller = new BlogMyAccountController();
 	break;	
 
 	// New Post
 	case 'newPost';
-		echo $plates->render('newPost');
+		require 'app/controllers/NewPostController.php';
+		$controller = new NewPostController();
 	break;
 
 	// Blog Pending
 	case 'blogPending';
-		echo $plates->render('blogPending');
+		require 'app/controllers/BlogPendingController.php';
+		$controller = new BlogPendingController();		
 	break;
 
 	// Edit Comment
 	case 'editComment';
-		echo $plates->render('editComment');
+		require 'app/controllers/EditCommentController.php';
+		$controller = new EditCommentController();
 	break;
 
 	// Edit Post
 	case 'editPost';
-		echo $plates->render('editPost');
+		require 'app/controllers/EditPostController.php';
+		$controller = new EditPostController();
 	break;
 
-	// New Post
+	// Blog Admin
 	case 'blogAdmin';
-		echo $plates->render('blogAdmin');
+		require 'app/controllers/BlogAdminController.php';
+		$controller = new BlogAdminController();		
 	break;
 
 
 
 	default:
-		echo $plates->render('error404');
+		require 'app/controllers/Error404Controller.php';
+		$controller = new Error404Controller();
 	break;
 
 
 }
+
+$controller->buildHTML();
 
 
 
