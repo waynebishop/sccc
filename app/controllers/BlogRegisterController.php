@@ -2,7 +2,8 @@
 
 class BlogRegisterController {
 
-	// Properties
+	// Properties (attributes)
+
 
 
 	// Constructor
