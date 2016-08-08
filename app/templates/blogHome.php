@@ -70,7 +70,7 @@
                 </p>
 
                 
-                <hr>
+                <br>
 
                 <!-- IMAGE section -->
 
@@ -85,8 +85,6 @@
                 <!-- Intro -->
 
                 <p> <strong> <?= $item['intro'] ?> </strong></p>
-                
-                <hr>
                 
                 <!-- READ MORE BUTTON -->
 

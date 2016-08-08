@@ -15,13 +15,7 @@ class BlogMyAccountController extends PageController {
 		// Save the database connection per private $dbc above
 		$this->dbc = $dbc;
 
-		// If you are not logged in
-		if( !isset($_SESSION['id']) ) {
-			// Redirect the user to the login page
-			header ('Location: Index.php?page=blogLogin');
-		}
-
-		
+		$this->mustBeLoggedIn();		
 
 	}
 

@@ -32,7 +32,7 @@
         <div class="container-fluid">
           
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.php?page=home">Home</a></li>
+            <li><a href="index.php?page=home">Home</a></li>
             <li><a href="index.php?page=home">Seniors</a></li>
             <li><a href="index.php?page=home">Juniors</a></li>
             <li><a href="index.php?page=home">Sponsors</a></li>
@@ -45,6 +45,8 @@
             <li role="presentation"><a href="index.php?page=blogHome"><i class="fa fa-bullhorn" aria-hidden="true"></i> Blog</a></li>
 
             <li role="presentation"><a href="index.php?page=blogLogin"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+
+            <li role="presentation"><a href="index.php?page=blogLogin"><i class="fa fa-sign-out" aria-hidden="true"></i> Log out</a></li>
 
             <li role="presentation"><a href="index.php?page=blogRegister"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign up</a></li>
 
