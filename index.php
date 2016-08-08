@@ -4,6 +4,7 @@ session_start();
 
 // Make verything in the vendor folder available to use
 require 'vendor/autoload.php';
+require 'app/controllers/PageController.php';
 
 // Check $_GET for page and set page as home if no page
 $page = isset($_GET['page']) ? $_GET['page'] : 'home'; 

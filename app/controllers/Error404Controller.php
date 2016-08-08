@@ -1,23 +1,28 @@
 <?php
 
-class Error404Controller {
+class Error404Controller extends PageController {
 
 	// Properties
 
 
 	// Constructor
+	public function __construct($dbc) {
+
+		// Run the parent constructor
+		parent::__construct(); 
+
+		$this->dbc = $dbc;
+
+
+	}
 
 
 	// Methods (functions)
 
-	public function buildHTML() {
-
-	// Instantiate Plates Library
-	$plates = new League\Plates\Engine('app/templates');	
+	public function buildHTML() {	
 		
-	echo $plates->render('error404');	
-
-		
+		echo $this->plates->render('error404');	
+	
 	}
 
 

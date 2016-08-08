@@ -1,18 +1,19 @@
 <?php
 
-class BlogHomeController {
+class BlogHomeController extends PageController {
 
-	// Properties
-	private $dbc;
+	// Properties - specific to this page
+	
 
 
 	// Constructor
 	public function __construct($dbc) {
 
-		// Save the database connection per private $dbc above
+		// Run the parent constructor
+		parent::__construct(); 
+
 		$this->dbc = $dbc;
 
-		
 
 	}
 
@@ -21,11 +22,10 @@ class BlogHomeController {
 
 	public function buildHTML() {
 
-	// Instantiate Plates Library
-	$plates = new League\Plates\Engine('app/templates');	
-		
-	echo $plates->render('blogHome');	
+		// Get latest posts
 
+		
+		echo $this->plates->render('blogHome');	
 		
 	}
 

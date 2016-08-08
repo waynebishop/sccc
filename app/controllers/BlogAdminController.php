@@ -1,13 +1,16 @@
 <?php
 
-class BlogAdminController {
+class BlogAdminController extends PageController {
 
 	// Properties
-	private $dbc;
+	
 
 
 	// Constructor
 	public function __construct($dbc) {
+
+		// Run the parent constructor
+		parent::__construct();
 
 		// Save the database connection per private $dbc above
 		$this->dbc = $dbc;
@@ -21,10 +24,7 @@ class BlogAdminController {
 
 	public function buildHTML() {
 
-	// Instantiate Plates Library
-	$plates = new League\Plates\Engine('app/templates');	
-		
-	echo $plates->render('blogAdmin');	
+		echo $this->plates->render('blogAdmin');	
 
 		
 	}

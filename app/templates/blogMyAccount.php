@@ -57,12 +57,12 @@
 
                     <br>
 
-                    <div class="input-group">
+                    <!-- <div class="input-group">
                         <span class="input-group-addon" id="Email"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
                         <input type="text" class="form-control" placeholder="Email address eg name@gmail.com etc">
-                    </div>
+                    </div> -->
 
-                    <br>
+                    <!--  <br> -->
 
                     <div class="input-group">
                         <span class="input-group-addon" id="PhoneNumber"><i class="fa fa-smile-o" aria-hidden="true"></i></span>

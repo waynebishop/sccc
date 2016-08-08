@@ -1,15 +1,17 @@
 <?php
 
-class BlogRegisterController {
+class BlogRegisterController extends PageController {
 
 	// Properties (attributes)
 	private $emailMessage;
 	private $passwordMessage;
-	private $dbc;
-
+	
 	// Constructor
 	public function __construct($dbc) {
 
+		// Run the parent constructor
+		parent::__construct(); 
+		
 		// Save the database connection per private $dbc above
 		$this->dbc = $dbc;
 
@@ -44,9 +46,6 @@ class BlogRegisterController {
 
 	public function buildHTML() {
 
-		// Instantiate Plates Library
-		$plates = new League\Plates\Engine('app/templates');
-
 		// Prepare a container for data
 		$data = [];
 
@@ -60,7 +59,7 @@ class BlogRegisterController {
 			$data['passwordMessage'] = $this->passwordMessage;
 		}
 
-		echo $plates->render('blogRegister', $data);
+		echo $this->plates->render('blogRegister', $data);
 
 
 	}

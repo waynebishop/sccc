@@ -11,7 +11,7 @@
 <div class="container">
 
     <!-- ***** THIS IS JUST TO SHOW SESSION ID ***** -->
-    <?= $_SESSION['id'] ?>
+    <!-- <?= $_SESSION['id'] ?> -->
     
     <ol class="breadcrumb">
         <li><a href="index.php?page=home">Home</a></li>
@@ -47,81 +47,38 @@
                 <small>Reports &amp; Chat</small>
             </h1>
 
-            <!-- First Blog Post NB image size 750 wide -->
-            <h2>
-                <a href="#">Premiere 1 win game One</a>
-            </h2>
-            <p class="lead">
-               <a href="index.php">Match Report </a>for team <a href="index.php">Premier 1 </a>by <a href="index.php">Dave Champion </a>Grade: <a href="index.php"> Senior </a><a href="index.php">Premier 1</a>
-            </p>
+            <?php foreach($allPosts as $item): ?>
 
-            <p>Location: <a href="#">Home </a>Game: <a href="#">One Day</a></p>
+            <article>
 
-            <p><span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on September 28, 2016 at 11:30 PM <span><strong>Post ID#101</strong></span></p>
-            <hr>
-            <img class="img-responsive" src="img/shaunbat.jpg" alt="">
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
-            <a class="btn btn-primary" href="index.php?page=blogPost">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                <!-- Blog Post NB image size 750 x 500 -->
+                <h2>
+                    <a href="#"></a>
+                </h2>
+                <p class="lead">
+                   <a href="index.php">REPORT </a>for team <a href="index.php">TEAM </a>by <a href="index.php">AUTHOR </a>Grade: <a href="index.php"> JUNIOR-SENIOR </a><a href="index.php">GRADE</a>
+                </p>
 
-            <hr>
+                <p>Location: <a href="#">HOME/AWAY </a>Game: <a href="#">GAME-TYPE</a></p>
 
-            <!-- Second Blog Post -->
-            <h2>
-                <a href="#">Premiere 2 win at J'ville</a>
-            </h2>
-            <p class="lead">
-                <a href="index.php">Match Report </a>for team <a href="index.php">Premier 2 </a>by <a href="index.php">Trever Nerk </a>Grade: <a href="index.php"> Senior </a><a href="index.php">Premier 2</a>
-            </p>
+                <p><span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on September 28, 2016 at 11:30 PM <span><strong>Post ID#101</strong></span></p>
+                <hr>
 
-            <p>Location: <a href="#">Away </a>Game: <a href="#">One Day</a></p>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2" class="bg-info">
+                        <img class="img-responsive" src="" alt="">
+                    </div>
+                </div>
+                
+                <hr>
+                <p> </p>
+                <a class="btn btn-primary" href="index.php?page=blogPost">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 
-            <p><span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on September 28, 2016 at 9:45 PM <span><strong>Post ID#102</strong></span></p>
-            <hr>
-            <img class="img-responsive" src="img/shauncatch.jpg" alt="">
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, quasi, fugiat, asperiores harum voluptatum tenetur a possimus nesciunt quod accusamus saepe tempora ipsam distinctio minima dolorum perferendis labore impedit voluptates!</p>
-            <a class="btn btn-primary" href="index.php?page=blogPost">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                <hr>
 
-            <hr>
+            </article>
 
-            <!-- Third Blog Post -->
-            <h2>
-                <a href="#">Fun day had by all :)</a>
-            </h2>
-            <p class="lead">
-                <a href="index.php">Match Report </a>for team <a href="index.php">Roar </a>by <a href="index.php">Sally Smith </a>Grade: <a href="index.php">Junior </a><a href="index.php">Year 5</a>
-            </p>
-
-            <p>Location: <a href="#">Home </a>Game: <a href="#">Milo</a></p>
-
-            <p><span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on September 25, 2016 at 7:00 PM <span><strong>Post ID#103</strong></span></p>
-            <hr>
-            <img class="img-responsive" src="img/shaunbowling.jpg" alt="">
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptates, voluptas dolore ipsam cumque quam veniam accusantium laudantium adipisci architecto itaque dicta aperiam maiores provident id incidunt autem. Magni, ratione.</p>
-            <a class="btn btn-primary" href="index.php?page=blogPost">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-
-            <hr>
-
-            <!-- Fourth -->
-            <h2>
-                <a href="#">Colts off to great start</a>
-            </h2>
-            <p class="lead">
-                <a href="index.php">Match Report </a>for team <a href="index.php">Colts </a>by <a href="index.php">Master Chief </a>Grade: <a href="index.php">Junior </a><a href="index.php"> Colts</a>
-            </p>
-
-            <p>Location: <a href="#">Home </a>Game: <a href="#">40 Over</a></p>
-
-            <p><span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on September 21, 2016 at 9:30 PM <span><strong>Post ID#104</strong></span></p>
-            <hr>
-            <img class="img-responsive" src="img/shauncatch.jpg" alt="">
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptates, voluptas dolore ipsam cumque quam veniam accusantium laudantium adipisci architecto itaque dicta aperiam maiores provident id incidunt autem. Magni, ratione.</p>
-            <a class="btn btn-primary" href="index.php?page=blogPost">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-
-            <hr>
+            <?php endforeach ?>
 
             <!-- Pager -->
             <ul class="pager">

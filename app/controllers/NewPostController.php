@@ -1,13 +1,16 @@
 <?php
 
-class NewPostController {
+class NewPostController extends PageController {
 
 	// Properties
-	private $dbc;
+	
 
 
 	// Constructor
 	public function __construct($dbc) {
+
+		// Run the parent constructor
+		parent::__construct(); 
 
 		// Save the database connection per private $dbc above
 		$this->dbc = $dbc;
@@ -20,12 +23,8 @@ class NewPostController {
 	// Methods (functions)
 
 	public function buildHTML() {
-
-	// Instantiate Plates Library
-	$plates = new League\Plates\Engine('app/templates');	
 		
-	echo $plates->render('newPost');	
-
+		echo $this->plates->render('newPost');	
 		
 	}
 

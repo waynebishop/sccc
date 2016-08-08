@@ -1,16 +1,25 @@
 <?php
 
-class BlogMyAccountController {
+class BlogMyAccountController extends PageController {
 
 	// Properties
-	private $dbc;
+	
 
 
 	// Constructor
 	public function __construct($dbc) {
 
+		// Run the parent constructor
+		parent::__construct();
+
 		// Save the database connection per private $dbc above
 		$this->dbc = $dbc;
+
+		// If you are not logged in
+		if( !isset($_SESSION['id']) ) {
+			// Redirect the user to the login page
+			header ('Location: Index.php?page=blogLogin');
+		}
 
 		
 
@@ -20,11 +29,8 @@ class BlogMyAccountController {
 	// Methods (functions)
 
 	public function buildHTML() {
-
-	// Instantiate Plates Library
-	$plates = new League\Plates\Engine('app/templates');	
 		
-	echo $plates->render('blogMyAccount');	
+		echo $this->plates->render('blogMyAccount');	
 
 		
 	}

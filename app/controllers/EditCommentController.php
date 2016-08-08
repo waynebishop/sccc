@@ -1,13 +1,16 @@
 <?php
 
-class EditCommentController {
+class EditCommentController extends PageController {
 
 	// Properties
-	private $dbc;
+	
 
 
 	// Constructor
 	public function __construct($dbc) {
+
+		// Run the parent constructor
+		parent::__construct(); 
 
 		// Save the database connection per private $dbc above
 		$this->dbc = $dbc;
@@ -19,12 +22,9 @@ class EditCommentController {
 
 	// Methods (functions)
 
-	public function buildHTML() {
-
-	// Instantiate Plates Library
-	$plates = new League\Plates\Engine('app/templates');	
+	public function buildHTML() {	
 		
-	echo $plates->render('editComment');	
+	echo $this->plates->render('editComment');	
 
 		
 	}
