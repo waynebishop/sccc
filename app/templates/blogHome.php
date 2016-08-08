@@ -47,31 +47,49 @@
                 <small>Reports &amp; Chat</small>
             </h1>
 
+            <!-- BLOG POSTS start here -->
+
             <?php foreach($allPosts as $item): ?>
 
             <article>
 
                 <!-- Blog Post NB image size 750 x 500 -->
                 <h2>
-                    <a href="#"></a>
+                    <a href="#"> <?= $item['title'] ?> </a>
                 </h2>
+
                 <p class="lead">
-                   <a href="index.php">REPORT </a>for team <a href="index.php">TEAM </a>by <a href="index.php">AUTHOR </a>Grade: <a href="index.php"> JUNIOR-SENIOR </a><a href="index.php">GRADE</a>
+                   <a href="index.php">ReportID: <?= $item['report_id'] ?> </a> for team <a href="index.php">TeamID: <?= $item['team_id'] ?> </a>by <a href="index.php">AuthorID: <?= $item['user_id'] ?>
+                   </a>Grade: <a href="index.php"> JR T-Table </a><a href="index.php">GRD T-Table</a>
                 </p>
 
-                <p>Location: <a href="#">HOME/AWAY </a>Game: <a href="#">GAME-TYPE</a></p>
+                <p>Location: <a href="#"> <?= $item['location'] ?> </a>Game: <a href="#"> <?= $item['type'] ?> </a>
+                <span><strong>Post # <?= $item['id'] ?> </strong></span>
+                <span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on: <?= $item['created_at'] ?></span>
+                <span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Updated on: <?= $item['updated_at'] ?> <span>
+                </p>
 
-                <p><span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on September 28, 2016 at 11:30 PM <span><strong>Post ID#101</strong></span></p>
+                
                 <hr>
+
+                <!-- IMAGE section -->
 
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2" class="bg-info">
-                        <img class="img-responsive" src="" alt="">
+                        <img class="img-responsive" src="img/<?= $item['image'] ?>" alt="">
                     </div>
                 </div>
+
+                <br>
+
+                <!-- Intro -->
+
+                <p> <strong> <?= $item['intro'] ?> </strong></p>
                 
                 <hr>
-                <p> </p>
+                
+                <!-- READ MORE BUTTON -->
+
                 <a class="btn btn-primary" href="index.php?page=blogPost">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 
                 <hr>
