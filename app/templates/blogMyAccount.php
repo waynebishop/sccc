@@ -39,34 +39,45 @@
             <!--  Maintain a User account -->
                      
             <div class="well">
-                <h2>Update your details</h2>
+                <h2>Update your contact details</h2>
                 
                 <form action="index.php?page=blogMyAccount" method="post">
 
+                    <label for="">First Name:</label>
                     <div class="input-group">
-                        <span class="input-group-addon" id="FirstName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                        <input type="text" class="form-control" placeholder="First name">
+                        <span class="input-group-addon" id="first-name"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                        <input type="text" name="first-name" class="form-control" placeholder="First name" value="<?= isset($_POST['update-contact']) ? $_POST['first-name'] : '' ?>">
                     </div>
+                    
+                    <!-- Error Message --> 
+                    <?= isset($firstNameMessage) ? $firstNameMessage : '' ?>   
 
                     <br>
 
+                    <label for="">Last Name:</label>
                     <div class="input-group">
-                        <span class="input-group-addon" id="LastName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                        <input type="text" class="form-control" placeholder="Last name">
+                        <span class="input-group-addon" id="last-name"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                        <input type="text" name="last-name" class="form-control" placeholder="Last name" value="<?= isset($_POST['update-contact']) ? $_POST['last-name'] : '' ?>">
                     </div>
+
+                    <!-- Error Message --> 
+                    <?= isset($lastNameMessage) ? $lastNameMessage : '' ?> 
 
                     <br>
 
+                    <label for="">Telephone Number:</label>
                     <div class="input-group">
-                        <span class="input-group-addon" id="PhoneNumber"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                        <input type="text" class="form-control" placeholder="Contact phone number">
+                        <span class="input-group-addon" id="phone-number"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                        <input type="text" name="phone-number" class="form-control" placeholder="Contact phone number" value="<?= isset($_POST['update-contact']) ? $_POST['phone-number'] : '' ?>">
                     </div>
+
+                    <!-- Error Message --> 
+                    <?= isset($phoneNumberMessage) ? $phoneNumberMessage : '' ?> 
 
                     <br>
                         
                     <div class="input-group">
-                        <input type="submit" name="blogMyAccount" class="btn btn-primary" value="Update">                 
-                        <!-- <button type="button" class="btn btn-success">Submit</button> -->
+                        <input type="submit" name="update-contact" class="btn btn-primary" value="Update Details">                 
                     </div>
 
                 </form>

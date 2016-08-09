@@ -48,7 +48,7 @@
                     
                     <div class="input-group">
                         <span class="input-group-addon" id="userName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                        <input type="text" name="userName" class="form-control" placeholder="Username - Usually your email address">
+                        <input type="text" name="userName" class="form-control" placeholder="Username - Your email address">
                     </div>
 
                     <br>

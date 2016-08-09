@@ -64,7 +64,7 @@
                 </p>
 
                 <p>Location: <a href="#"> <?= $item['location'] ?> </a>Game: <a href="#"> <?= $item['type'] ?> </a>
-                <span><strong>Post # <?= $item['id'] ?> </strong></span>
+                <span><strong>Post ID: <?= $item['id'] ?> </strong></span>
                 <span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on: <?= $item['created_at'] ?></span>
                 <span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Updated on: <?= $item['updated_at'] ?> <span>
                 </p>
