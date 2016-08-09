@@ -40,47 +40,55 @@
 
             <p class="politeWarning"><i class="fa fa-heart" aria-hidden="true"></i><em> Watch out, kids about!</em></p>
 
+
+
+            <!-- ** Start of Form ** -->
             
-            <form>
+            <form action="index.php?page=newPost" method="post" enctype="multipart/form-data">
+
+                <!-- Report Type -->
                 
                 <div class="form-group">                        
-                    <label for="selectReport">Report Topic</label>
-                    <select class="form-control" id="selectReport">
-                        <option>Choose...</option>
-                        <option>Match Report - Senior</option>
-                        <option>Match Report - Junior</option>
-                        <option>Match Preview - Senior</option>
-                        <option>Match Preview - Junior</option>
-                        <option>Good Chat - Senior</option>
-                        <option>Good Chat - Junior</option>
+                    <label for="report">Report Topic / Type</label>
+                    <select class="form-control" name="report" id="report">
+                        <option value="0">Choose...</option>
+                        <option value="1">1 Match Report - Senior</option>
+                        <option value="2">2 Match Report - Junior</option>
+                        <option value="3">3 Match Preview - Senior</option>
+                        <option value="4">4 Match Preview - Junior</option>
+                        <option value="5">5 Good Chat - Senior</option>
+                        <option value="6">6 Good Chat - Junior</option>
                     </select>
                 </div>
                 
+                <!-- Team -->
 
                 <div class="form-group">                        
-                    <label for="selectTeam">Team</label>
-                    <select class="form-control" id="selectTeam">
-                        <option>Choose...</option>
-                        <option>Premier 1</option>
-                        <option>Premier 2</option>
-                        <option>Colts</option>
-                        <option>Year 5</option>
+                    <label for="team">Team</label>
+                    <select class="form-control" id="team" name="team">
+                        <option value="0">Choose...</option>
+                        <option value="1">Premier 1 - Premiers</option>
+                        <option value="2">Year 5 - Tigers</option>
                     </select>
                 </div>
+
+                <!-- Home / Away -->
                 
                 <div class="form-group">                        
-                    <label for="selectLocation">Location</label>
-                    <select class="form-control" id="selectLocation">
-                        <option>Choose...</option>
+                    <label for="location">Location</label>
+                    <select class="form-control" id="location" name="location">
+                        <option value="0">Choose...</option>
                         <option>Home</option>
                         <option>Away</option>
                     </select>
                 </div>
 
+                <!-- Game Type -->
+
                 <div class="form-group">                        
-                    <label for="selectGameType">Game Type</label>
-                    <select class="form-control" id="selectGameType">
-                        <option>Choose...</option>
+                    <label for="type">Game Type</label>
+                    <select class="form-control" id="type" name="type">
+                        <option value="0">Choose...</option>
                         <option>One Day</option>
                         <option>Two Day</option>
                         <option>20/20</option>
@@ -89,41 +97,58 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <!-- Author / User -->                
+
+                <!-- <div class="form-group">
                     <label for="author">Author</label>
                     <input type="text" class="form-control" id="author" placeholder="** Pre-populate with User First &amp; Last name **">
-                </div>
+                </div> -->
+
+
+                <!-- Title -->
 
                 <div class="form-group">
-                    <label for="postTitle">Title</label>
-                    <input type="text" class="form-control" id="postTitle" placeholder="Title">
-                </div>
-
-                <!-- UNSURE about Textarea form for Bootstrap  per next 2 textarea inputs-->
-
-                <div class="form-group">
-                    <label for="postIntro">Post Introduction</label>
-                    <textarea class="form-control" rows="3" id="postIntro" placeholder="Brief post introduction appears below the image on main blog page and as the intro line to the main content."></textarea>
+                    <label for="title">Title: </label>
+                    <input type="text" name="title" class="form-control" id="title" placeholder="Title for your post" >
+                    <?= isset($titleMessage) ? $titleMessage : '' ?>
                 </div>
 
                 
+
+                <!-- UNSURE about Textarea form for Bootstrap  per next 2 textarea inputs-->
+
+                <!-- Intro -->
+
                 <div class="form-group">
-                    <label for="mainPost">Main Post Content</label>
+                    <label for="intro">Introduction</label>
+                    <textarea class="form-control" rows="3" name="intro" id="intro" placeholder="Brief post introduction appears below the image on main blog page and as the intro line to the main content."></textarea>
+                </div>
+
+                <!-- Article / Main Content -->
+
+                <div class="form-group">
+                    <label for="article">Main Content</label>
                     <!-- <input type="textarea" class="form-control" id="mainPost" placeholder="This main content follows on from post intro."> -->
-                    <textarea class="form-control" rows="10" id="mainPost" placeholder="This main content follows on from Post Introduction above that becomes the first line of the main post."></textarea>
+                    <textarea class="form-control" rows="10" name="article" id="article" placeholder="This main content follows on from Post Introduction above that becomes the first line of the main post."></textarea>
 
                 </div>
 
+                <!-- Image -->
+
                 <div class="form-group">
-                    <label for="exampleInputFile">Image</label>
-                    <input type="file" id="exampleInputFile">
+                    <label for="image">Image</label>
+                    <input type="file" name="image" id="image">
                     <p class="help-block">Must be .jpeg, .png or .gif.</p>
                 </div>
+
+                <!-- ** Submit Button ** -->
              
-                <input type="submit" name="newPost" class="btn btn-primary" value="Submit"> 
+                <input type="submit" name="new-post" class="btn btn-primary" value="Submit"> 
 
                 <!-- <button type="submit" class="btn btn-success">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i></button> -->
-            </form>
+            
+
+            </form>  <!-- End of Form-->
           
 
             
@@ -133,7 +158,7 @@
 
             <ul class="pager">
                 <li class="previous">
-                    <a href="index.php?page=blogHome">&larr; Back </a>
+                    <a href="index.php?page=blogHome">&larr; Back to Captains Blog</a>
                 </li>        
             </ul>
 
