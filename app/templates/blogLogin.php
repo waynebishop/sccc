@@ -47,22 +47,40 @@
                 <form action="index.php?page=blogLogin" method="post">
                     
                     <div class="input-group">
-                        <span class="input-group-addon" id="userName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                        <input type="text" name="userName" class="form-control" placeholder="Username - Your email address">
+                        <span class="input-group-addon" id="email"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                        <input type="text" name="email" class="form-control" placeholder="Username - Your email address" value="<?= isset($_POST['login']) ? $_POST['email'] : ''?>">
                     </div>
+
+                    <!-- EMAIL/username error message -->
+                    <?php if( isset($emailMessage) ): ?>
+                        <span class="politeWarning"> <?= $emailMessage ?> </span>
+                    <?php endif ?>    
 
                     <br>
 
                     <div class="input-group">
                         <span class="input-group-addon" id="password"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                        <input type="password" name="password" class="form-control" placeholder="Password">
+                        <input type="password" name="password" class="form-control" placeholder="Password - At least 8 characters">
                     </div>
+
+                    <!-- PASSWORD error message -->
+                    <?php if( isset($passwordMessage) ): ?>
+                        <span class="politeWarning"> <?= $passwordMessage ?> </span>
+                    <?php endif ?> 
 
                     <br>
                         
                     <div class="input-group">
                         <input type="submit" name="login" class="btn btn-primary" value="Log in">                 
                     </div>
+
+                    <!-- PASSWORD error message -->
+                    <?php if( isset($loginMessage) ): ?>
+                        <span class="politeWarning"> <?= $loginMessage ?> </span>
+                    <?php endif ?> 
+
+
+
 
                 </form>
 
@@ -75,7 +93,7 @@
 
             <ul class="pager">
                 <li class="previous">
-                    <a href="index.php?page=blogHome">&larr; Back </a>
+                    <a href="index.php?page=blogHome">&larr; Back to Captains Blog</a>
                 </li>        
             </ul>
 

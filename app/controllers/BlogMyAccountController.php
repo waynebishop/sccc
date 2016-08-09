@@ -2,7 +2,7 @@
 
 class BlogMyAccountController extends PageController {
 
-	// Properties
+	// Properties- these first three actually relate to other style of error message generation per Login and Register
 	private $firstNameMessage;
 	private $lastNameMessage;
 	private $emailMessage;
@@ -62,9 +62,26 @@ class BlogMyAccountController extends PageController {
 		// If total errors is 0 good to go
 		if( $totalErrors == 0) {
 			// Form validation passed
-
 			// Update the database
-			die('update');
+			$firstName = $this->dbc->real_escape_string($_POST['first-name']);
+			$lastName = $this->dbc->real_escape_string($_POST['last-name']);
+			$phoneNumber = $this->dbc->real_escape_string($_POST['phone-number']);
+
+			$userID = $_SESSION['id'];
+
+			// Prepare the SQL to update Users table by setting columns where for this id person
+			$sql = "UPDATE users 
+					SET first_name = '$firstName', 
+					last_name = '$lastName',
+					phone = '$phoneNumber'
+					WHERE id = $userID ";
+
+			// Run the query
+			$this->dbc->query( $sql );
+
+
+
+
 
 		}
 

@@ -53,7 +53,7 @@
 
                     <!-- Email message after form submitted if emailMessage exists -->
                     <?php if( isset($emailMessage) ) : ?>   
-                    <p class="politeWarning"> <?= $emailMessage ?> </p>
+                    <span class="politeWarning"> <?= $emailMessage ?> </span>
                     <?php endif; ?>
 
                     <br>
@@ -65,7 +65,7 @@
 
                     <!-- Email message after form submitted if emailMessage exists -->
                     <?php if( isset($passwordMessage) ) : ?>   
-                    <p class="politeWarning"> <?= $passwordMessage ?> </p>
+                    <span class="politeWarning"> <?= $passwordMessage ?> </span>
                     <?php endif; ?>
 
                     <br>

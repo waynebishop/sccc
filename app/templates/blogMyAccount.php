@@ -90,7 +90,7 @@
 
             <ul class="pager">
                 <li class="previous">
-                    <a href="index.php?page=blogHome">&larr; Back </a>
+                    <a href="index.php?page=blogHome">&larr; Back to Captains Blog</a>
                 </li>        
             </ul>
 
