@@ -164,8 +164,6 @@ class NewPostController extends PageController {
 
 			
 
-
-
 		}
 
 

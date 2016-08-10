@@ -35,9 +35,14 @@ class BlogPostController extends PageController {
 		$postID = $this->dbc->real_escape_string( $_GET['postid'] );
 
 		// Get info about this post ( ** BUT not yet team, report etc that use foreign keys ** )
-		$sql = "SELECT id, title, intro, article, image, location, type, created_at, updated_at
-				FROM posts 
-				WHERE id = $postID";
+		$sql = "SELECT title, intro, article, image, location, type, created_at, updated_at, first_name, last_name
+				FROM posts
+				
+				JOIN users
+				ON user_id = users.id
+				 
+				WHERE posts.id = $postID";
+
 
 		// Run the SQL
 		$result = $this->dbc->query($sql);		
@@ -49,8 +54,20 @@ class BlogPostController extends PageController {
 		} else {
 			// Good to go
 			$this->data['post'] = $result->fetch_assoc();
+
+			// If the user doesn't have a name
+			$fName = $this->data['post']['first_name'];
+			$lName = $this->data['post']['last_name'];	
+
+			if( !$fName  && !$lName ) {
+				// Anon
+				$this->data['post']['first_name'] = 'Anon';
+			}
+
+			
 		
 		}
+
 
 
 

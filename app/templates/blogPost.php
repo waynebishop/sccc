@@ -37,14 +37,14 @@
                 <small>Reports &amp; Chat</small>
             </h1>
 
-            <!-- First Blog Post -->
+            <!-- Blog Post -->
             <h2><?= $post['title'] ?></h2>
 
             <p class="lead">
-               <a href="index.php">Match Report </a>for team <a href="index.php">Premier 1 </a>by <a href="index.php">Dave Champion </a>Grade: <a href="index.php"> Premier 1</a>
+               <a href="index.php"> TeamNameSr/Jr </a>for team <a href="index.php">Premier 1 </a>by <a href="index.php"> <?= $post['first_name'].' '.$post['last_name'] ?> </a>Grade: <a href="index.php"> Premier 1</a>
             </p>
 
-            <p>Location: <a href="#"><?= $post['location'] ?></a> Game: <a href="#"><?= $post['type'] ?></a><span><strong> Post ID# <?= $post['id'] ?></strong></span>
+            <p>Location: <a href="#"><?= $post['location'] ?></a> Game: <a href="#"><?= $post['type'] ?></a><span><strong> Post ID# X</strong></span>
             <span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on <?= $post['created_at'] ?>
             <span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Post Updated <?= $post['updated_at'] ?></p>
 
@@ -99,83 +99,87 @@
 
             <hr>
 
-            <!-- Blog Comments -->
+            <section>
 
-            <!-- Comments Form -->
-            <div class="well">
-                <h4>Leave a Comment </h4>
-                <p class="politeWarning"><i class="fa fa-heart" aria-hidden="true"></i><em> Watch out, kids about!</em></p>
-                <form>
-                    <div class="form-group">
-                        <textarea class="form-control" rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-success">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                </form>
-            </div>
+                <!-- Blog Comments -->
 
-            <hr>
+                <!-- Comments Form -->
+                <div class="well">
+                    <h4>Leave a Comment </h4>
+                    <p class="politeWarning"><i class="fa fa-heart" aria-hidden="true"></i><em> Watch out, kids about!</em></p>
+                    <form>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                    </form>
+                </div>
 
-            <!-- Posted Comments -->
+                <hr>
 
-            <!-- Comment 1 -->
-            <div class="media">
-                <a class="pull-left" href="#">
-                    <img class="media-object" src="http://placehold.it/64x64" alt="">
-                </a>
-                <div class="media-body">
-                    <h4 class="media-heading">Fred Flintstone
-                        <small>October 2, 2016 at 9:30 AM</small>
-                    </h4>
-                    Yabba Dabba Doo! This is the best post I have ever read. Can't wait for the next game.
+                <!-- Posted Comments -->
 
-                    <br>
-                    <a class="btn btn-warning btn-xs" href="index.php?page=editComment" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit </a>
+                <!-- Comment 1 -->
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="http://placehold.it/64x64" alt="">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">Fred Flintstone
+                            <small>October 2, 2016 at 9:30 AM</small>
+                        </h4>
+                        Yabba Dabba Doo! This is the best post I have ever read. Can't wait for the next game.
 
-                    <!-- Comment Delete Button & modal -->
+                        <br>
+                        <a class="btn btn-warning btn-xs" href="index.php?page=editComment" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit </a>
 
-                    <!-- Comment Delete Button trigger modal -->
-                    <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#commentDeleteModal1"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                        <!-- Comment Delete Button & modal -->
 
-                    <!-- Delete Comment Modal -->
+                        <!-- Comment Delete Button trigger modal -->
+                        <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#commentDeleteModal1"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
 
-                    <div class="modal fade" id="commentDeleteModal1" tabindex="-1" role="dialog">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="commentDelete"> Delete Comment Confirmation</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Are you certain that you want to delete this comment?</p>
-                                    
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="commentDeleteConfirm" value="no" checked>
-                                            NO I want to keep it.
-                                        </label>
+                        <!-- Delete Comment Modal -->
+
+                        <div class="modal fade" id="commentDeleteModal1" tabindex="-1" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="commentDelete"> Delete Comment Confirmation</h4>
                                     </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="commentDeleteConfirm" value="yes">
-                                            YES please delete this comment.
-                                        </label>
+                                    <div class="modal-body">
+                                        <p>Are you certain that you want to delete this comment?</p>
+                                        
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="commentDeleteConfirm" value="no" checked>
+                                                NO I want to keep it.
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="commentDeleteConfirm" value="yes">
+                                                YES please delete this comment.
+                                            </label>
+                                        </div>
+                   
                                     </div>
-               
-                                </div>
 
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Submit </button>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Submit </button>
+                                    </div>
                                 </div>
-                            </div>
+                            </div> 
                         </div> 
-                    </div> 
-                    <!-- /End Comment Delete Button & Modal-->
+                        <!-- /End Comment Delete Button & Modal-->
 
-                </div> <!-- / End media-body -->
-                
-            </div> <!-- End of comment 1 class="media" -->
+                    </div> <!-- / End media-body -->
+                    
+                </div> <!-- End of comment 1 class="media" -->
 
+            </section>
+            
             <hr>
 
             <!-- Comment 2 -->
