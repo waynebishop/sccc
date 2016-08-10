@@ -103,16 +103,21 @@
 
                 <!-- Blog Comments -->
 
-                <!-- Comments Form -->
+                <!-- NEW Comment Form -->
                 <div class="well">
                     <h4>Leave a Comment </h4>
                     <p class="politeWarning"><i class="fa fa-heart" aria-hidden="true"></i><em> Watch out, kids about!</em></p>
-                    <form>
+                    
+                    <form action="index.php?page=post&postid=<?= $_GET['postid'] ?>" method="post">
                         <div class="form-group">
-                            <textarea class="form-control" rows="3"></textarea>
+                            <label for"comment">Write your comment here: </label>
+                            <textarea  name="comment" id="comment" cols="30" class="form-control" rows="3"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-success">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+
+                        <input type="submit" name="new-comment" value="Submit">
+
                     </form>
+
                 </div>
 
                 <hr>
@@ -179,7 +184,7 @@
                 </div> <!-- End of comment 1 class="media" -->
 
             </section>
-            
+
             <hr>
 
             <!-- Comment 2 -->
