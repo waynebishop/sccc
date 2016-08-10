@@ -76,7 +76,11 @@
 
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2" class="bg-info">
-                        <img class="img-responsive" src="img/<?= $item['image'] ?>" alt="">
+
+                        <a href="index.php?page=blogPost&postid=<?= $item['id'] ?>">
+                            <img class="img-responsive" src="img/<?= $item['image'] ?>" alt="">
+                        </a>
+
                     </div>
                 </div>
 

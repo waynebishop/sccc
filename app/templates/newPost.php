@@ -52,14 +52,18 @@
                     <label for="report">Report Topic / Type</label>
                     <select class="form-control" name="report" id="report">
                         <option value="0">Choose...</option>
-                        <option value="1">1 Match Report - Senior</option>
-                        <option value="2">2 Match Report - Junior</option>
-                        <option value="3">3 Match Preview - Senior</option>
-                        <option value="4">4 Match Preview - Junior</option>
-                        <option value="5">5 Good Chat - Senior</option>
-                        <option value="6">6 Good Chat - Junior</option>
+                        <option value="1">Match Report - Senior</option>
+                        <option value="2">Match Report - Junior</option>
+                        <option value="3">Match Preview - Senior</option>
+                        <option value="4">Match Preview - Junior</option>
+                        <option value="5">Good Chat - Senior</option>
+                        <option value="6">Good Chat - Junior</option>
                     </select>
+
+                    <?= isset($reportMessage) ? $reportMessage : '' ?>
+
                 </div>
+
                 
                 <!-- Team -->
 
@@ -70,6 +74,9 @@
                         <option value="1">Premier 1 - Premiers</option>
                         <option value="2">Year 5 - Tigers</option>
                     </select>
+
+                    <?= isset($teamMessage) ? $teamMessage : '' ?>
+
                 </div>
 
                 <!-- Home / Away -->
@@ -77,10 +84,14 @@
                 <div class="form-group">                        
                     <label for="location">Location</label>
                     <select class="form-control" id="location" name="location">
-                        <option value="0">Choose...</option>
+                        <option>Choose...</option>
                         <option>Home</option>
                         <option>Away</option>
+                        <option>Chat</option>
                     </select>
+
+                    <?= isset($locationMessage) ? $locationMessage : '' ?>
+
                 </div>
 
                 <!-- Game Type -->
@@ -88,22 +99,18 @@
                 <div class="form-group">                        
                     <label for="type">Game Type</label>
                     <select class="form-control" id="type" name="type">
-                        <option value="0">Choose...</option>
+                        <option>Choose...</option>
                         <option>One Day</option>
                         <option>Two Day</option>
                         <option>20/20</option>
                         <option>Milo</option>
+                        <option>Chat</option>
                         <option>Other</option>
                     </select>
+
+                    <?= isset($typeMessage) ? $typeMessage : '' ?>
+
                 </div>
-
-                <!-- Author / User -->                
-
-                <!-- <div class="form-group">
-                    <label for="author">Author</label>
-                    <input type="text" class="form-control" id="author" placeholder="** Pre-populate with User First &amp; Last name **">
-                </div> -->
-
 
                 <!-- Title -->
 
@@ -122,6 +129,7 @@
                 <div class="form-group">
                     <label for="intro">Introduction</label>
                     <textarea class="form-control" rows="3" name="intro" id="intro" placeholder="Brief post introduction appears below the image on main blog page and as the intro line to the main content."></textarea>
+                    <?= isset($introMessage) ? $introMessage : '' ?>
                 </div>
 
                 <!-- Article / Main Content -->
@@ -130,7 +138,7 @@
                     <label for="article">Main Content</label>
                     <!-- <input type="textarea" class="form-control" id="mainPost" placeholder="This main content follows on from post intro."> -->
                     <textarea class="form-control" rows="10" name="article" id="article" placeholder="This main content follows on from Post Introduction above that becomes the first line of the main post."></textarea>
-
+                    <?= isset($articleMessage) ? $articleMessage : '' ?>
                 </div>
 
                 <!-- Image -->
@@ -139,14 +147,13 @@
                     <label for="image">Image</label>
                     <input type="file" name="image" id="image">
                     <p class="help-block">Must be .jpeg, .png or .gif.</p>
+                    <?= isset($fileMessage) ? $fileMessage : '' ?>
                 </div>
 
                 <!-- ** Submit Button ** -->
              
-                <input type="submit" name="new-post" class="btn btn-primary" value="Submit"> 
-
-                <!-- <button type="submit" class="btn btn-success">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i></button> -->
-            
+                <input type="submit" name="new-post" class="btn btn-primary" value="Submit">
+                <?= isset($postMessage) ? $postMessage : '' ?> 
 
             </form>  <!-- End of Form-->
           
