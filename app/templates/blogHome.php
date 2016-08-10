@@ -55,7 +55,7 @@
 
                 <!-- Blog Post NB image size 750 x 500 -->
                 <h2>
-                    <a href="#"> <?= $item['title'] ?> </a>
+                    <a href="index.php?page=blogPost&postid=<?= $item['id'] ?>"> <?= $item['title'] ?> </a>
                 </h2>
 
                 <p class="lead">
@@ -92,7 +92,7 @@
                 
                 <!-- READ MORE BUTTON -->
 
-                <a class="btn btn-primary" href="index.php?page=blogPost">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                <a class="btn btn-primary" href="index.php?page=blogPost&postid=<?= $item['id'] ?>">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 
                 <hr>
 
