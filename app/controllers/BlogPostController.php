@@ -41,6 +41,8 @@ class BlogPostController extends PageController {
 		// Filter the ID
 		$postID = $this->dbc->real_escape_string( $_GET['postid'] );
 
+		$this->data['tempPostID'] = $postID;
+
 		// Get info about this post ( ** BUT not yet team, report etc that use foreign keys ** )
 		$sql = "SELECT title, intro, article, image, location, type, created_at, updated_at, first_name, last_name
 				FROM posts
@@ -75,7 +77,7 @@ class BlogPostController extends PageController {
 
 
 		// Get all the comments and CONCAT first_name and last_name into author
-		$sql = "SELECT user_id, comment, CONCAT(first_name, ' ',last_name) AS author, created_at, updated_at
+		$sql = "SELECT comment, CONCAT(first_name, ' ',last_name) AS author, created_at, updated_at
 				FROM comments
 				JOIN users
 				ON comments.user_id = users.id

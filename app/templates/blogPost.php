@@ -44,7 +44,8 @@
                    <a href="index.php"> TeamNameSr/Jr </a>for team <a href="index.php">Premier 1 </a>by <a href="index.php"> <?= $post['first_name'].' '.$post['last_name'] ?> </a>Grade: <a href="index.php"> Premier 1</a>
                 </p>
 
-                <p>Location: <a href="#"><?= $post['location'] ?></a> Game: <a href="#"><?= $post['type'] ?></a><span><strong> Post ID# </strong></span>
+                <p>Location: <a href="#"><?= $post['location'] ?></a> Game: <a href="#"><?= $post['type'] ?></a>
+                <span><strong> Post ID# <?= isset($tempPostID) ? $tempPostID : 'TBC' ?></strong></span>
                 <span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on <?= $post['created_at'] ?>
                 <span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Post Updated <?= $post['updated_at'] ?></p>
 
@@ -138,7 +139,7 @@
                     </a>
                     <div class="media-body">
                         <h4 class="media-heading">
-                            <?= htmlentities($comment['author']) ?>
+                            <?= htmlentities($comment['author']) ?>                            
                             <small><i class="fa fa-clock-o" aria-hidden="true"></i> Created: <?= $comment['created_at'] ?></small>
                             <small><i class="fa fa-clock-o" aria-hidden="true"></i> Updated: <?= $comment['updated_at'] ?></small>
                         </h4>
