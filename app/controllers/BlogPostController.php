@@ -15,7 +15,14 @@ class BlogPostController extends PageController {
 		// Save the database connection per private $dbc above
 		$this->dbc = $dbc;
 
+		// Did the user add a comment
+		if( isset($_POST['new-comment']) ) {
+			$this->processNewComment();
+		}
+
 		$this->getPostData();
+
+		
 
 	}
 
@@ -64,14 +71,79 @@ class BlogPostController extends PageController {
 				$this->data['post']['first_name'] = 'Anon';
 			}
 
-			
-		
 		}
+
+
+		// Get all the comments and CONCAT first_name and last_name into author
+		$sql = "SELECT user_id, comment, CONCAT(first_name, ' ',last_name) AS author, created_at, updated_at
+				FROM comments
+				JOIN users
+				ON comments.user_id = users.id
+				WHERE post_id = $postID
+				ORDER BY created_at DESC
+				";
+
+		$result = $this->dbc->query($sql);
+		
+		// extract the data as an associative array ( allComments is then referred ot as $allComments on blogPost.php)
+		$this->data['allComments'] = $result->fetch_all(MYSQLI_ASSOC);
 
 
 
 
 	}
 
+	private function processNewComment() {
+
+		// Validate comment
+		$totalErrors = 0;
+
+		// Minimum length 1
+
+		// Maximum length 1000
+
+		// If passed, add to the DB
+		if( $totalErrors == 0 ) {
+
+			// Filter the comment
+			$comment = $this->dbc->real_escape_string( $_POST['comment'] );
+			$userID = $_SESSION['id'];
+			$postID = $this->dbc->real_escape_string( $_GET['postid'] );
+
+			// Prepare SQL
+			$sql = "INSERT INTO comments (comment, user_id, Post_id)
+					VALUES ('$comment', $userID, $postID)
+					";
+
+			// Run the SQL
+			$this->dbc->query($sql);
+
+			// Make sure query worked ** TO DO ** as for newpost
+
+
+
+			
+
+
+
+		} 
+
+
+
+
+
+	} 
+
+
 
 }
+
+
+
+
+
+
+
+
+
+

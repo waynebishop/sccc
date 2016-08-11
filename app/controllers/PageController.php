@@ -7,6 +7,7 @@ abstract class PageController {
 	protected $dbc;
 	protected $plates;
 	protected $data =[];
+	protected $tempPostID;
 
 	Public function __construct () {
 
