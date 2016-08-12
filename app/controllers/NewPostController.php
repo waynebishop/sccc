@@ -179,7 +179,7 @@ class NewPostController extends PageController {
    				 $constraint->aspectRatio();
 			});
 
-			// Save resized smaller image for blogHome page NB {} in {$fileName}{$fileExtension} is optional to aid code appearance 
+			// Save resized medium image for blogPost page NB {} in {$fileName}{$fileExtension} is optional to aid code appearance 
 			$image->save("img/uploads/blogPost/{$fileName}{$fileExtension}");
 
 			// Resize for blogHome.php
