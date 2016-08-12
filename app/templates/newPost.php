@@ -147,7 +147,7 @@
                     <label for="image">Image</label>
                     <input type="file" name="image" id="image">
                     <p class="help-block">Must be .jpeg, .png or .gif.</p>
-                    <?= isset($fileMessage) ? $fileMessage : '' ?>
+                    <p class="politeWarning"><?= isset($imageMessage) ? $imageMessage : '' ?></p>
                 </div>
 
                 <!-- ** Submit Button ** -->

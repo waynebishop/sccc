@@ -49,8 +49,10 @@
                 <span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on <?= $post['created_at'] ?>
                 <span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Post Updated <?= $post['updated_at'] ?></p>
 
+                <!-- Image -->
+
                 <hr>
-                <img class="img-responsive" src="img/<?= $post['image'] ?>" alt="A cricket photograph">
+                <img class="img-responsive" src="img/uploads/blogPost/<?= $post['image'] ?>" alt="A cricket photograph">
                 <hr>
 
                 <p><?= $post['intro'] ?></p>
