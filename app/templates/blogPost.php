@@ -48,6 +48,32 @@
                 <span><strong> Post ID# <?= isset($tempPostID) ? $tempPostID : 'TBC' ?></strong></span>
                 <span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on <?= $post['created_at'] ?>
                 <span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Post Updated <?= $post['updated_at'] ?></p>
+                
+                <!-- Edit Post Button -->
+
+                <?php 
+                    // Are they logged in? must be.
+                    if( isset($_SESSION['id']) ) {
+                        // Check to see if logged in User matches post author/User
+                        if( $_SESSION['id'] == $post['user_id'] ) {
+                            // True = owns the post
+                            ?> <!-- Close php-->
+
+                <a class="btn btn-warning btn-sm" href="index.php?page=editPost&id=<?= $_GET['postid'] ?>" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Post</a>
+
+                <a class="btn btn-danger btn-sm" href="index.php?page=editPost&id=<?= $_GET['postid'] ?>" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Delete Post</a>
+                <!-- See alt modal below comented out-->            
+
+                               <!-- Open new php tags --> 
+                            <? 
+
+
+
+                        }
+
+                    }
+
+                ?>
 
                 <!-- Image -->
 
@@ -59,16 +85,19 @@
 
                 <p><?= htmlentities($post['article']) ?></p>
 
-                <a class="btn btn-warning btn-sm" href="index.php?page=editPost" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Post</a>
 
+                <!-- *** OLD Edit button -->
 
+               <!--  <a class="btn btn-warning btn-sm" href="index.php?page=editPost" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Post</a> -->
 
-                <!-- Post Delete Button trigger modal -->
+                
+                <!-- *** OLD Post Delete Button trigger modal -->
 
-                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#postDeleteModal"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                <!-- <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#postDeleteModal"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> -->
 
-                <!-- Post Delete Modal -->
-                <div class="modal fade" id="postDeleteModal" tabindex="-1" role="dialog" aria-labelledby="postDelete">
+                <!-- *** Post Delete Modal -->
+
+                <!-- <div class="modal fade" id="postDeleteModal" tabindex="-1" role="dialog" aria-labelledby="postDelete">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -99,7 +128,9 @@
                             </div>
                         </div>
                     </div> 
-                </div> <!-- /End Delete Post Button & Modal-->
+                </div>  -->
+
+                <!-- *** /End Delete Post Button & Modal-->
 
                 <hr>
 

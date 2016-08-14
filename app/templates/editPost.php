@@ -35,18 +35,24 @@
             
             <h1 class="page-header">
                 Captains Blog
-                <small>Edit Post</small>
+                <small>Edit Post: <?= htmlentities($post['title']) ?>  </small>
             </h1>
 
             <p class="politeWarning"><i class="fa fa-heart" aria-hidden="true"></i><em> Watch out, kids about!</em></p>
 
 
-            <form action="index.php?page=editPost" method="post">
+            <form action="index.php?page=editPost" method="post" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" value="<?= $post['title'] ?>">
+                </div>
+
                 
                 <div class="form-group">                        
-                    <label for="selectReport">Report Topic</label>
-                    <select class="form-control" id="selectReport">
-                        <option>Choose...</option>
+                    <label for="report">Report Topic</label>
+                    <select class="form-control" id="report" name="report">
+                        <option><?= $post['report_id'] ?></option>
                         <option>Match Report - Senior</option>
                         <option>Match Report - Junior</option>
                         <option>Match Preview - Senior</option>
@@ -57,9 +63,9 @@
                 </div>
                 
                 <div class="form-group">                        
-                    <label for="selectTeam">Team</label>
-                    <select class="form-control" id="selectTeam">
-                        <option>Choose...</option>
+                    <label for="team">Team</label>
+                    <select class="form-control" id="team" name="team">
+                        <option><?= $post['report_id'] ?></option>
                         <option>Premier 1</option>
                         <option>Premier 2</option>
                         <option>Colts</option>
@@ -68,18 +74,18 @@
                 </div>
                 
                 <div class="form-group">                        
-                    <label for="selectLocation">Location</label>
-                    <select class="form-control" id="selectLocation">
-                        <option>Choose...</option>
+                    <label for="location">Location</label>
+                    <select class="form-control" id="location" name="location">
+                        <option><?= $post['location'] ?></option>
                         <option>Home</option>
                         <option>Away</option>
                     </select>
                 </div>
 
                 <div class="form-group">                        
-                    <label for="selectGameType">Game Type</label>
-                    <select class="form-control" id="selectGameType">
-                        <option>Choose...</option>
+                    <label for="type">Game Type</label>
+                    <select class="form-control" id="type" name="type">
+                        <option><?= $post['type'] ?></option>
                         <option>One Day</option>
                         <option>Two Day</option>
                         <option>20/20</option>
@@ -88,33 +94,30 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <!-- ** Author?????-->
+
+                <!-- <div class="form-group">
                     <label for="author">Author</label>
                     <input type="text" class="form-control" id="author" placeholder="** Pre-populates with User First &amp; Last name. **">
-                </div>
-
-                <div class="form-group">
-                    <label for="postTitle">Title</label>
-                    <input type="text" class="form-control" id="postTitle" placeholder="Title">
-                </div>
+                </div> -->
 
                 <!-- UNSURE about Textarea form for Bootstrap  per next 2 textarea inputs-->
-
+                <!-- ** CAUTION make sure no extra paces between textarea tags or they will display! -->
                 <div class="form-group">
-                    <label for="postIntro">Post Introduction</label>
-                    <textarea class="form-control" rows="3" id="postIntro" placeholder="Brief post introduction appears below the image on main blog page and as the intro line to the main content."></textarea>
+                    <label for="intro">Post Introduction</label>
+                    <textarea class="form-control" rows="3" id="intro" name="intro"><?= $post['intro'] ?></textarea>
                 </div>
 
                 
                 <div class="form-group">
-                    <label for="mainPost">Main Post Content</label>
+                    <label for="article">Main Post Content</label>
                     <!-- <input type="textarea" class="form-control" id="mainPost" placeholder="This main content follows on from post intro."> -->
-                    <textarea class="form-control" rows="10" id="mainPost" placeholder="This main content follows on from Post Introduction above that becomes the first line of the main post."></textarea>
+                    <textarea class="form-control" rows="10" id="article" name="article"><?= $post['article'] ?></textarea>
                 </div>    
 
                 <div class="form-group">
-                    <label for="exampleInputFile">Image</label>
-                    <input type="file" id="exampleInputFile">
+                    <label for="image">Image</label>
+                    <input type="file" id="image" name="image">
                     <p class="help-block">Must be .jpg, .jpeg, .png or .gif.</p>
                 </div>
               

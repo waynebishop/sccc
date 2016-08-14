@@ -36,7 +36,7 @@ class BlogPostController extends PageController {
 		
 	}
 
-	private function getPostdata() {
+	private function getPostData() {
 
 		// Filter the ID
 		$postID = $this->dbc->real_escape_string( $_GET['postid'] );
@@ -44,7 +44,7 @@ class BlogPostController extends PageController {
 		$this->data['tempPostID'] = $postID;
 
 		// Get info about this post ( ** BUT not yet team, report etc that use foreign keys ** )
-		$sql = "SELECT title, intro, article, image, location, type, created_at, updated_at, first_name, last_name
+		$sql = "SELECT title, intro, article, image, location, type, created_at, updated_at, first_name, last_name, user_id
 				FROM posts
 				
 				JOIN users
