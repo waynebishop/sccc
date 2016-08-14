@@ -55,7 +55,7 @@
 
                 <!-- Blog Post NB image size 750 x 500 -->
                 <h2>
-                    <a href="index.php?page=blogPost&postid=<?= $item['id'] ?>"> <?= $item['title'] ?> </a>
+                    <a href="index.php?page=blogPost&postid=<?= $item['id'] ?>"> <?= htmlentities($item['title']) ?> </a>
                 </h2>
 
                 <p class="lead">
@@ -91,7 +91,7 @@
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1" class="bg-info">
 
-                        <p> <strong> <?= $item['intro'] ?> </strong></p>
+                        <p> <strong> <?= htmlentities($item['intro']) ?> </strong></p>
 
                     </div>
                 </div>

@@ -38,10 +38,10 @@
             <article>
 
                 <!-- Blog Post -->
-                <h2><?= $post['title'] ?></h2>
+                <h2><?= htmlentities($post['title']) ?></h2>
 
                 <p class="lead">
-                   <a href="index.php"> TeamNameSr/Jr </a>for team <a href="index.php">Premier 1 </a>by <a href="index.php"> <?= $post['first_name'].' '.$post['last_name'] ?> </a>Grade: <a href="index.php"> Premier 1</a>
+                   <a href="index.php"> TeamNameSr/Jr </a>for team <a href="index.php">Premier 1 </a>by <a href="index.php"> <?= htmlentities($post['first_name'].' '.$post['last_name']) ?> </a>Grade: <a href="index.php"> Premier 1</a>
                 </p>
 
                 <p>Location: <a href="#"><?= $post['location'] ?></a> Game: <a href="#"><?= $post['type'] ?></a>
@@ -55,9 +55,9 @@
                 <img class="img-responsive" src="img/uploads/blogPost/<?= $post['image'] ?>" alt="A cricket photograph">
                 <hr>
 
-                <p><?= $post['intro'] ?></p>
+                <p><?= htmlentities($post['intro']) ?></p>
 
-                <p><?= $post['article'] ?></p>
+                <p><?= htmlentities($post['article']) ?></p>
 
                 <a class="btn btn-warning btn-sm" href="index.php?page=editPost" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Post</a>
 
@@ -121,7 +121,7 @@
                             <textarea  name="comment" id="comment" cols="30" class="form-control" rows="5"></textarea>
                         </div>
 
-                        <input type="submit" name="new-comment" value="Submit">
+                        <input type="submit" name="new-comment" value="Submit" class="btn btn-success">
 
                     </form>
 
@@ -161,7 +161,15 @@
                                 if( $_SESSION['id'] == $comment['user_id'] ) {
                                     // Yes - logged in user owns the comment!
                                     echo 'Delete';
-                                    echo ' Edit';
+
+                                    //EDIT 
+                                    // Ben link
+
+                                    echo '<a href="index.php?page=editComment&id='. $comment['id'] .'">Edit</a>';
+
+                                    // OR yellow button
+
+                                    echo '<a class="btn btn-warning btn-xs" href="index.php?page=editComment&id='. $comment['id'] .'" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit </a>';
 
                                 } 
                             }
@@ -169,10 +177,12 @@
                         ?>
 
                         <br>
+                        <br>
+                        <br>
 
                         <!-- Original DELETE and EDIT buttons and DELETE modals -->
 
-                        <a class="btn btn-warning btn-xs" href="index.php?page=editComment" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit </a>
+                        <!-- <a class="btn btn-warning btn-xs" href="" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit </a> -->
 
                         <!-- Comment Delete Button & modal -->
 

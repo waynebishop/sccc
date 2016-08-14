@@ -77,7 +77,7 @@ class BlogPostController extends PageController {
 
 
 		// Get all the comments and CONCAT first_name and last_name into author
-		$sql = "SELECT user_id, comment, CONCAT(first_name, ' ',last_name) AS author, created_at, updated_at
+		$sql = "SELECT comments.id, user_id, comment, CONCAT(first_name, ' ',last_name) AS author, created_at, updated_at
 				FROM comments
 				JOIN users
 				ON comments.user_id = users.id
