@@ -41,7 +41,7 @@
             <p class="politeWarning"><i class="fa fa-heart" aria-hidden="true"></i><em> Watch out, kids about!</em></p>
 
 
-            <form action="index.php?page=editPost" method="post" enctype="multipart/form-data">
+            <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
                     <label for="title">Title</label>
@@ -115,12 +115,19 @@
                     <textarea class="form-control" rows="10" id="article" name="article"><?= $post['article'] ?></textarea>
                 </div>    
 
+
+                <!-- Image --> 
+
+                <img src="img/uploads/blogHome/<?= $post['image'] ?>" alt="crcket photograph">
+
                 <div class="form-group">
                     <label for="image">Image</label>
                     <input type="file" id="image" name="image">
                     <p class="help-block">Must be .jpg, .jpeg, .png or .gif.</p>
                 </div>
               
+
+
                 <!--  Pending OR Approved checkboxes -->
 
                 <div class="radio">
@@ -136,7 +143,9 @@
                     </label>
                 </div>
 
-                <input type="submit" name="editPost" class="btn btn-primary" value="Submit">
+                <!-- ** SUBMIT button **-->
+
+                <input type="submit" name="edit-post" class="btn btn-success" value="Submit">
                 <!--  <button type="submit" class="btn btn-success">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i></button> -->
                 
                 <hr>
