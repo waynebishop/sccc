@@ -60,7 +60,7 @@
 
                 <p class="lead">
                    <a href="index.php">ReportID: <?= $item['report_id'] ?> </a> for team <a href="index.php">TeamID: <?= $item['team_id'] ?> </a>by <a href="index.php">AuthorID: <?= $item['user_id'] ?>
-                   </a>Grade: <a href="index.php"> JR T-Table </a><a href="index.php">GRD T-Table</a>
+                   </a>Grade: <a href="index.php">TBC Join Team Table </a>
                 </p>
 
                 <p>Location: <a href="#"> <?= $item['location'] ?> </a>Game: <a href="#"> <?= $item['type'] ?> </a>
@@ -98,7 +98,11 @@
                 
                 <!-- READ MORE BUTTON -->
 
-                <a class="btn btn-primary" href="index.php?page=blogPost&postid=<?= $item['id'] ?>">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                <div class="row">
+                    <div class="col-md-1 col-md-offset-8" class="bg-info">
+                        <a class="btn btn-primary" href="index.php?page=blogPost&postid=<?= $item['id'] ?>">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
 
                 <hr>
 

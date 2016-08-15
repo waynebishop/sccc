@@ -41,7 +41,7 @@
                 <h2><?= htmlentities($post['title']) ?></h2>
 
                 <p class="lead">
-                   <a href="index.php"> TeamNameSr/Jr </a>for team <a href="index.php">Premier 1 </a>by <a href="index.php"> <?= htmlentities($post['first_name'].' '.$post['last_name']) ?> </a>Grade: <a href="index.php"> Premier 1</a>
+                   <a href="index.php">Report ID: <?= $post['report_id'] ?></a> for team ID <a href="index.php"><?= $post['team_id'] ?></a> by <a href="index.php"> <?= htmlentities($post['first_name'].' '.$post['last_name']) ?> </a>Grade: <a href="index.php"> TBC Join Team Table</a>
                 </p>
 
                 <p>Location: <a href="#"><?= $post['location'] ?></a> Game: <a href="#"><?= $post['type'] ?></a>
@@ -196,7 +196,7 @@
                                     //EDIT 
                                     // Ben link
 
-                                    echo '<a href="index.php?page=editComment&id='. $comment['id'] .'">Edit</a>';
+                                    // echo '<a href="index.php?page=editComment&id='. $comment['id'] .'">Edit</a>';
 
                                     // OR yellow button
 

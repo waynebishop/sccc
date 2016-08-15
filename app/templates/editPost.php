@@ -35,41 +35,42 @@
             
             <h1 class="page-header">
                 Captains Blog
-                <small>Edit Post: <?= htmlentities($post['title']) ?>  </small>
+                <small>Edit Post</small>
             </h1>
 
             <p class="politeWarning"><i class="fa fa-heart" aria-hidden="true"></i><em> Watch out, kids about!</em></p>
 
+            <h3>ID# <?= htmlentities($tempPostId)?> - <?= htmlentities($originalTitle) ?></h3>
+
+            <br>  
 
             <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input type="text" class="form-control" id="title" name="title" value="<?= $post['title'] ?>">
+                    <span class="politeWarning"><?= isset($titleError) ? $titleError : '' ?></span>
                 </div>
 
-                
                 <div class="form-group">                        
                     <label for="report">Report Topic</label>
-                    <select class="form-control" id="report" name="report">
-                        <option><?= $post['report_id'] ?></option>
-                        <option>Match Report - Senior</option>
-                        <option>Match Report - Junior</option>
-                        <option>Match Preview - Senior</option>
-                        <option>Match Preview - Junior</option>
-                        <option>Good Chat - Senior</option>
-                        <option>Good Chat - Junior</option>
+                    <select class="form-control" id="report" name="report_id">
+                        <option value="<?= $post['report_id'] ?>"><?= $post['report_id'] ?></option>
+                        <option value="1">Match Report - Senior</option>
+                        <option value="2">Match Report - Junior</option>
+                        <option value="3">Match Preview - Senior</option>
+                        <option value="4">Match Preview - Junior</option>
+                        <option value="5">Good Chat - Senior</option>
+                        <option value="6">Good Chat - Junior</option>
                     </select>
                 </div>
                 
                 <div class="form-group">                        
                     <label for="team">Team</label>
-                    <select class="form-control" id="team" name="team">
-                        <option><?= $post['report_id'] ?></option>
-                        <option>Premier 1</option>
-                        <option>Premier 2</option>
-                        <option>Colts</option>
-                        <option>Year 5</option>
+                    <select class="form-control" id="team" name="team_id">
+                        <option value="<?= $post['report_id'] ?>"><?= $post['report_id'] ?></option>
+                        <option value="1">Premier 1</option>
+                        <option value="2">Year 5 </option>
                     </select>
                 </div>
                 
@@ -79,6 +80,7 @@
                         <option><?= $post['location'] ?></option>
                         <option>Home</option>
                         <option>Away</option>
+                        <option>Chat</option>
                     </select>
                 </div>
 
@@ -94,18 +96,11 @@
                     </select>
                 </div>
 
-                <!-- ** Author?????-->
-
-                <!-- <div class="form-group">
-                    <label for="author">Author</label>
-                    <input type="text" class="form-control" id="author" placeholder="** Pre-populates with User First &amp; Last name. **">
-                </div> -->
-
-                <!-- UNSURE about Textarea form for Bootstrap  per next 2 textarea inputs-->
                 <!-- ** CAUTION make sure no extra paces between textarea tags or they will display! -->
                 <div class="form-group">
                     <label for="intro">Post Introduction</label>
                     <textarea class="form-control" rows="3" id="intro" name="intro"><?= $post['intro'] ?></textarea>
+                    <span class="politeWarning"><?= isset($introError) ? $introError : '' ?></span>
                 </div>
 
                 
@@ -113,6 +108,7 @@
                     <label for="article">Main Post Content</label>
                     <!-- <input type="textarea" class="form-control" id="mainPost" placeholder="This main content follows on from post intro."> -->
                     <textarea class="form-control" rows="10" id="article" name="article"><?= $post['article'] ?></textarea>
+                    <span class="politeWarning"><?= isset($articleError) ? $articleError : '' ?></span>
                 </div>    
 
 
@@ -128,7 +124,7 @@
               
 
 
-                <!--  Pending OR Approved checkboxes -->
+                <!--  ADMIN Pending OR Approved checkboxes -->
 
                 <div class="radio">
                     <label>
@@ -143,6 +139,9 @@
                     </label>
                 </div>
 
+
+
+
                 <!-- ** SUBMIT button **-->
 
                 <input type="submit" name="edit-post" class="btn btn-success" value="Submit">
@@ -151,7 +150,10 @@
                 <hr>
                 <!-- <button type="submit" class="btn btn-danger btn-md"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> -->
 
-            </form>    
+            </form>
+
+
+
 
             <!-- Delete Button trigger modal -->
             <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#postDeleteModal"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>

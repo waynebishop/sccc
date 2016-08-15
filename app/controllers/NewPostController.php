@@ -83,7 +83,7 @@ class NewPostController extends PageController {
 
 		}
 
-		// Location validation
+		// Type validation
 
 		if( $type == "Choose..." ) {
 			$this->data['typeMessage'] = '<span class="politeWarning">Required - Please choose game type from the drop down list.</span>';
