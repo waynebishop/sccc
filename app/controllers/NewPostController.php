@@ -135,7 +135,8 @@ class NewPostController extends PageController {
 			
 		}
 
-		// Image validation - must have image - inarray comapres this image error message with array of error codes
+		// Image validation - must have image - inarray compares this image error message with array of error codes
+		// Error codes 0 AOK, 1 exceeds max size, 3 only partially uploaded, 4 No file uploaded 
 		if( in_array( $_FILES['image']['error'], [1,3,4] ) ) {
 			// Show error message
 			// Use a switch to generate appropriate error message OR insert a default image per siteImages postDefaultImage 

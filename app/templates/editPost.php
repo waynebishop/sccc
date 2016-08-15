@@ -44,6 +44,7 @@
 
             <br>  
 
+            <!-- $_SERVER['REQUEST_URI' give you a copy paste of the url address bar instead of using $_GET -->
             <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
@@ -145,7 +146,7 @@
                 <!-- ** SUBMIT button **-->
 
                 <input type="submit" name="edit-post" class="btn btn-success" value="Submit">
-                <!--  <button type="submit" class="btn btn-success">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i></button> -->
+                <span class="politeWarning"><?= isset($updateMessage) ? $updateMessage : '' ?></span>
                 
                 <hr>
                 <!-- <button type="submit" class="btn btn-danger btn-md"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> -->

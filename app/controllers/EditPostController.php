@@ -1,8 +1,12 @@
 <?php
 
+// import the ** INTERVENTION IMAGE ** Manager Class
+use Intervention\Image\ImageManager;
+
 class EditPostController extends PageController {
 
 	// Properties
+	private $acceptableImageTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/bmp', 'image/tiff'];
 
 
 
@@ -65,13 +69,17 @@ class EditPostController extends PageController {
 			header("Location: index.php?page=blogPost&postid=$postID");
 		} else {
 
-			// Check -  what is user has submitted a post-edit form? Must keep changes.
+			// Check -  what if user has submitted a post-edit form? Must keep changes.
 			if( isset($_POST['edit-post']) ) {
 				// Use form data
 				$this->data['post'] = $_POST;
 
 				$result = $result->fetch_assoc();
 				$this->data['originalTitle'] = $result['title'];
+
+				// Make sure we use the current saved image from the DB if need to redisplay due to error msgs 
+				// as we can'thold the new image submitted if there was one.
+				$this->data['post']['image'] = $result['image'];
 
 
 
@@ -162,8 +170,94 @@ class EditPostController extends PageController {
 		// }
 
 
+		// IMAGE Validation
+		// Image validation - must have image - inarray compares this image error message with array of error codes
+		// Error codes 0 AOK, 1 exceeds max size, 3 only partially uploaded, 4 No file uploaded  
+		if( $_FILES['image']['name'] != '' ) {
+			
+			if( in_array( $_FILES['image']['error'], [1,3] ) ) {
+				// Show error message
+				// Use a switch to generate appropriate error message OR insert a default image per siteImages postDefaultImage 
+				$this->data['imageMessage'] = 'Image failed to upload';
+				$totalErrors++;			
+
+			} elseif( !in_array( $_FILES['image']['type'], $this->acceptableImageTypes )  ) {
+				// Show error message
+				$this->data['imageMessage'] = 'Must be an image ie. .jpeg, .png etc.';
+				$totalErrors++;
+
+			}
+
+		}
+
+		
 		// ** If there are no errors
 		if( $totalErrors == 0 ) {
+
+			$postID = $this->dbc->real_escape_string($_GET['id']);
+
+				// Get the name of the original image file 
+				$sql = "SELECT image FROM posts WHERE id =$postID";
+
+				// Run the query
+				$result = $this->dbc->query($sql);
+
+
+				// Extract the data
+				$result = $result->fetch_assoc();
+
+				// Get the image name
+				$imageName = $result['image'];
+
+			// If the user uploaded an image
+			if( $_FILES['image']['name'] != '' ) {
+
+				// *** INTERVENTION IMAGE ***
+				// create an image manager instance with favored driver
+				$manager = new ImageManager();
+
+				// Get the file that was just uploaded from temp files and save as $image
+				$image  = $manager->make( $_FILES['image']['tmp_name'] );
+
+				// Run $fileExtension function to get mime/file type ie jpeg, png etc.
+				$fileExtension = $this->getFileExtension( $image->mime() );
+
+				// Create random file name
+				$fileName = uniqid();
+
+				// Save the original to img/uploads/original folder
+				$image->save("img/uploads/original/{$fileName}{$fileExtension}");
+
+				// Resize for blogPost.php
+				// Resize the image to a width of 750 for blogHome page and constrain aspect ratio (auto height)
+				$image->resize(750, null, function ($constraint) {
+	   				 $constraint->aspectRatio();
+				});
+
+				// Save resized medium image for blogPost page NB {} in {$fileName}{$fileExtension} is optional to aid code appearance 
+				$image->save("img/uploads/blogPost/{$fileName}{$fileExtension}");
+
+				// Resize for blogHome.php
+				// Resize the image to a width of 500 for blogHome page and constrain aspect ratio (auto height)
+				$image->resize(500, null, function ($constraint) {
+	   				 $constraint->aspectRatio();
+				});
+
+				// Save resized smaller image for blogHome page NB {} in {$fileName}{$fileExtension} is optional to aid code appearance 
+				$image->save("img/uploads/blogHome/{$fileName}{$fileExtension}");
+
+				// Delete the old image to free up space / save storage costs
+				// Destroy the old image file in the img folders
+				unlink("img/uploads/original/$imageName");
+				unlink("img/uploads/blogHome/$imageName");
+				unlink("img/uploads/blogPost/$imageName");
+
+				// Change the $imageName to be the new filename
+				$imageName = $fileName.$fileExtension;
+
+			}
+
+			// *** Upload part
 
 			// Filter the data
 			$title = $this->dbc->real_escape_string($title);
@@ -175,8 +269,9 @@ class EditPostController extends PageController {
 			$location = $this->dbc->real_escape_string($location);
 			$type = $this->dbc->real_escape_string($type);
 
-			$postID = $this->dbc->real_escape_string($_GET['id']);
 			$userID = $_SESSION['id'];
+
+			// Did the user upload an image
 
 
 			// Prepare the SQL
@@ -187,17 +282,55 @@ class EditPostController extends PageController {
 						report_id = '$report',
 						team_id = '$team',
 						location= '$location',
-						type = '$type'
+						type = '$type',
+						image = '$imageName'
 					WHERE id = $postID
 					AND user_id = $userID";
 
 			$this->dbc->query($sql);
 
+			// Validation to make sure query ran
+			if( $this->dbc->affected_rows == 0 ) {
+				$this->data['updateMessage'] = 'Nothing changed. Update failed OR no changes submitted.';
+			} else {
+
 			// Redirect user back to blogPost
 			header("Location: index.php?page=blogPost&postid=$postID");
 
+			}
+
 		}
 
+
+	}
+
+	// This function part of image handling above
+
+	private function getFileExtension( $mimeType ) {
+
+		switch($mimeType) {
+
+			case 'image/png':
+				return '.png';
+			break;
+
+			case 'image/gif':
+				return '.gif';
+			break;
+
+			case 'image/jpeg':
+				return '.jpg';
+			break;
+
+			case 'image/bmp':
+				return '.bmp';
+			break;
+
+			case 'image/tiff':
+				return '.tiff';
+			break;
+
+		}
 
 	}
 
