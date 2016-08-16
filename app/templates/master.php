@@ -57,7 +57,7 @@
             <!-- Display if IS logged in : Log Out and My Account -->
             <?php if( isset($_SESSION['id']) ): ?>
 
-              <li role="presentation"><a href="index.php?page=blogLogin"><i class="fa fa-sign-out" aria-hidden="true"></i> Log out</a></li>
+              <li role="presentation"><a href="index.php?page=blogLogout"><i class="fa fa-sign-out" aria-hidden="true"></i> Log out</a></li>
 
               <li role="presentation"><a href="index.php?page=blogMyAccount"><i class="fa fa-user" aria-hidden="true"></i> My Account</a></li>
                         

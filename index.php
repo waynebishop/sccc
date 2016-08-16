@@ -45,6 +45,16 @@ switch($page) {
 		$controller = new BlogLoginController($dbc);
 	break;
 
+	// Blog Logout
+	case 'blogLogout';
+		
+		unset($_SESSION['id']);
+		unset($_SESSION['privilege']);
+		header ('Location: Index.php');
+
+	break;	
+
+
 	// Blog My Account
 	case 'blogMyAccount';
 		require 'app/controllers/BlogMyAccountController.php';
