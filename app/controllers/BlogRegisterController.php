@@ -125,7 +125,9 @@ class BlogRegisterController extends PageController {
 
 
 			// Log the user in - insert_id shows the latest added use ID
-			$_SESSION['id'] = $this->dbc->insert_id;  
+			$_SESSION['id'] = $this->dbc->insert_id;
+			// Record the default privilege status user in the SESSION key
+			$_SESSION['privilege'] = 'user';  
 
 			// Redirect th user to the blog home page
 			header('Location: index.php?page=blogHome'); 

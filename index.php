@@ -46,14 +46,11 @@ switch($page) {
 	break;
 
 	// Blog Logout
-	case 'blogLogout';
-		
+	case 'blogLogout';		
 		unset($_SESSION['id']);
 		unset($_SESSION['privilege']);
 		header ('Location: Index.php');
-
 	break;	
-
 
 	// Blog My Account
 	case 'blogMyAccount';
