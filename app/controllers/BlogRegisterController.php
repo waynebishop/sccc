@@ -15,6 +15,10 @@ class BlogRegisterController extends PageController {
 		// Save the database connection per private $dbc above
 		$this->dbc = $dbc;
 
+
+		// If user already logged in then redirect to blogHome page
+		$this->mustBeLoggedOut();
+
 		// If the user has submitted rego form
 		if( isset($_POST['new-account']) ) {
 			$this->validateRegistrationForm();

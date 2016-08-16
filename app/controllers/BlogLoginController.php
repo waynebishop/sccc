@@ -12,6 +12,9 @@ class BlogLoginController extends PageController {
 		// Run the parent constructor
 		parent::__construct();
 
+		// If user already logged in then redirect to blogHome page
+		$this->mustBeLoggedOut();
+
 		// Save the database connection per private $dbc above
 		$this->dbc = $dbc;
 
