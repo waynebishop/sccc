@@ -44,14 +44,25 @@
 
             <li role="presentation"><a href="index.php?page=blogHome"><i class="fa fa-bullhorn" aria-hidden="true"></i> Blog</a></li>
 
-            <li role="presentation"><a href="index.php?page=blogLogin"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
 
-            <li role="presentation"><a href="index.php?page=blogLogin"><i class="fa fa-sign-out" aria-hidden="true"></i> Log out</a></li>
+            <!-- Display if NOT logged in : Login and Sign Up -->
+            <?php if( !isset($_SESSION['id']) ): ?>
 
-            <li role="presentation"><a href="index.php?page=blogRegister"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign up</a></li>
+              <li role="presentation"><a href="index.php?page=blogLogin"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
 
-            <li role="presentation"><a href="index.php?page=blogMyAccount"><i class="fa fa-user" aria-hidden="true"></i> My Account</a></li>
+              <li role="presentation"><a href="index.php?page=blogRegister"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign up</a></li>            
+                        
+            <?php endif ?> 
 
+            <!-- Display if IS logged in : Log Out and My Account -->
+            <?php if( isset($_SESSION['id']) ): ?>
+
+              <li role="presentation"><a href="index.php?page=blogLogin"><i class="fa fa-sign-out" aria-hidden="true"></i> Log out</a></li>
+
+              <li role="presentation"><a href="index.php?page=blogMyAccount"><i class="fa fa-user" aria-hidden="true"></i> My Account</a></li>
+                        
+            <?php endif ?>   
+           
           </ul>
 
         </div>
