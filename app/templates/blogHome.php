@@ -32,15 +32,36 @@
 
         <div class="col-md-8">
 
-            <!-- Post Pending Button Alert for Admin only -->
-            <a class="btn btn-warning" href="index.php?page=blogPending" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Posts Pending: 4</a>
+            <!-- ** ADMIN privilege BUTTONS **-->
 
-            <!-- Admin Maintenance Button for Admin only -->
-            <a class="btn btn-info" href="index.php?page=blogAdmin" role="button"><i class="fa fa-cog" aria-hidden="true"></i> Blog Admin</a>
-            
-            <!-- Create a new post Button -->
+            <!-- First check if logge in -->
+            <?php if( isset($_SESSION['id']) ): ?>
 
-            <a class="btn btn-success" href="index.php?page=newPost" role="button"><i class="fa fa-pencil" aria-hidden="true"></i> Create New Post</a>
+                <!-- Second check if has admin privilege & if true show Admin buttons -->
+
+                <?php if($_SESSION['privilege'] == 'admin') : ?>
+                <!-- Post Pending Button Alert for Admin only -->    
+                <a class="btn btn-warning" href="index.php?page=blogPending" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Posts Pending: 4</a>
+
+                <!-- Admin Maintenance Button for Admin only -->
+                <a class="btn btn-info" href="index.php?page=blogAdmin" role="button"><i class="fa fa-cog" aria-hidden="true"></i> Blog Admin</a>
+
+                <?php endif; ?>
+
+                <!-- Third check for author privilege - if true show Post button -->
+                
+                <?php if($_SESSION['privilege'] == 'author' || $_SESSION['privilege'] == 'admin') : ?> 
+             
+                <!-- Create a new post Button -->
+                <a class="btn btn-success" href="index.php?page=newPost" role="button"><i class="fa fa-pencil" aria-hidden="true"></i> Create New Post</a>
+
+                 <?php endif; ?>
+
+            <?php endif; ?>  
+
+
+             <!-- BLOG POSTS -->
+
 
             <h1 class="page-header">
                 Captains Blog

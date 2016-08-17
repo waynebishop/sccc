@@ -57,8 +57,13 @@ class EditPostController extends PageController {
 		// Prepare the query
 		$sql = "SELECT title, intro, article, image, location, type, user_id, team_id, report_id, status
 				FROM posts
-				WHERE id = $postID
-				AND user_id = $userID";
+				WHERE id = $postID";
+
+		if( $_SESSION['privilege'] != 'admin' ) {
+
+			$sql .= " AND user_id = $userID";	
+
+		} 		
 
 		// Run the query
 		$result = $this->dbc->query($sql);
@@ -271,8 +276,10 @@ class EditPostController extends PageController {
 
 			$userID = $_SESSION['id'];
 
-			// Did the user upload an image
+			// ADMIN We need to cover off edit by Admin as the AND user_id = $userID in the SQL below will fail if admin wasn't author.
+			// Needd an if statement which makes $userID equal actual post author so it works. maybe run SQL query to get author ID??			
 
+			// Did the user upload an image
 
 			// Prepare the SQL
 			$sql = "UPDATE posts
@@ -284,8 +291,13 @@ class EditPostController extends PageController {
 						location= '$location',
 						type = '$type',
 						image = '$imageName'
-					WHERE id = $postID
-					AND user_id = $userID";
+					WHERE id = $postID";
+
+			if( $_SESSION['privilege'] != 'admin' ) {
+
+				$sql .= " AND user_id = $userID";
+
+			}		
 
 			$this->dbc->query($sql);
 

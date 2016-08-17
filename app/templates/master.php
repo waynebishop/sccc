@@ -94,7 +94,7 @@
               </ul>
 
               <ul class="nav navbar-nav navbar-right">     
-                <li><a href="#"> Copyright &copy; Bish Design 2016</a></li>
+                <li><a href="#"> Copyright &copy; BiSH Design 2016</a></li>
               </ul>  
 
             </div>

@@ -54,9 +54,9 @@
                 <?php 
                     // Are they logged in? must be.
                     if( isset($_SESSION['id']) ) {
-                        // Check to see if logged in User matches post author/User
-                        if( $_SESSION['id'] == $post['user_id'] ) {
-                            // True = owns the post
+                        // Check to see if logged in User matches post author/User OR has admin privileges
+                        if( $_SESSION['id'] == $post['user_id'] || $_SESSION['privilege'] == 'admin') {
+                            // True = owns the post OR logged in as ** admin **
                             ?> <!-- Close php-->
 
                 <a class="btn btn-warning btn-sm" href="index.php?page=editPost&id=<?= $_GET['postid'] ?>" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Post</a>
@@ -65,15 +65,10 @@
                 <!-- See alt modal below comented out-->            
 
                                <!-- Open new php tags --> 
-                            <? 
-
-
-
+                            <?
                         }
-
                     }
-
-                ?>
+                ?> <!-- /. PHP section closed -->
 
                 <!-- Image -->
 
@@ -152,7 +147,15 @@
                             <textarea  name="comment" id="comment" cols="30" class="form-control" rows="5"></textarea>
                         </div>
 
+                        <!-- Only show Comment Submit if logged in -->
+                        <?php if( isset($_SESSION['id'])) : ?>
                         <input type="submit" name="new-comment" value="Submit" class="btn btn-success">
+                        <?php endif; ?>
+
+                        <?php if( !isset($_SESSION['id'])) : ?>
+                            <span>Hi there! <a href="index.php?page=blogLogin">Login</a> OR <a href="index.php?page=blogRegister">Sign-up </a> to make a comment. We'd love to hear from you.</span>
+                        <?php endif; ?>
+
 
                     </form>
 
@@ -189,16 +192,11 @@
                             if( isset($_SESSION['id']) ) {
 
                                 // Does this user own the comment?
-                                if( $_SESSION['id'] == $comment['user_id'] ) {
+                                if( $_SESSION['id'] == $comment['user_id'] || $_SESSION['privilege'] == 'admin' ) {
                                     // Yes - logged in user owns the comment!
-                                    echo 'Delete';
+                                    echo '<a class="btn btn-danger btn-xs" href="#" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Delete </a>';
 
-                                    //EDIT 
-                                    // Ben link
-
-                                    // echo '<a href="index.php?page=editComment&id='. $comment['id'] .'">Edit</a>';
-
-                                    // OR yellow button
+                                    echo ' ';
 
                                     echo '<a class="btn btn-warning btn-xs" href="index.php?page=editComment&id='. $comment['id'] .'" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit </a>';
 
@@ -218,7 +216,11 @@
                         <!-- Comment Delete Button & modal -->
 
                         <!-- Comment Delete Button trigger modal -->
-                        <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#commentDeleteModal1"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                        <!-- 
+
+                        <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#commentDeleteModal1"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> 
+
+                        -->
 
                         <!-- Delete Comment Modal -->
 
