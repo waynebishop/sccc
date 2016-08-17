@@ -59,9 +59,23 @@
                             // True = owns the post OR logged in as ** admin **
                             ?> <!-- Close php-->
 
-                <a class="btn btn-warning btn-sm" href="index.php?page=editPost&id=<?= $_GET['postid'] ?>" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Post</a>
+                <a class="btn btn-warning btn-sm" href="index.php?page=editPost&id=<?= $_GET['postid'] ?>" role="button">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Post</a>
 
-                <a class="btn btn-danger btn-sm" href="index.php?page=editPost&id=<?= $_GET['postid'] ?>" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Delete Post</a>
+                <!-- DELETE POST button function-->
+
+                <button id="delete-post" class="btn btn-danger btn-sm">Delete</button>
+
+                <div id="delete-post-options">
+                    <a href="<?= $_SERVER['REQUEST_URI']?>&delete">Yes</a> / <button>No</button>                            
+                </div>
+
+
+
+
+                <!-- <a class="btn btn-danger btn-sm" href="index.php?page=editPost&id=<?= $_GET['postid'] ?>" role="button">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Delete Post</a> -->
+                
                 <!-- See alt modal below comented out-->            
 
                                <!-- Open new php tags --> 
@@ -296,4 +310,16 @@
     </div>  <!-- /.row -->
 
 </div> <!-- /.container -->
+
+<script>
+
+    $(document).ready(function(){
+        $('#delete-post, #delete-post-options button').click(function(){
+            // Toggle visibility of the Delete options Yes / No
+            $('#delete-post-options').toggle();
+
+        });
+    });
+
+</script>
 

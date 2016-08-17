@@ -15,6 +15,11 @@ class BlogPostController extends PageController {
 		// Save the database connection per private $dbc above
 		$this->dbc = $dbc;
 
+		// Does user want to delete this post??
+		if( isset($_GET['delete']) ) {
+			$this->deletePost();
+		}
+
 		// Did the user add a comment
 		if( isset($_POST['new-comment']) ) {
 			$this->processNewComment();
@@ -130,6 +135,60 @@ class BlogPostController extends PageController {
 
 		} 
 
+
+
+
+
+	}
+
+	private function deletePost() {
+
+		// Is user NOT logged in
+		if( !isset($_SESSION['id']) ) {
+			return;
+		}
+
+		// Make sure user owns post
+		
+		$postID = $this->dbc->real_escape_string($_GET['postid']);
+		$userID = $_SESSION['id'];
+		$privilege = $_SESSION['privilege'];
+
+		// Delete the image first - need to get image name form DB via sql query
+		$sql = "SELECT image
+				FROM posts
+				WHERE id = $postID";
+
+		// if the user is not an admin
+		if( $privilege != 'admin' ) {
+			$sql .= " AND user_id = $userID";
+		}		
+				
+		//  Run this image read query
+		$result = $this->dbc->query($sql);
+
+		// If the query failed - post doesn't exist OR user doesn't own it
+		// Return will stop Delete function & let rest of page code run
+		if ( !$result || $result->num_rows == 0 ) {
+			return;
+		}		
+
+		$result = $result->fetch_assoc();
+
+		$filename = $result['image'];
+
+		die($filename);
+
+		// Prepare the sql
+		$sql = "DELETE FROM posts
+				WHERE id = $postID";
+
+		// If user is not Admin they must own the post
+		if( $privilege != 'admin' ) {
+			$sql .= " AND user_id = $userID";
+		}
+
+		// Run the query
 
 
 
