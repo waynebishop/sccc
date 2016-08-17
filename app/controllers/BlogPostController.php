@@ -127,17 +127,9 @@ class BlogPostController extends PageController {
 
 			// Make sure query worked ** TO DO ** as for newpost
 
-
-
 			
 
-
-
 		} 
-
-
-
-
 
 	}
 
@@ -159,7 +151,7 @@ class BlogPostController extends PageController {
 				FROM posts
 				WHERE id = $postID";
 
-		// if the user is not an admin
+		// ** Privilege Check ** if the user is not an admin check user_id too
 		if( $privilege != 'admin' ) {
 			$sql .= " AND user_id = $userID";
 		}		
@@ -177,25 +169,23 @@ class BlogPostController extends PageController {
 
 		$filename = $result['image'];
 
-		die($filename);
+		unlink("img/uploads/blogHome/$filename");
+		unlink("img/uploads/blogPost/$filename");
+		unlink("img/uploads/original/$filename");
 
 		// Prepare the sql
 		$sql = "DELETE FROM posts
 				WHERE id = $postID";
 
-		// If user is not Admin they must own the post
-		if( $privilege != 'admin' ) {
-			$sql .= " AND user_id = $userID";
-		}
-
 		// Run the query
+		$this->dbc->query($sql);
 
-
-
+		// Redirect user back to blogHome page
+		header('Location: index.php?page=blogHome');
+		// Die below needed as otherwiese header redirect fails
+		die();
 
 	} 
-
-
 
 }
 
