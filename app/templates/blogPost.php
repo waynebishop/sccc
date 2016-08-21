@@ -67,16 +67,11 @@
                 <button id="delete-post" class="btn btn-danger btn-sm">Delete</button>
 
                 <div id="delete-post-options">
-                    
-                    <a href="<?= $_SERVER['REQUEST_URI']?>&delete" class="btn btn-danger btn-sm">Yes please delete post.</a> / <button class="btn btn-primary btn-sm">No please keep the post.</button>                            
+
+                    <a href="<?= $_SERVER['REQUEST_URI']?>&delete" class="btn btn-danger btn-sm">Yes please delete post.</a><button class="btn btn-primary btn-sm">No please keep the post.</button>                            
                 </div>
 
-
-
-
-                <!-- <a class="btn btn-danger btn-sm" href="index.php?page=editPost&id=<?= $_GET['postid'] ?>" role="button">
-                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Delete Post</a> -->
-                
+                       
                 <!-- See alt modal below comented out-->            
 
                                <!-- Open new php tags --> 
@@ -160,7 +155,7 @@
                     <form action="index.php?page=blogPost&postid=<?= $_GET['postid'] ?>" method="post">
                         <div class="form-group">
                             <label for"comment">Write your comment here: </label>
-                            <textarea  name="comment" id="comment" cols="30" class="form-control" rows="5"></textarea>
+                            <textarea  name="comment" id="comment" cols="30" class="form-control" rows="5" placeholder="If the green 'Submit' button does not appear below please Login or Sign-up before typing your comment."></textarea>
                         </div>
 
                         <!-- Only show Comment Submit if logged in -->
@@ -191,9 +186,13 @@
                     </a>
                     <div class="media-body">
                         <h4 class="media-heading">
-                            <?= htmlentities($comment['author']) ?>                            
+                            
+                            <?= htmlentities($comment['author']) ?>
+
                             <small><i class="fa fa-clock-o" aria-hidden="true"></i> Created: <?= $comment['created_at'] ?></small>
                             <small><i class="fa fa-clock-o" aria-hidden="true"></i> Updated: <?= $comment['updated_at'] ?></small>
+                            <small> Comment ID# <?= ($comment['id']) ?> </small>
+
                         </h4>
 
 
@@ -209,12 +208,25 @@
 
                                 // Does this user own the comment?
                                 if( $_SESSION['id'] == $comment['user_id'] || $_SESSION['privilege'] == 'admin' ) {
-                                    // Yes - logged in user owns the comment!
-                                    echo '<a class="btn btn-danger btn-xs" href="#" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Delete </a>';
+                                    // Yes - logged in user owns the comment OR has Admin privilege!
+
+                                    // echo '<a class="btn btn-danger btn-xs" href="#" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Delete </a>';
 
                                     echo ' ';
 
                                     echo '<a class="btn btn-warning btn-xs" href="index.php?page=editComment&id='. $comment['id'] .'" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit </a>';
+
+
+                                    ?>
+                                    <button id="delete-comment" class="btn btn-danger btn-xs">Delete</button>
+
+                                    <div class="delete-comment-options">
+
+                                         <a class="btn btn-danger btn-sm" href="<?= $_SERVER['REQUEST_URI']?>&deleteComment&commentid=<?= $comment['id'] ?>"> Yes please delete comment.</a><button class="btn btn-primary btn-sm">No please keep the comment.</button>                            
+                                     </div>
+
+
+                                    <?php 
 
                                 } 
                             }
@@ -313,12 +325,28 @@
 
 </div> <!-- /.container -->
 
+<!-- JS for Delete post button toggle-->
+
 <script>
 
     $(document).ready(function(){
         $('#delete-post, #delete-post-options button').click(function(){
             // Toggle visibility of the Delete options Yes / No
             $('#delete-post-options').toggle();
+
+        });
+    });
+
+</script>
+
+<!-- JS for Delete comment button toggle-->
+
+<script>
+
+    $(document).ready(function(){
+        $('#delete-comment, .delete-comment-options button').click(function(){
+            // Toggle visibility of the Delete options Yes / No
+            $('.delete-comment-options').toggle();
 
         });
     });

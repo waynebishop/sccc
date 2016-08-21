@@ -20,6 +20,12 @@ class BlogPostController extends PageController {
 			$this->deletePost();
 		}
 
+		// Does user want to delete a comment??
+		if( isset($_GET['deleteComment']) ) {
+			$this->deleteComment();
+		}
+
+
 		// Did the user add a comment
 		if( isset($_POST['new-comment']) ) {
 			$this->processNewComment();
@@ -184,6 +190,60 @@ class BlogPostController extends PageController {
 		header('Location: index.php?page=blogHome');
 		// Die below needed as otherwiese header redirect fails
 		die();
+
+	}
+
+	private function deleteComment() {
+
+		// Is user NOT logged in
+		if( !isset($_SESSION['id']) ) {
+			return;
+		}
+
+		// Make sure user owns comment
+		
+		$postID = $this->dbc->real_escape_string($_GET['postid']);
+		$commentID = $this->dbc->real_escape_string($_GET['commentid']);
+		$userID = $_SESSION['id'];
+		$privilege = $_SESSION['privilege'];
+
+		
+
+
+		// Check to see if comment there and they are owner
+		$sql = "SELECT comment, post_id
+				FROM comments
+				WHERE id = $commentID";
+
+		// ** Privilege Check ** if the user is not an admin check user_id too
+		if( $privilege != 'admin' ) {
+			$sql .= " AND user_id = $userID";
+		}		
+				
+		//  Run this image read query
+		$result = $this->dbc->query($sql);
+
+		// If the query failed - post doesn't exist OR user doesn't own it
+		// Return will stop Delete function & let rest of page code run
+		if ( !$result || $result->num_rows == 0 ) {
+			return;
+		}		
+
+		$result = $result->fetch_assoc();
+
+		// Prepare the sql
+		$sql = "DELETE FROM comments
+				WHERE id = $commentID";
+
+		// Run the query
+		$this->dbc->query($sql);
+
+		// Redirect user back to blogPost page with the relvent post
+
+		header('Location: index.php?page=blogPost&postid='.$postID);
+
+		// Die below needed as otherwiese header redirect fails
+		die();		
 
 	} 
 
