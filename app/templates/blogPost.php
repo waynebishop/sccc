@@ -67,7 +67,8 @@
                 <button id="delete-post" class="btn btn-danger btn-sm">Delete</button>
 
                 <div id="delete-post-options">
-                    <a href="<?= $_SERVER['REQUEST_URI']?>&delete">Yes</a> / <button>No</button>                            
+                    
+                    <a href="<?= $_SERVER['REQUEST_URI']?>&delete" class="btn btn-danger btn-sm">Yes please delete post.</a> / <button class="btn btn-primary btn-sm">No please keep the post.</button>                            
                 </div>
 
 
@@ -115,13 +116,14 @@
                             </div>
                             <div class="modal-body">
                                 <p>Are you certain that you want to delete this post?</p>
-                                
+                                                                
                                 <div class="radio">
                                     <label>
                                         <input type="radio" name="postDeleteConfirm" value="no" checked>
                                         NO I want to keep it.
                                     </label>
                                 </div>
+
                                 <div class="radio">
                                     <label>
                                         <input type="radio" name="postDeleteConfirm" value="yes">
@@ -137,7 +139,7 @@
                             </div>
                         </div>
                     </div> 
-                </div>  -->
+                </div> --> 
 
                 <!-- *** /End Delete Post Button & Modal-->
 
@@ -230,11 +232,11 @@
                         <!-- Comment Delete Button & modal -->
 
                         <!-- Comment Delete Button trigger modal -->
-                        <!-- 
+                        
 
-                        <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#commentDeleteModal1"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> 
+                       <!--  <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#commentDeleteModal1"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> --> 
 
-                        -->
+                       
 
                         <!-- Delete Comment Modal -->
 
