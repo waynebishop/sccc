@@ -90,54 +90,6 @@
 
                 <p><?= htmlentities($post['article']) ?></p>
 
-
-                <!-- *** OLD Edit button -->
-
-               <!--  <a class="btn btn-warning btn-sm" href="index.php?page=editPost" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Post</a> -->
-
-                
-                <!-- *** OLD Post Delete Button trigger modal -->
-
-                <!-- <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#postDeleteModal"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> -->
-
-                <!-- *** Post Delete Modal -->
-
-                <!-- <div class="modal fade" id="postDeleteModal" tabindex="-1" role="dialog" aria-labelledby="postDelete">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="postDelete"> Delete Post Confirmation</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p>Are you certain that you want to delete this post?</p>
-                                                                
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="postDeleteConfirm" value="no" checked>
-                                        NO I want to keep it.
-                                    </label>
-                                </div>
-
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="postDeleteConfirm" value="yes">
-                                        YES please delete the post.
-                                    </label>
-                                </div>
-           
-                            </div>
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Submit </button>
-                            </div>
-                        </div>
-                    </div> 
-                </div> --> 
-
-                <!-- *** /End Delete Post Button & Modal-->
-
                 <hr>
 
             </article> <!-- End of Post Article -->
@@ -218,82 +170,28 @@
 
 
                                     ?>
-                                    <button id="delete-comment" class="btn btn-danger btn-xs">Delete</button>
+                                    <button class="btn btn-danger btn-xs delete-comment">Delete</button>
 
                                     <div class="delete-comment-options">
 
                                          <a class="btn btn-danger btn-sm" href="<?= $_SERVER['REQUEST_URI']?>&deleteComment&commentid=<?= $comment['id'] ?>"> Yes please delete comment.</a><button class="btn btn-primary btn-sm">No please keep the comment.</button>                            
                                      </div>
 
-
                                     <?php 
-
                                 } 
                             }
-
                         ?>
 
                         <br>
                         <br>
                         <br>
-
-                        <!-- Original DELETE and EDIT buttons and DELETE modals -->
-
-                        <!-- <a class="btn btn-warning btn-xs" href="" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit </a> -->
-
-                        <!-- Comment Delete Button & modal -->
-
-                        <!-- Comment Delete Button trigger modal -->
-                        
-
-                       <!--  <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#commentDeleteModal1"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> --> 
-
-                       
-
-                        <!-- Delete Comment Modal -->
-
-                        <div class="modal fade" id="commentDeleteModal1" tabindex="-1" role="dialog">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="commentDelete"> Delete Comment Confirmation</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Are you certain that you want to delete this comment?</p>
-                                        
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="commentDeleteConfirm" value="no" checked>
-                                                NO I want to keep it.
-                                            </label>
-                                        </div>
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="commentDeleteConfirm" value="yes">
-                                                YES please delete this comment.
-                                            </label>
-                                        </div>
-                   
-                                    </div>
-
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Submit </button>
-                                    </div>
-                                </div>
-                            </div> 
-                        </div> 
-                        <!-- /End Comment Delete Button & Modal-->
-
+                                                
                     </div> <!-- / End media-body -->
                     
                 </div> <!-- End of individual comment class="media" -->
 
 
                 <?php endforeach ?>
-
-
 
 
             </section>
@@ -330,24 +228,25 @@
 <script>
 
     $(document).ready(function(){
+
         $('#delete-post, #delete-post-options button').click(function(){
             // Toggle visibility of the Delete options Yes / No
             $('#delete-post-options').toggle();
 
         });
-    });
 
-</script>
 
-<!-- JS for Delete comment button toggle-->
-
-<script>
-
-    $(document).ready(function(){
-        $('#delete-comment, .delete-comment-options button').click(function(){
+        $('.delete-comment').click(function(){
             // Toggle visibility of the Delete options Yes / No
-            $('.delete-comment-options').toggle();
+            $(this).parent().children('.delete-comment-options').toggle();
+            // console.log($(this));
+        });
 
+
+        $('.delete-comment-options button').click(function(){
+            // Toggle visibility of the Delete options Yes / No
+            $(this).parent().toggle();
+            // console.log($(this));
         });
     });
 
