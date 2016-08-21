@@ -88,6 +88,12 @@ switch($page) {
 		$controller = new BlogAdminController($dbc);		
 	break;
 
+	// Blog Search
+	case 'blogSearch';
+		require 'app/controllers/BlogSearchController.php';
+		$controller = new BlogSearchController($dbc);		
+	break;
+
 	case 'error404':
 		require 'app/controllers/Error404Controller.php';
 		$controller = new Error404Controller($dbc);
