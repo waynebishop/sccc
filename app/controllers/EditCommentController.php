@@ -45,7 +45,12 @@ class EditCommentController extends PageController {
 
 		// Get the commentdetails from the DB
 		$sql = "SELECT comment, post_id 
-				FROM comments 
+				FROM comments
+
+				
+
+
+				 
 				WHERE id = $commentID ";
 
 		// If the user is not an admin ** ADMIN SPECIAL **

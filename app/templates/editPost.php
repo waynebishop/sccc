@@ -56,7 +56,7 @@
                 <div class="form-group">                        
                     <label for="report">Report Topic</label>
                     <select class="form-control" id="report" name="report_id">
-                        <option value="<?= $post['report_id'] ?>"><?= $post['report_id'] ?></option>
+                        <option value="<?= $post['report_id'] ?>"><?= $post['purpose'] ?> - <?= $post['reportsJrSr'] ?></option>
                         <option value="1">Match Report - Senior</option>
                         <option value="2">Match Report - Junior</option>
                         <option value="3">Match Preview - Senior</option>
@@ -69,7 +69,7 @@
                 <div class="form-group">                        
                     <label for="team">Team</label>
                     <select class="form-control" id="team" name="team_id">
-                        <option value="<?= $post['report_id'] ?>"><?= $post['report_id'] ?></option>
+                        <option value="<?= $post['report_id'] ?>"><?= $post['team_name'] ?> - <?= $post['teamsJrSr'] ?> <?= $post['grade'] ?></option>
                         <option value="1">Premier 1</option>
                         <option value="2">Year 5 </option>
                     </select>

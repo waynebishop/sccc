@@ -21,6 +21,8 @@ class EditPostController extends PageController {
 
 		$this->mustBeLoggedIn();
 
+
+
 		// Did user submit edit form
 		if( isset($_POST['edit-post']) ) {
 			$this->processPostEdit();
@@ -28,9 +30,6 @@ class EditPostController extends PageController {
 
 		// Get post info
 		$this->getPostInfo();
-
-
-
 
 
 	}
@@ -44,6 +43,7 @@ class EditPostController extends PageController {
 		
 	}
 
+
 	private function getPostInfo() {
 
 		// Get POST ID from GET array ie address bar
@@ -55,9 +55,16 @@ class EditPostController extends PageController {
 		$userID = $_SESSION['id'];
 
 		// Prepare the query
-		$sql = "SELECT title, intro, article, image, location, type, user_id, team_id, report_id, status
+		$sql = "SELECT posts.id, title, intro, article, image, location, type, user_id, team_id, report_id, status, purpose, reportsJrSr, team_name, grade, teamsJrSr
 				FROM posts
-				WHERE id = $postID";
+
+				JOIN reports
+				ON report_id = reports.id
+
+				JOIN teams
+				ON team_id = teams.id
+
+				WHERE posts.id = $postID";
 
 		if( $_SESSION['privilege'] != 'admin' ) {
 
@@ -65,13 +72,17 @@ class EditPostController extends PageController {
 
 		} 		
 
+
 		// Run the query
 		$result = $this->dbc->query($sql);
+
 
 		// If the query failed
 		if( !$result || $result->num_rows == 0 ) {
 			// Send the user back to the blogPost page - Don't own post or No post there or Query just failed
+				
 			header("Location: index.php?page=blogPost&postid=$postID");
+
 		} else {
 
 			// Check -  what if user has submitted a post-edit form? Must keep changes.
