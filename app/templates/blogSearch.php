@@ -10,12 +10,10 @@
 <!-- Breadcrumbs -->
 <div class="container">
 
-    <!-- ***** THIS IS JUST TO SHOW SESSION ID ***** -->
-    <!-- <?= $_SESSION['id'] ?> -->
-    
     <ol class="breadcrumb">
         <li><a href="index.php?page=home">Home</a></li>
-        <li><a href="index.php?page=blogHome" class="active">Captains Blog</a></li>    
+        <li><a href="index.php?page=blogHome">Captains Blog</a></li>
+        <li><a href="index.php?page=blogHome" class="active">Captains Blog Search</a></li>     
     </ol>
 
 </div>
@@ -57,79 +55,36 @@
 
                  <?php endif; ?>
 
-            <?php endif; ?>  
+            <?php endif; ?>
 
-
-             <!-- BLOG POSTS -->
-
+            <!-- Page Heading  -->
 
             <h1 class="page-header">
                 Captains Blog
-                <small>Reports &amp; Chat</small>
-            </h1>
+                <small>Search Results</small>
+            </h1>  
+            
+            <!-- ** Display Search Results ** -->
 
-            <!-- BLOG POSTS start here -->
+            <h2>Search results for "<i><?= $this->e($searchTerm) ?></i>"</h2>
 
-            <?php foreach($allPosts as $item): ?>
+            <?php if(strlen($searchTerm) > 0): ?>
+                <?php if($searchResults > 0): ?>
+                    <?php foreach($searchResults as $Result): ?>
+                        <h3><?= $Result['score_title'] ?> </h3>
+                        <p><?= $Result['score_intro'] ?> </p>
+                        <a href="index.php?page=blogPost&postid=<?= $Result['id'] ?>">View Post ID# <?= $Result['id'] ?></a>
 
-            <article>
+                        <hr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p>There were no results for "<i><?= $this->e($searchTerm) ?></i>"</p>
+                <?php endif; ?>
+            <?php else: ?>
+                <p>Please enter details in the search bar.</p>
+            <?php endif; ?>                    
 
-                <!-- Blog Post NB image size 750 x 500 -->
-                <h2>
-                    <a href="index.php?page=blogPost&postid=<?= $item['id'] ?>"> <?= htmlentities($item['title']) ?> </a>
-                </h2>
 
-                <p class="lead">
-                   <a href="index.php">ReportID: <?= $item['report_id'] ?> </a> for team <a href="index.php">TeamID: <?= $item['team_id'] ?> </a>by <a href="index.php">AuthorID: <?= $item['user_id'] ?>
-                   </a>Grade: <a href="index.php">TBC Join Team Table </a>
-                </p>
-
-                <p>Location: <a href="#"> <?= $item['location'] ?> </a>Game: <a href="#"> <?= $item['type'] ?> </a>
-                <span><strong>Post ID: <?= $item['id'] ?> </strong></span>
-                <span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on: <?= $item['created_at'] ?></span>
-                <span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Updated on: <?= $item['updated_at'] ?> <span>
-                </p>
-
-                
-                <br>
-
-                <!-- IMAGE section -->
-
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2" class="bg-info">
-
-                        <a href="index.php?page=blogPost&postid=<?= $item['id'] ?>">
-                            <img class="img-responsive" src="img/uploads/blogHome/<?= $item['image'] ?>" alt="Acricket photograph">
-                        </a>
-
-                    </div>
-                </div>
-
-                <br>
-
-                <!-- Intro -->
-
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-1" class="bg-info">
-
-                        <p> <strong> <?= htmlentities($item['intro']) ?> </strong></p>
-
-                    </div>
-                </div>
-                
-                <!-- READ MORE BUTTON -->
-
-                <div class="row">
-                    <div class="col-md-1 col-md-offset-8" class="bg-info">
-                        <a class="btn btn-primary" href="index.php?page=blogPost&postid=<?= $item['id'] ?>">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-
-                <hr>
-
-            </article>
-
-            <?php endforeach ?>
 
             <!-- Pager -->
             <ul class="pager">
@@ -139,6 +94,18 @@
                 <li class="next">
                     <a href="#">Newer &rarr;</a>
                 </li>
+            </ul>
+
+            <hr>
+            <br>
+            <br>
+
+            <!-- back to Blog Home -->
+
+            <ul class="pager">
+                <li class="previous ">
+                    <a href="index.php?page=blogHome">&larr; Back to Main Blog</a>
+                </li>        
             </ul>
 
         </div>
@@ -155,4 +122,16 @@
 
 
     
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -6,16 +6,19 @@
         <div class="col-md-4">
         
             <div class="well">
+                
                 <!-- <h4>Blog Search</h4> -->
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Captains Blog Search">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" >
+                <form action="index.php?page=blogSearch" method="post">
+                    <div class="input-group">
+                        <input type="search" name="search" class="form-control" placeholder="Captains Blog Search">
+                        <span class="input-group-btn">
+                        <button type="submit" class="btn btn-default">
                             <span><i class="fa fa-search" aria-hidden="true"></i></span>
-                    </button>
-                    </span>
-                </div>
-                <!-- /.input-group -->
+                        </button>
+                        </span>
+                    </div>
+                    <!-- /.input-group -->
+                </form>    
             </div>
 
             <div class="well">

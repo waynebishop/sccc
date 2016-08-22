@@ -1,11 +1,8 @@
 <?php
 
-class BlogHomeController extends PageController {
-
+class BlogSearchController extends PageController {
 	// Properties - specific to this page
 	
-
-
 	// Constructor
 	public function __construct($dbc) {
 
@@ -14,42 +11,38 @@ class BlogHomeController extends PageController {
 
 		$this->dbc = $dbc;
 
-
+		$this->getSearch();
 	}
-
 
 	// Methods (functions)
-
 	public function buildHTML() {
-
-		// Get latest posts
-		$allData = $this->getLatestPosts();
-
-		$data = [];
-
-		$data['allPosts'] = $allData;
-
-		echo $this->plates->render('blogHome', $data);	
-		
+		echo $this->plates->render('blogSearch', $this->data);	
 	}
 
-	private function getLatestPosts() {
+	private function getSearch() {
+		if(strlen($_POST['search']) === 0) {
+			$searchTerm = "";
+		} else {
+			$result = $_POST['search'];
+			$searchTerm = strtolower($result);
+		}
 
-		// Prepare some SQL
-		$sql = "SELECT * 
-				FROM posts ";
+		$this->data['searchTerm'] = $searchTerm;
 
-		// Run the SQL and capture the result
+		$sql = "SELECT posts.id, title AS score_title, intro AS score_intro
+			FROM posts
+			WHERE
+				title LIKE '%$searchTerm%' OR 
+				intro LIKE '%$searchTerm%'
+			ORDER BY score_title ASC";
+
 		$result = $this->dbc->query($sql);
 
-		// Extract the results
-		$allData = $result->fetch_all(MYSQLI_ASSOC);
-
-
-		// Return the results to the code that called this function 
-		return $allData;
-
+		if( !$result || $result->num_rows == 0) {
+			$this->data['searchResults'] = "No results";
+		} else {
+			$this->data['searchResults'] = $result->fetch_all(MYSQLI_ASSOC);
+		}
 	}
-
-
 }
+

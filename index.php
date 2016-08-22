@@ -90,6 +90,7 @@ switch($page) {
 
 	// Blog Search
 	case 'blogSearch';
+		// die($_POST['search']);
 		require 'app/controllers/BlogSearchController.php';
 		$controller = new BlogSearchController($dbc);		
 	break;
