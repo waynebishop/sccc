@@ -26,8 +26,13 @@ class BlogMyAccountController extends PageController {
 
 		}
 
+		// Get user account info
+		$this->getUserInfo();
+
 
 	}
+
+
 
 
 	// Methods (functions)
@@ -37,6 +42,54 @@ class BlogMyAccountController extends PageController {
 		echo $this->plates->render('blogMyAccount', $this->data);	
 		
 	}
+
+
+	private function getUserInfo() {
+
+		// Get User ID
+		$userID = $_SESSION['id'];
+
+		
+
+		// Prepare query
+
+		$sql = "SELECT first_name, last_name, phone
+				FROM users
+				WHERE users.id = $userID";
+
+		if( $_SESSION['privilege'] != 'admin') {
+
+			$sql .= " AND id = $userID";
+		}		
+
+		// Run the query
+		$result = $this->dbc->query($sql);
+
+		// If the query failed
+		if( !$result || $result->num_rows == 0 ) {
+			// Send user back to blogHome page
+			header("Location: index.php?page=blogHome");
+		} else {
+
+			// Check if user submitted update-contact form, Yes then keep the changes.
+			if( isset($_POST['update-contact']) ) {
+				// Use form data
+				$this->data['post'] = $_POST;
+
+				$result = $result->fetch_assoc();
+
+			} else {
+
+				$result = $result->fetch_assoc();
+
+				$this->data['post'] = $result;
+			}
+
+		} 
+
+	} 
+
+
 
 	private function processNewContactDetails() {
 

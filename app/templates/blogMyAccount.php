@@ -46,7 +46,7 @@
                     <label for="">First Name:</label>
                     <div class="input-group">
                         <span class="input-group-addon" id="first-name"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                        <input type="text" name="first-name" class="form-control" placeholder="First name" value="<?= isset($_POST['update-contact']) ? $_POST['first-name'] : '' ?>">
+                        <input type="text" name="first-name" class="form-control" placeholder="First name" value="<?= isset($_POST['update-contact']) ? $_POST['first-name'] : $post['first_name'] ?>">
                     </div>
                     
                     <!-- Error Message --> 
@@ -57,7 +57,7 @@
                     <label for="">Last Name:</label>
                     <div class="input-group">
                         <span class="input-group-addon" id="last-name"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                        <input type="text" name="last-name" class="form-control" placeholder="Last name" value="<?= isset($_POST['update-contact']) ? $_POST['last-name'] : '' ?>">
+                        <input type="text" name="last-name" class="form-control" placeholder="Last name" value="<?= isset($_POST['update-contact']) ? $_POST['last-name'] : $post['last_name'] ?>">
                     </div>
 
                     <!-- Error Message --> 
@@ -68,7 +68,7 @@
                     <label for="">Telephone Number:</label>
                     <div class="input-group">
                         <span class="input-group-addon" id="phone-number"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                        <input type="text" name="phone-number" class="form-control" placeholder="Contact phone number" value="<?= isset($_POST['update-contact']) ? $_POST['phone-number'] : '' ?>">
+                        <input type="text" name="phone-number" class="form-control" placeholder="Contact phone number" value="<?= isset($_POST['update-contact']) ? $_POST['phone-number'] : $post['phone'] ?>">
                     </div>
 
                     <!-- Error Message --> 
