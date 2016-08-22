@@ -32,7 +32,7 @@
             
             <h1 class="page-header">
                 Captains Blog
-                <small>Reports &amp; Chat</small>
+                <small><?= $post['purpose'] ?></small>
             </h1>
 
             <article>
@@ -41,7 +41,7 @@
                 <h2><?= htmlentities($post['title']) ?></h2>
 
                 <p class="lead">
-                   <a href="index.php"><?= $post['purpose'] ?></a> for team <a href="index.php"><?= htmlentities($post['team_name']) ?></a></a> in grade <a href="index.php"> <?= htmlentities($post['teamsJrSr']) ?> <?= htmlentities($post['grade']) ?></a>. By <a href="index.php"> <?= htmlentities($post['first_name'].' '.$post['last_name']) ?>
+                   <a href="index.php"><?= $post['purpose'] ?></a> for team <a href="index.php"><?= htmlentities($post['team_name']) ?></a> in grade <a href="index.php"> <?= htmlentities($post['teamsJrSr']) ?> <?= htmlentities($post['grade']) ?></a>. By <a href="index.php"> <?= htmlentities($post['first_name'].' '.$post['last_name']) ?></a> 
                 </p>
 
                 <p>Location: <a href="#"><?= $post['location'] ?></a> Game: <a href="#"><?= $post['type'] ?></a>
