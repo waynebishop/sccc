@@ -29,11 +29,12 @@ class BlogSearchController extends PageController {
 
 		$this->data['searchTerm'] = $searchTerm;
 
-		$sql = "SELECT posts.id, title AS score_title, intro AS score_intro
+		$sql = "SELECT posts.id, title AS score_title, intro AS score_intro, article AS score_article
 			FROM posts
 			WHERE
 				title LIKE '%$searchTerm%' OR 
-				intro LIKE '%$searchTerm%'
+				intro LIKE '%$searchTerm%' OR
+				article LIKE '%$searchTerm%'
 			ORDER BY score_title ASC";
 
 		$result = $this->dbc->query($sql);
