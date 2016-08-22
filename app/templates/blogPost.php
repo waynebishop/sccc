@@ -41,13 +41,18 @@
                 <h2><?= htmlentities($post['title']) ?></h2>
 
                 <p class="lead">
-                   <a href="index.php"><?= $post['purpose'] ?></a> for team <a href="index.php"><?= htmlentities($post['team_name']) ?></a> in grade <a href="index.php"> <?= htmlentities($post['teamsJrSr']) ?> <?= htmlentities($post['grade']) ?></a>. By <a href="index.php"> <?= htmlentities($post['first_name'].' '.$post['last_name']) ?></a> 
+                   <a href="index.php"><?= $post['purpose'] ?></a> for team <a href="index.php"><?= htmlentities($post['team_name']) ?></a> in grade <a href="index.php"> <?= htmlentities($post['teamsJrSr']) ?> <?= htmlentities($post['grade']) ?></a>. 
                 </p>
 
-                <p>Location: <a href="#"><?= $post['location'] ?></a> Game: <a href="#"><?= $post['type'] ?></a>
+                <p class="lead">
+                    Location: <a href="#"><?= $post['location'] ?></a> Game: <a href="#"><?= $post['type'] ?></a> Author: <a href="index.php"> <?= htmlentities($post['first_name'].' '.$post['last_name']) ?></a> 
+                </p>
+
+                <p>
                 <span><strong> Post ID# <?= isset($tempPostID) ? $tempPostID : 'TBC' ?></strong></span>
                 <span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on <?= $post['created_at'] ?>
-                <span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Post Updated <?= $post['updated_at'] ?></p>
+                <span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Post Updated <?= $post['updated_at'] ?>
+                </p>
                 
                 <!-- Edit Post Button -->
 

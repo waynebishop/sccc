@@ -80,11 +80,16 @@
                 </h2>
 
                 <p class="lead">
-                   <a href="index.php"><?= $item['purpose'] ?> </a> for team <a href="index.php"><?= $item['team_name'] ?> </a>in grade <a href="index.php"><?= $item['teamsJrSr'] ?> <?= $item['grade'] ?></a>. By <a href="index.php"><?= $item['first_name'] ?> <?= $item['last_name'] ?>
+                   <a href="index.php"><?= $item['purpose'] ?> </a> for team <a href="index.php"><?= $item['team_name'] ?> </a>in grade <a href="index.php"><?= $item['teamsJrSr'] ?> <?= $item['grade'] ?></a>.
                    </a>
                 </p>
 
-                <p>Location: <a href="#"> <?= $item['location'] ?> </a>Game: <a href="#"> <?= $item['type'] ?> </a>
+                <p class="lead">
+                   Location: <a href="#"> <?= $item['location'] ?> </a>Game: <a href="#"> <?= $item['type'] ?> </a> Author: <a href="index.php"><?= $item['first_name'] ?> <?= $item['last_name'] ?>
+                   </a>
+                </p>
+
+                <p>
                 <span><strong>Post ID: <?= $item['id'] ?> </strong></span>
                 <span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Posted on: <?= $item['created_at'] ?></span>
                 <span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Updated on: <?= $item['updated_at'] ?> <span>

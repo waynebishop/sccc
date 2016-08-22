@@ -71,8 +71,10 @@
                     <label for="team">Team</label>
                     <select class="form-control" id="team" name="team">
                         <option value="0">Choose...</option>
-                        <option value="1">Premier 1 - Premiers</option>
-                        <option value="2">Year 5 - Tigers</option>
+                        <option value="1">Premier Mens</option>
+                        <option value="2">Premier Reserve - Mens</option>
+                        <option value="7">Premier - Womens</option>
+                        <option value="10">Champs - Year 2 Junior</option>
                     </select>
 
                     <?= isset($teamMessage) ? $teamMessage : '' ?>
