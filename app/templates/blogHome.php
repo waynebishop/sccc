@@ -80,8 +80,8 @@
                 </h2>
 
                 <p class="lead">
-                   <a href="index.php">ReportID: <?= $item['report_id'] ?> </a> for team <a href="index.php">TeamID: <?= $item['team_id'] ?> </a>by <a href="index.php">AuthorID: <?= $item['user_id'] ?>
-                   </a>Grade: <a href="index.php">TBC Join Team Table </a>
+                   <a href="index.php"><?= $item['purpose'] ?> </a> for team <a href="index.php"><?= $item['team_name'] ?> </a>in grade <a href="index.php"><?= $item['teamsJrSr'] ?> <?= $item['grade'] ?></a>. By <a href="index.php"><?= $item['first_name'] ?> <?= $item['last_name'] ?>
+                   </a>
                 </p>
 
                 <p>Location: <a href="#"> <?= $item['location'] ?> </a>Game: <a href="#"> <?= $item['type'] ?> </a>
