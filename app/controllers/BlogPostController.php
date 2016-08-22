@@ -55,12 +55,18 @@ class BlogPostController extends PageController {
 		$this->data['tempPostID'] = $postID;
 
 		// Get info about this post ( ** BUT not yet team, report etc that use foreign keys ** )
-		$sql = "SELECT title, intro, article, image, location, type, created_at, updated_at, first_name, last_name, user_id, team_id, report_id
+		$sql = "SELECT title, intro, article, image, location, type, created_at, updated_at, first_name, last_name, user_id, team_id, report_id, purpose, reportsJrSr, team_name, grade, teamsJrSr 
 				FROM posts
 				
 				JOIN users
 				ON user_id = users.id
-				 
+
+				JOIN reports
+				ON report_id = reports.id
+
+				JOIN teams
+				ON team_id = teams.id
+
 				WHERE posts.id = $postID";
 
 
