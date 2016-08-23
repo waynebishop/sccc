@@ -45,7 +45,7 @@
                 </p>
 
                 <p class="lead">
-                    Location: <a href="#"><?= $post['location'] ?></a> Game: <a href="#"><?= $post['type'] ?></a> Author: <a href="index.php"> <?= htmlentities($post['first_name'].' '.$post['last_name']) ?></a> 
+                    <a href="#"><?= $post['type'] ?></a> game at <a href="#"><?= $post['location'] ?></a>. Author: <a href="index.php"> <?= htmlentities($post['first_name'].' '.$post['last_name']) ?></a> 
                 </p>
 
                 <p>

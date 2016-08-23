@@ -81,12 +81,11 @@
 
                 <p class="lead">
                    <a href="index.php"><?= $item['purpose'] ?> </a> for team <a href="index.php"><?= $item['team_name'] ?> </a>in grade <a href="index.php"><?= $item['teamsJrSr'] ?> <?= $item['grade'] ?></a>.
-                   </a>
                 </p>
 
                 <p class="lead">
-                   Location: <a href="#"> <?= $item['location'] ?> </a>Game: <a href="#"> <?= $item['type'] ?> </a> Author: <a href="index.php"><?= $item['first_name'] ?> <?= $item['last_name'] ?>
-                   </a>
+                   <a href="#"> <?= $item['type'] ?> </a> game at <a href="#"><?= $item['location'] ?>.</a>  Author: <a href="index.php"><?= $item['first_name'] ?> <?= $item['last_name'] ?></a>
+                   Status:  <?= $item['status'] ?> 
                 </p>
 
                 <p>
