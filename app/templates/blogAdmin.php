@@ -46,10 +46,10 @@
                 <form action="index.php?page=blogAdmin" method="post">
 
                     <div class="input-group">
-                        <input type="text" name="search" class="form-control" placeholder="Username Search">
+                        <input type="text" name="user_search" class="form-control" placeholder="Username/Email Search">
                         <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <span><i class="fa fa-search" aria-hidden="true"></i></span>
+                            <button type="submit" class="btn btn-default">
+                            <span><i class="fa fa-search" aria-hidden="true"></i></span>
                         </button>
                         </span>
                     </div>
