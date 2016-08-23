@@ -223,9 +223,7 @@ class NewPostController extends PageController {
 				$this->data['postMessage'] = '<span>Your post was successfully uploaded!</span>';
 			} else {
 				$this->data['postMessage'] = '<span class="politeWarning">Your post failed to upload. Please resubmit your post.</span>';
-			}
-
-			
+			}			
 
 		}
 

@@ -131,8 +131,11 @@
 
                 <!-- ** ADMIN privilege BUTTONS **-->
 
-                <!-- First check if logge in -->
+                <!-- First check if logged in -->
                 <?php if( isset($_SESSION['id']) ): ?>
+
+                        
+
 
                     <!-- Second check if has admin privilege & if true show Admin buttons -->
 
@@ -154,28 +157,6 @@
                  
 
                 <?php endif; ?>
-
-
-
-
-
-
-
-
-               <!--  <div class="radio">
-                    <label>
-                        <input type="radio" name="postStatus" id="pendingStatus" value="pending" checked>
-                        Pending
-                    </label>
-                </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="postStatus" id="approvedStatus" value="approved">
-                        Approved
-                    </label>
-                </div> -->
-
-
 
 
                 <!-- ** SUBMIT button **-->

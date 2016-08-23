@@ -213,8 +213,8 @@ class EditPostController extends PageController {
 
 			$postID = $this->dbc->real_escape_string($_GET['id']);
 
-				// Get the name of the original image file 
-				$sql = "SELECT image FROM posts WHERE id =$postID";
+				// Get the name of the original image file (as it will be overwritten) and post status (so if user not Admin then we can retain original and avoid empty value)
+				$sql = "SELECT image, status FROM posts WHERE id =$postID";
 
 				// Run the query
 				$result = $this->dbc->query($sql);
@@ -225,6 +225,9 @@ class EditPostController extends PageController {
 
 				// Get the image name
 				$imageName = $result['image'];
+				$postStatus = $result['status'];
+
+
 
 			// If the user uploaded an image
 			if( $_FILES['image']['name'] != '' ) {
@@ -287,7 +290,14 @@ class EditPostController extends PageController {
 			$type = $this->dbc->real_escape_string($type);
 			$status = $this->dbc->real_escape_string($status);
 
+
 			$userID = $_SESSION['id'];
+
+			if( $_SESSION['privilege'] != 'admin' ) {
+
+				$status = $postStatus;
+
+			}
 
 			// ADMIN We need to cover off edit by Admin as the AND user_id = $userID in the SQL below will fail if admin wasn't author.
 			// Needd an if statement which makes $userID equal actual post author so it works. maybe run SQL query to get author ID??			

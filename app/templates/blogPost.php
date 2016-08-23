@@ -53,7 +53,7 @@
                 </p>
 
                 <p class="lead">
-                    <a href="#"><?= $post['type'] ?></a> game at <a href="#"><?= $post['location'] ?></a>. Author: <a href="index.php"> <?= htmlentities($post['first_name'].' '.$post['last_name']) ?></a> 
+                    <a href="#"><?= $post['type'] ?></a> / <a href="#"><?= $post['location'] ?></a>. Author: <a href="index.php"> <?= htmlentities($post['first_name'].' '.$post['last_name']) ?></a> 
                 </p>
 
                 <p>

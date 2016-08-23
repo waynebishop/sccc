@@ -90,7 +90,7 @@
                 </p>
 
                 <p class="lead">
-                   <a href="#"> <?= $item['type'] ?> </a> game at <a href="#"><?= $item['location'] ?>.</a>  Author: <a href="index.php"><?= $item['first_name'] ?> <?= $item['last_name'] ?></a>
+                   <a href="#"> <?= $item['type'] ?> </a> / <a href="#"><?= $item['location'] ?>.</a>  Author: <a href="index.php"><?= $item['first_name'] ?> <?= $item['last_name'] ?></a>
                    
                 </p>
 
