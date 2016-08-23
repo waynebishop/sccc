@@ -129,7 +129,40 @@
 
                 <!--  ADMIN Pending OR Approved checkboxes -->
 
-                <div class="radio">
+                <!-- ** ADMIN privilege BUTTONS **-->
+
+                <!-- First check if logge in -->
+                <?php if( isset($_SESSION['id']) ): ?>
+
+                    <!-- Second check if has admin privilege & if true show Admin buttons -->
+
+                    <?php if($_SESSION['privilege'] == 'admin') : ?>
+                    
+                    <div class="well">
+                        <div class="form-group">                        
+                            <label for="status">Post Status <em>(May only be changed by an Administrator)</em></label>
+                            <select class="form-control" id="status" name="status">
+                                <option><?= $post['status'] ?></option>
+                                <option>Pending</option>
+                                <option>Approved</option>
+                             </select>
+                         </div>
+                    </div>
+
+                    <?php endif; ?>
+
+                 
+
+                <?php endif; ?>
+
+
+
+
+
+
+
+
+               <!--  <div class="radio">
                     <label>
                         <input type="radio" name="postStatus" id="pendingStatus" value="pending" checked>
                         Pending
@@ -140,7 +173,7 @@
                         <input type="radio" name="postStatus" id="approvedStatus" value="approved">
                         Approved
                     </label>
-                </div>
+                </div> -->
 
 
 

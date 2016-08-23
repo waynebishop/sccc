@@ -47,7 +47,13 @@ class BlogHomeController extends PageController {
 
 				JOIN teams
 				ON team_id = teams.id";
-				
+
+
+		if( $_SESSION['privilege'] != 'admin' ) {
+
+		$sql .= " WHERE status = 'Approved' ";
+		
+		}
 
 		// Run the SQL and capture the result
 		$result = $this->dbc->query($sql);

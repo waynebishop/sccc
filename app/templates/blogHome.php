@@ -41,7 +41,7 @@
 
                 <?php if($_SESSION['privilege'] == 'admin') : ?>
                 <!-- Post Pending Button Alert for Admin only -->    
-                <a class="btn btn-warning" href="index.php?page=blogPending" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Posts Pending: 4</a>
+                <a class="btn btn-warning" href="index.php?page=blogPending" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Posts Pending</a>
 
                 <!-- Admin Maintenance Button for Admin only -->
                 <a class="btn btn-info" href="index.php?page=blogAdmin" role="button"><i class="fa fa-cog" aria-hidden="true"></i> Blog Admin</a>
@@ -72,10 +72,16 @@
 
             <?php foreach($allPosts as $item): ?>
 
+            
             <article>
 
                 <!-- Blog Post NB image size 750 x 500 -->
                 <h2>
+                    <!-- Pending Warning Button for Admin -->
+                    <?php if($item['status'] == 'Pending') : ?>
+                         <a class="btn btn-warning" href="index.php?page=editPost&id=<?= $item['id'] ?>">Pending <i class="fa fa-arrow-right" aria-hidden="true"></i> EDIT</a>
+                    <?php endif; ?>
+
                     <a href="index.php?page=blogPost&postid=<?= $item['id'] ?>"> <?= htmlentities($item['title']) ?> </a>
                 </h2>
 
@@ -85,7 +91,7 @@
 
                 <p class="lead">
                    <a href="#"> <?= $item['type'] ?> </a> game at <a href="#"><?= $item['location'] ?>.</a>  Author: <a href="index.php"><?= $item['first_name'] ?> <?= $item['last_name'] ?></a>
-                   Status:  <?= $item['status'] ?> 
+                   
                 </p>
 
                 <p>
@@ -132,6 +138,8 @@
                 <hr>
 
             </article>
+
+           
 
             <?php endforeach ?>
 

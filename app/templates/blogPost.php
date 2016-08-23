@@ -38,7 +38,15 @@
             <article>
 
                 <!-- Blog Post -->
-                <h2><?= htmlentities($post['title']) ?></h2>
+                <h2>
+                
+                 <!-- Pending Warning Button for Admin -->
+                    <?php if($post['status'] == 'Pending') : ?>
+                         <a class="btn btn-warning" href="index.php?page=editPost&id=<?= $_GET['postid'] ?>">Pending <i class="fa fa-arrow-right" aria-hidden="true"></i> EDIT</a>
+                    <?php endif; ?>   
+
+                <?= htmlentities($post['title']) ?>            
+                </h2>
 
                 <p class="lead">
                    <a href="index.php"><?= $post['purpose'] ?></a> for team <a href="index.php"><?= htmlentities($post['team_name']) ?></a> in grade <a href="index.php"> <?= htmlentities($post['teamsJrSr']) ?> <?= htmlentities($post['grade']) ?></a>. 

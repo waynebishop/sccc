@@ -129,6 +129,7 @@ class EditPostController extends PageController {
 		$title = trim($_POST['title']);
 		$intro = trim($_POST['intro']);
 		$article = trim($_POST['article']);
+		$status = ($_POST['status']);
 
 
 		// Validate title
@@ -284,6 +285,7 @@ class EditPostController extends PageController {
 			$team = $this->dbc->real_escape_string($team);
 			$location = $this->dbc->real_escape_string($location);
 			$type = $this->dbc->real_escape_string($type);
+			$status = $this->dbc->real_escape_string($status);
 
 			$userID = $_SESSION['id'];
 
@@ -301,7 +303,8 @@ class EditPostController extends PageController {
 						team_id = '$team',
 						location= '$location',
 						type = '$type',
-						image = '$imageName'
+						image = '$imageName',
+						status = '$status'
 					WHERE id = $postID";
 
 			if( $_SESSION['privilege'] != 'admin' ) {
