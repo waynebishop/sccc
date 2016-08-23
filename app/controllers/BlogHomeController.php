@@ -36,7 +36,7 @@ class BlogHomeController extends PageController {
 	private function getLatestPosts() {
 
 		// Prepare some SQL
-		$sql = "SELECT posts.id, title, intro, article, image, location, type, created_at, updated_at, user_id, team_id, report_id, first_name, last_name, purpose, reportsJrSr, team_name, grade, teamsJrSr
+		$sql = "SELECT posts.id, title, intro, article, image, location, type, created_at, updated_at, user_id, team_id, report_id, status, first_name, last_name, purpose, reportsJrSr, team_name, grade, teamsJrSr
 				FROM posts
 
 				JOIN users
