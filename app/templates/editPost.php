@@ -13,7 +13,6 @@
     <ol class="breadcrumb">
         <li><a href="index.php?page=home">Home</a></li>
         <li><a href="index.php?page=blogHome">Captains Blog</a></li>
-        <!-- <li><a href="index.php?page=blogPending">Posts Pending</a></li>  -->
         <li><a href="index.php?page=editPost" class="active">Edit Post</a></li>    
     </ol>
 
@@ -188,47 +187,6 @@
 
             </form>
 
-
-
-
-            <!-- Delete Button trigger modal -->
-            <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#postDeleteModal"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-
-            <!-- Delete Modal -->
-            <div class="modal fade" id="postDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel"> Delete Post Confirmation</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>Are you certain that you want to delete this post?</p>
-                            
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="deleteConfirm" id="noDeleteConfirm" value="no" checked>
-                                    NO I want to keep it.
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="deleteConfirm" id="yesDeleteConfirm" value="yes">
-                                    YES please delete the post.
-                                </label>
-                            </div>
-       
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Submit </button>
-                        </div>
-                    </div>
-                </div> 
-            </div> 
-            <!-- /End Delete Button & Modal-->
-    
             <hr>
 
             <!-- back to Blog Home -->

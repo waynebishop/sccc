@@ -49,11 +49,11 @@
                 </h2>
 
                 <p class="lead">
-                   <a href="index.php"><?= $post['purpose'] ?></a> for team <a href="index.php"><?= htmlentities($post['team_name']) ?></a> in grade <a href="index.php"> <?= htmlentities($post['teamsJrSr']) ?> <?= htmlentities($post['grade']) ?></a>. 
+                   <?= $post['purpose'] ?> for team <?= htmlentities($post['team_name']) ?> in grade <?= htmlentities($post['teamsJrSr']) ?> <?= htmlentities($post['grade']) ?>. 
                 </p>
 
                 <p class="lead">
-                    <a href="#"><?= $post['type'] ?></a> / <a href="#"><?= $post['location'] ?></a>. Author: <a href="index.php"> <?= htmlentities($post['first_name'].' '.$post['last_name']) ?></a> 
+                    <?= $post['type'] ?> / <?= $post['location'] ?>. Author: <?= htmlentities($post['first_name'].' '.$post['last_name']) ?>
                 </p>
 
                 <p>

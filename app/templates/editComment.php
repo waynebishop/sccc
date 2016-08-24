@@ -57,47 +57,6 @@
                                     
             <hr> <!-- /. edit comment -->
             
-            <!-- Comment Delete Button & modal -->
-
-            <!-- Comment Delete Button trigger modal -->
-            <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#commentDeleteModal"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete </button>
-
-            <!-- Delete Comment Modal -->
-
-            <div class="modal fade" id="commentDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel"> Delete Comment Confirmation</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>Are you certain that you want to delete this comment?</p>
-                            
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="commentDeleteConfirm" id="DontDeleteConfirm" value="no" checked>
-                                    NO I want to keep it.
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="commentDeleteConfirm" id="YesDeleteConfirm" value="yes">
-                                    YES please delete this comment.
-                                </label>
-                            </div>
-       
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Submit </button>
-                        </div>
-                    </div>
-                </div> 
-            </div> 
-            <!-- /End Comment Delete Button & Modal-->
-            
             <hr>
 
             <!-- back to BlogPost -->

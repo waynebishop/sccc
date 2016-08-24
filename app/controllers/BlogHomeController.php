@@ -35,6 +35,20 @@ class BlogHomeController extends PageController {
 
 	private function getLatestPosts() {
 
+
+		if( $_SESSION['privilege'] != 'anon' ) {
+
+			$userID = $_SESSION['id'];
+
+		} else {
+
+			$userID = '';
+
+		}
+
+		
+
+
 		// Prepare some SQL
 		$sql = "SELECT posts.id, title, intro, article, image, location, type, created_at, updated_at, user_id, team_id, report_id, status, first_name, last_name, purpose, reportsJrSr, team_name, grade, teamsJrSr
 				FROM posts
@@ -51,10 +65,15 @@ class BlogHomeController extends PageController {
 
 		if( $_SESSION['privilege'] != 'admin' ) {
 
-		$sql .= " WHERE status = 'Approved' ";
+			$sql .= " WHERE status = 'Approved' OR user_id = '$userID'
+					ORDER BY created_at DESC";
 		
-		}
+		} else {
 
+			$sql .= " ORDER BY created_at DESC";	
+
+		}
+		
 		// Run the SQL and capture the result
 		$result = $this->dbc->query($sql);
 

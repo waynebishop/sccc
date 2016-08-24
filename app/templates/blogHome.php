@@ -41,7 +41,7 @@
 
                 <?php if($_SESSION['privilege'] == 'admin') : ?>
                 <!-- Post Pending Button Alert for Admin only -->    
-                <a class="btn btn-warning" href="index.php?page=blogPending" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Posts Pending</a>
+                <!-- <a class="btn btn-warning" href="index.php?page=blogPending" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Posts Pending</a> -->
 
                 <!-- Admin Maintenance Button for Admin only -->
                 <a class="btn btn-info" href="index.php?page=blogAdmin" role="button"><i class="fa fa-cog" aria-hidden="true"></i> Blog Admin</a>
@@ -86,11 +86,11 @@
                 </h2>
 
                 <p class="lead">
-                   <a href="index.php"><?= $item['purpose'] ?> </a> for team <a href="index.php"><?= $item['team_name'] ?> </a>in grade <a href="index.php"><?= $item['teamsJrSr'] ?> <?= $item['grade'] ?></a>.
+                   <?= $item['purpose'] ?> for team <?= $item['team_name'] ?> in grade <?= $item['teamsJrSr'] ?> <?= $item['grade'] ?>.
                 </p>
 
                 <p class="lead">
-                   <a href="#"> <?= $item['type'] ?> </a> / <a href="#"><?= $item['location'] ?>.</a>  Author: <a href="index.php"><?= $item['first_name'] ?> <?= $item['last_name'] ?></a>
+                   <?= $item['type'] ?> / <?= $item['location'] ?>. Author: <?= $item['first_name'] ?> <?= $item['last_name'] ?>
                    
                 </p>
 

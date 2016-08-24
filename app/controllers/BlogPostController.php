@@ -49,6 +49,18 @@ class BlogPostController extends PageController {
 
 	private function getPostData() {
 
+		// Set userID
+		if( $_SESSION['privilege'] != 'anon' ) {
+
+			$userID = $_SESSION['id'];
+
+		} else {
+
+			$userID = '';
+
+		}
+
+
 		// Filter the ID
 		$postID = $this->dbc->real_escape_string( $_GET['postid'] );
 
@@ -71,7 +83,7 @@ class BlogPostController extends PageController {
 
 		if( $_SESSION['privilege'] != 'admin' ) {
 
-		$sql .= " AND status = 'Approved' ";
+		$sql .= " AND status = 'Approved' OR user_id = '$userID' ";
 		
 		}
 

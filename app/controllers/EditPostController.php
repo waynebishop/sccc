@@ -167,29 +167,7 @@ class EditPostController extends PageController {
 			$totalErrors++;
 
 		}
-
-		// ** Validation required??? 
-
-		// Location validation
-
-		// if( $location == "Choose..." ) {
-		// 	$this->data['locationMessage'] = '<span class="politeWarning">Required - Please choose a location Home OR Away from the drop down list.</span>';
-		// 	$totalErrors++;
-
-		// }
-
-		// Type validation
-
-		// if( $type == "Choose..." ) {
-		// 	$this->data['typeMessage'] = '<span class="politeWarning">Required - Please choose game type from the drop down list.</span>';
-		// 	$totalErrors++;
-
-		// }
-
-
-		// IMAGE Validation
-		// Image validation - must have image - inarray compares this image error message with array of error codes
-		// Error codes 0 AOK, 1 exceeds max size, 3 only partially uploaded, 4 No file uploaded  
+ 
 		if( $_FILES['image']['name'] != '' ) {
 			
 			if( in_array( $_FILES['image']['error'], [1,3] ) ) {

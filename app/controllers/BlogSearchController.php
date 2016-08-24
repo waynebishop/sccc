@@ -20,6 +20,9 @@ class BlogSearchController extends PageController {
 	}
 
 	private function getSearch() {
+
+		$userID = $_SESSION['id'];
+		
 		if(strlen($_POST['search']) === 0) {
 			$searchTerm = "";
 		} else {
@@ -34,8 +37,21 @@ class BlogSearchController extends PageController {
 			WHERE
 				title LIKE '%$searchTerm%' OR 
 				intro LIKE '%$searchTerm%' OR
-				article LIKE '%$searchTerm%'
-			ORDER BY score_title ASC";
+				article LIKE '%$searchTerm%'";
+
+		if( $_SESSION['privilege'] != 'admin' ) {
+
+			$sql .= " AND status = 'Approved'
+					ORDER BY score_title ASC";
+		
+		} else {
+
+			$sql .= " ORDER BY score_title ASC";	
+
+		}		
+
+		
+			// ORDER BY score_title ASC";
 
 		$result = $this->dbc->query($sql);
 
