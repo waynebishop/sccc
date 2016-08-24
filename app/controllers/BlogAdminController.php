@@ -170,10 +170,10 @@ class BlogAdminController extends PageController {
 		if( $this->dbc->affected_rows == 0 ) {
 				$this->data['userUpdateMessage'] = 'Nothing changed. Update failed OR no changes submitted.';
 			} else {
-
-			// Redirect user back to blogAdmin
-			header("Location: index.php?page=blogAdmin");
-
+				$this->data['userUpdateMessage'] = 'Update successful.';
+				// Redirect user back to blogAdmin
+				return;
+				
 		}	
 
 

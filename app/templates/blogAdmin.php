@@ -129,7 +129,7 @@
                     <div class="input-group">
                         <input type="submit" name="edit-user" class="btn btn-primary" value="Submit">
 
-                        <span class="politeWarning"><?= isset($updateMessage) ? $updateMessage : '' ?></span>                 
+                        <span class="politeWarning"><?= isset($userUpdateMessage) ? $userUpdateMessage : '' ?></span>                 
                         
                     </div>
 
