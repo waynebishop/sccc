@@ -60,18 +60,14 @@
                         
                         <h4>Seniors</h4>  
                         <ul class="list-unstyled">
-                            <li><a href="#">Premier 1</a>
-                            </li>
-                            <li><a href="#">Premier 2</a>
-                            </li>
-                            <li><a href="#">3rd Grade</a>
-                            </li>
-                            <li><a href="#">20/20 Tigers</a>
-                            </li>
-                            <li><a href="#">20/20 Bobcats</a>
-                            </li>
-                            <li><a href="#">20/20 Oldcodgers</a>
-                            </li>
+                            <li><a href="#">Premier Men</a></li>
+                            <li><a href="#">Premier Women</a></li>
+                            <li><a href="#">Prem. Reserve Men</a></li>
+                            <li><a href="#">Prem. Reserve Women</a></li>
+                            <li><a href="#">3rd XI</a></li>
+                            <li><a href="#">4th XI</a></li>
+                            <li><a href="#">Hotshots Twenty20</a></li>
+                            <li><a href="#">Masters Twenty20</a></li>                            
                         </ul>
                     
                     </div>
@@ -80,18 +76,21 @@
 
                         <h4>Juniors</h4>  
                         <ul class="list-unstyled">
-                            <li><a href="#">Year 5 Thunder</a>
-                            </li>
-                            <li><a href="#">Year 5 Roar</a>
-                            </li>
-                            <li><a href="#">Year 6 Phoenix</a>
-                            </li>
-                            <li><a href="#">Year 6 Superkings</a>
-                            </li>
-                            <li><a href="#">Year 7 Hurricanes</a>
-                            </li>
-                            <li><a href="#">Year 7 Big-Hitters</a>
-                            </li>
+                            <li><a href="#">Junior Blaze Girls</a></li>
+                            <li><a href="#">Premier Boys</a></li>
+                            <li><a href="#">Premier Girls</a></li>
+                            <li><a href="#">Colts Boys</a></li>
+                            <li><a href="#">Sharks - Year 8</a></li>
+                            <li><a href="#">Hawks - Year 8 Girls</a></li>
+                            <li><a href="#">Eagles T20 Yr 7/8 </a></li>
+                            <li><a href="#">Storm - Year 7 </a></li>
+                            <li><a href="#">Rabbits T20 Yr 6</a></li>
+                            <li><a href="#">Sluggers - Year 6</a></li>
+                            <li><a href="#">Rockets - Year 5 Girls</a></li>
+                            <li><a href="#">Thunder - Year 5</a></li>
+                            <li><a href="#">Comets - Year 4</a></li>
+                            <li><a href="#">Budgies - Year 3</a></li>
+                            <li><a href="#">Champs - Year 2</a></li>                            
                         </ul>
 
                     </div>

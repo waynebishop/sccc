@@ -70,10 +70,29 @@
                     <label for="team">Team</label>
                     <select class="form-control" id="team" name="team_id">
                         <option value="<?= $post['report_id'] ?>"><?= $post['team_name'] ?> - <?= $post['teamsJrSr'] ?> <?= $post['grade'] ?></option>
-                        <option value="1">Premier Mens</option>
-                        <option value="2">Premier Reserve - Mens</option>
-                        <option value="7">Premier - Womens</option>
-                        <option value="10">Champs - Year 2 Junior</option>
+                        <option value="1">Senior - Premier</option>
+                        <option value="2">Senior - Premier Reserve</option>
+                        <option value="3">Senior - 3rd XI - Second Grade</option>
+                        <option value="4">Senior - 4th XI - Third Grade</option>
+                        <option value="5">Senior - Hotshots - Twenty20</option>
+                        <option value="6">Senior - Masters- Twenty20</option>
+                        <option value="7">Senior - Premier - Womans</option>
+                        <option value="8">Senior - Premier Reserve - Womens</option>
+                        <option value="9">Junior - Premier - Girls</option>
+                        <option value="10">Junior - Champs - Year 2</option>
+                        <option value="11">Junior - Budgies - Year 3</option>
+                        <option value="12">Junior - Comets - Year 4</option>
+                        <option value="13">Junior - Thunder - Year 5</option>
+                        <option value="14">Junior - Rockets - Yr 5 Girls Quick-hit</option>
+                        <option value="15">Junior - Sluggers  Year 6</option>
+                        <option value="16">Junior - Rabbits - T20 Year 6</option>
+                        <option value="17">Junior - Storm - Year 7</option>
+                        <option value="18">Junior - Eagles - T20 Yr 7/8</option>
+                        <option value="19">Junior - Sharks - Year 8</option>
+                        <option value="20">Junior - Hawks - Yr 8 Girls Quick-hit</option>
+                        <option value="21">Junior - Junior Blaze - Girls</option>
+                        <option value="22">Junior - Colts</option>
+                        <option value="23">Junior - Premier</option>
                     </select>
                 </div>
                 
