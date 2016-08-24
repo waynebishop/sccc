@@ -48,20 +48,20 @@ class BlogAdminController extends PageController {
 			$searchTerm = "";
 		} else {
 			$result = $_POST['user_search'];
-			$searchTerm = strtolower($result);
-			$searchTerm = $this->dbc->real_escape_string($searchTerm);
+			// $searchTerm = strtolower($result);
+			$searchTerm = $this->dbc->real_escape_string($result);
 		}
 
 		$this->data['searchTerm'] = $searchTerm;
 
+		
 		$sql = "SELECT id, email, first_name, last_name, phone, privilege
 				
 				FROM users
 				
-				WHERE id = $searchTerm";
+				WHERE email = '$searchTerm' ";
 
-				
-
+		
 		$result = $this->dbc->query($sql);
 
 
