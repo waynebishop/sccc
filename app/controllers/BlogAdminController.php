@@ -22,7 +22,6 @@ class BlogAdminController extends PageController {
 		} 
 
 
-
 		// Did user submit user edit form
 		if( isset($_POST['edit-user']) ) {
 			$this->processUserEdit();
@@ -34,7 +33,6 @@ class BlogAdminController extends PageController {
 			$this->getUserInfo();
 
 		}
-
 				
 	}
 

@@ -46,9 +46,9 @@
                 <!-- Search Box -->
 
                 <form action="index.php?page=blogAdmin" method="post">
-                    <h4>Enter User ID# in the search field below:</h4>
+                    <h4>Enter Username ( E-Mail address ) in the search field below:</h4>
                     <div class="input-group">
-                        <input type="text" name="user_search" class="form-control" placeholder="User ID# Search">
+                        <input type="text" name="user_search" class="form-control" placeholder="Username ( E-Mail address ) Search">
                         <span class="input-group-btn">
                             <button type="submit" class="btn btn-default">
                             <span><i class="fa fa-search" aria-hidden="true"></i></span>
@@ -81,8 +81,8 @@
 
                     <div class="input-group">
                         <span class="input-group-addon" id="email"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                        <input type="text" class="form-control" name="email" placeholder="Username / Email address"
-                        value="<?= isset($post['email']) ? $post['email'] : 'Username / Email' ?>">
+                        <input type="text" class="form-control" name="email" placeholder="Username ( E-Mail )"
+                        value="<?= isset($post['email']) ? $post['email'] : 'Username ( E-Mail address )' ?>">
                     </div>
 
                     <br>
