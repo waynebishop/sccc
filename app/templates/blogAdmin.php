@@ -36,6 +36,8 @@
                 <small>Blog Administration</small>
             </h1>
 
+            <br>
+
             <!--  Maintain a User account -->
 
             <div class="well">
@@ -44,9 +46,9 @@
                 <!-- Search Box -->
 
                 <form action="index.php?page=blogAdmin" method="post">
-
+                    <h4>Enter User ID# in the search field below:</h4>
                     <div class="input-group">
-                        <input type="text" name="user_search" class="form-control" placeholder="Username/Email Search">
+                        <input type="text" name="user_search" class="form-control" placeholder="User ID# Search">
                         <span class="input-group-btn">
                             <button type="submit" class="btn btn-default">
                             <span><i class="fa fa-search" aria-hidden="true"></i></span>
@@ -54,69 +56,81 @@
                         </span>
                     </div>
 
+                    <br>
+
+                    <h4 class="bg-info">User search result: <?= isset($originalUserName) ? $originalUserName : '' ?></h4>
+
                 </form> <!-- /. Search -->        
 
                 <br>
 
                 <!-- User Details Boxes -->
 
+                <h4>User details:</h4>
+
                 <form action="index.php?page=blogAdmin" method="post">    
 
+                    <div class="input-group userIDDiv">
+                        <span class="input-group-addon" id="userID"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="userID" placeholder="UserID"
+                        value="<?= isset($post['id']) ? $post['id'] : 'id' ?>">
+                    </div>
+
+                    <br>
+
+
                     <div class="input-group">
-                        <span class="input-group-addon" id="Email"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                        <input type="text" class="form-control" placeholder="Email address eg name@gmail.com etc" >
+                        <span class="input-group-addon" id="email"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="email" placeholder="Username / Email address"
+                        value="<?= isset($post['email']) ? $post['email'] : 'Username / Email' ?>">
                     </div>
 
                     <br>
 
                     <div class="input-group">
-                        <span class="input-group-addon" id="FirstName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                        <input type="text" class="form-control" placeholder="First name">
+                        <span class="input-group-addon" id="firstName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="firstName" placeholder="First name" 
+                        value="<?= isset($post['first_name']) ? $post['first_name'] : 'First name' ?>">
                     </div>
 
                     <br>
 
                     <div class="input-group">
-                        <span class="input-group-addon" id="LastName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                        <input type="text" class="form-control" placeholder="Last name">
+                        <span class="input-group-addon" id="lastName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="lastName" placeholder="Last name"
+                        value="<?= isset($post['last_name']) ? $post['last_name'] : 'Last name' ?>">
                     </div>
 
                     <br>
 
                     <div class="input-group">
-                        <span class="input-group-addon" id="PhoneNumber"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                        <input type="text" class="form-control" placeholder="Contact phone number" >
+                        <span class="input-group-addon" id="phone"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="phone" placeholder="Contact phone number"
+                         value="<?= isset($post['phone']) ? $post['phone'] : 'Phone' ?>">
                     </div>
 
                     <br>
 
                     <!-- User Status -->
 
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="userStatus" value="User" checked>
-                            User
-                        </label>
+                    <div class="form-group">                        
+                        <label for="userPrivilege">User Privilege:</label>
+                        <select class="form-control" id="userPrivilege" name="privilege">
+                            <option value="<?= isset($post['privilege']) ? $post['privilege'] : 'user'?>"><?= isset($post['privilege']) ? $post['privilege'] : 'Privilege'?></option>
+                            <option value="user">User</option>
+                            <option value="author">Author</option>
+                            <option value="admin">Administrator</option>
+                        </select>
                     </div>
 
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="userStatus"  value="Author">
-                            Author
-                        </label>
-                    </div>
-
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="userStatus" value="Admin">
-                            Administrator
-                        </label>
-                    </div>
-                    
+           
+                    <!-- Submit button for User admin -->
 
                     <div class="input-group">
-                        <input type="submit" name="editUser" class="btn btn-primary" value="Submit">                 
-                        <!-- <button type="button" class="btn btn-success" >Submit</button> -->
+                        <input type="submit" name="edit-user" class="btn btn-primary" value="Submit">
+
+                        <span class="politeWarning"><?= isset($updateMessage) ? $updateMessage : '' ?></span>                 
+                        
                     </div>
 
                 </form>

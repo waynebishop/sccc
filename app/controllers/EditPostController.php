@@ -299,10 +299,6 @@ class EditPostController extends PageController {
 
 			}
 
-			// ADMIN We need to cover off edit by Admin as the AND user_id = $userID in the SQL below will fail if admin wasn't author.
-			// Needd an if statement which makes $userID equal actual post author so it works. maybe run SQL query to get author ID??			
-
-			// Did the user upload an image
 
 			// Prepare the SQL
 			$sql = "UPDATE posts
@@ -372,6 +368,13 @@ class EditPostController extends PageController {
 
 
 }
+
+
+
+
+
+
+
 
 
 
