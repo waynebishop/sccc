@@ -10,7 +10,7 @@
                 <!-- <h4>Blog Search</h4> -->
                 <form action="index.php?page=blogSearch" method="post">
                     <div class="input-group">
-                        <input type="search" name="search" class="form-control" placeholder="Captains Blog Search">
+                        <input type="search" name="search" class="form-control" placeholder="Search title and article only.">
                         <span class="input-group-btn">
                         <button type="submit" class="btn btn-default">
                             <span><i class="fa fa-search" aria-hidden="true"></i></span>

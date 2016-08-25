@@ -84,6 +84,12 @@ class BlogRegisterController extends PageController {
 			$totalErrors++;		
 		}		
 
+		// Email (username) must be at least 6 characters long
+		if( strlen($filteredEmail) < 6 ) {
+			// Password too short
+			$this->emailMessage = 'E-Mail must be at least 6 characters long';
+			$totalErrors++;
+		}
 
 		// Password must be at least 8 characters long
 		if( strlen($_POST['password']) < 8 ) {

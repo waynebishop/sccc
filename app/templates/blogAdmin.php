@@ -143,10 +143,11 @@
                      
             </div> <!-- End Maintain a User -->
 
+            <!--  FUTURE DEVELOPMENT below - Miantain a Team AND Add a Team -->
 
             <!-- Maintain a Team Well -->
 
-            <div class="well">
+            <!-- <div class="well">
                 <h2>Maintain a Team</h2>
                 
                 <form action="index.php?page=blogAdmin" method="post">
@@ -174,11 +175,11 @@
                         <input type="text" class="form-control" placeholder="Grade - Premier 1, Colts, Year 5 etc">
                     </div>
 
-                    <br>
+                    <br> -->
 
-                    <!-- Junior OR Senior Status radio buttons-->
+                <!-- Junior OR Senior Status radio buttons-->
 
-                    <div class="radio">
+                    <!-- <div class="radio">
                         <label>
                             <input type="radio" name="juniorSenior" value="junior" checked>
                             Junior
@@ -192,23 +193,25 @@
                         </label>
                     </div>
 
-                    <br>
+                    <br> -->
                     
-                    <!-- Submit -->
+                  <!-- Submit -->
 
-                    <div class="input-group">
+                    <!-- <div class="input-group">
                         <input type="submit" name="editTeam" class="btn btn-primary" value="Submit">                            
-                        <!-- <button type="button" class="btn btn-success">Submit</button> -->
+                       
                     </div>
 
-                </form>
+                </form> -->
                      
-            </div> <!-- END Maintain a team -->
+            <!-- </div> --> 
+
+            <!-- END Maintain a team -->
 
 
             <!-- Add a Team Well -->
 
-            <div class="well">
+            <!-- <div class="well">
                 <h2>Add a Team</h2>
 
                 <br>
@@ -227,11 +230,11 @@
                         <input type="text" class="form-control" placeholder="Grade - Premier 1, Colts, Year 5 etc">
                     </div>
 
-                    <br>
+                    <br> -->
 
-                    <!-- Junior OR Senior Status radio buttons-->
+        <!-- Junior OR Senior Status radio buttons-->
 
-                    <div class="radio">
+                    <!-- <div class="radio">
                         <label>
                             <input type="radio" name="newJuniorSenior" value="junior" checked>
                             Junior
@@ -249,12 +252,14 @@
                                                                 
                     <div class="input-group">
                         <input type="submit" name="addTeam" class="btn btn-primary" value="Submit">
-                        <!-- <button type="button" class="btn btn-success">Submit</button> -->
+                       
                     </div>
                 
                 </form>
 
-            </div> <!-- END Add a new team -->
+            </div> -->
+
+            <!-- END Add a new team -->
       
         
             <hr>
