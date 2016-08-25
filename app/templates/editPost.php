@@ -111,7 +111,7 @@
                         <option><?= $post['type'] ?></option>
                         <option>One Day</option>
                         <option>Two Day</option>
-                        <option>20/20</option>
+                        <option>Twenty20</option>
                         <option>Milo</option>
                         <option>Other</option>
                     </select>
