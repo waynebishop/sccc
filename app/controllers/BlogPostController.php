@@ -33,18 +33,13 @@ class BlogPostController extends PageController {
 
 		$this->getPostData();
 
-		
-
 	}
-
 
 	// Methods (functions)
 
 	public function buildHTML() {
 		
 		echo $this->plates->render('blogPost', $this->data);	
-
-		
 	}
 
 	private function getPostData() {
@@ -59,7 +54,6 @@ class BlogPostController extends PageController {
 			$userID = '';
 
 		}
-
 
 		// Filter the ID
 		$postID = $this->dbc->real_escape_string( $_GET['postid'] );
@@ -124,9 +118,6 @@ class BlogPostController extends PageController {
 		// extract the data as an associative array ( allComments is then referred ot as $allComments on blogPost.php)
 		$this->data['allComments'] = $result->fetch_all(MYSQLI_ASSOC);
 
-
-
-
 	}
 
 	private function processNewComment() {
@@ -134,9 +125,20 @@ class BlogPostController extends PageController {
 		// Validate comment
 		$totalErrors = 0;
 
+		$comment = $this->dbc->real_escape_string( $_POST['comment'] );
+
 		// Minimum length 1
+		if( strlen ( $comment ) == 0 ) {
+			$this->data['newCommentMessage'] = '<span class="politeWarning">Must be at least one character</span>';
+			$totalErrors++;			
 
 		// Maximum length 1000
+		} elseif( strlen( $comment ) > 1000 ) {
+			$this->data['newCommentMessage'] = '<span class="politeWarning">Must be less than 1000 characters</span>';	
+			$totalErrors++;
+			
+		}	
+
 
 		// If passed, add to the DB
 		if( $totalErrors == 0 ) {
@@ -156,7 +158,14 @@ class BlogPostController extends PageController {
 
 			// Make sure query worked ** TO DO ** as for newpost
 
-			
+			if( $this->dbc->affected_rows ) {
+				
+				$this->data['newCommentMessage'] = '';
+
+			} else {
+
+				$this->data['newCommentMessage'] = '<span class="politeWarning">Your post failed to upload. Please resubmit your post.</span>';
+			}
 
 		} 
 

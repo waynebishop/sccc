@@ -12,8 +12,6 @@ class Error404Controller extends PageController {
 		parent::__construct(); 
 
 		$this->dbc = $dbc;
-
-
 	}
 
 
@@ -24,6 +22,4 @@ class Error404Controller extends PageController {
 		echo $this->plates->render('error404');	
 	
 	}
-
-
 }

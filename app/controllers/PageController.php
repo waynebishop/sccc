@@ -37,8 +37,5 @@ abstract class PageController {
 			// Redirect the user to the login page
 			header ('Location: Index.php?page=blogHome');
 		}
-
-
-
 	}
 }

@@ -21,7 +21,22 @@ class BlogSearchController extends PageController {
 
 	private function getSearch() {
 
-		$userID = $_SESSION['id'];
+		// Set $userID as anon if not signed in, or per $_SESSION['id'] if signed in.
+		if( $_SESSION['privilege'] != 'anon' ) {
+
+			$userID = $_SESSION['id'];
+
+		} else {
+
+			$userID = '';
+
+		}
+
+		// Set search term per input OR blank
+
+		if( !isset($_POST['search'])) {
+			$_POST['search'] = "";
+		}
 		
 		if(strlen($_POST['search']) === 0) {
 			$searchTerm = "";

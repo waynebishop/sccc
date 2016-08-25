@@ -29,18 +29,13 @@ class BlogMyAccountController extends PageController {
 		// Get user account info
 		$this->getUserInfo();
 
-
 	}
-
-
-
 
 	// Methods (functions)
 
 	public function buildHTML() {
 		
 		echo $this->plates->render('blogMyAccount', $this->data);	
-		
 	}
 
 
@@ -48,8 +43,6 @@ class BlogMyAccountController extends PageController {
 
 		// Get User ID
 		$userID = $_SESSION['id'];
-
-		
 
 		// Prepare query
 
@@ -84,12 +77,8 @@ class BlogMyAccountController extends PageController {
 
 				$this->data['post'] = $result;
 			}
-
 		} 
-
 	} 
-
-
 
 	private function processNewContactDetails() {
 
@@ -132,19 +121,15 @@ class BlogMyAccountController extends PageController {
 			// Run the query
 			$this->dbc->query( $sql );
 
+			// Did it run??
+			if( $this->dbc->affected_rows ) {
+				
+				$this->data['accountChangeMessage'] = '<span class="politeWarning">Success. Your changes have been updated.</span>';				
 
+			} else {
 
-
-
+				$this->data['accountChangeMessage'] = '<span class="politeWarning">Your changes failed. Please try again.</span>';
+			}
 		}
-
-
-
-
-
-
-
-
 	}
-
 }

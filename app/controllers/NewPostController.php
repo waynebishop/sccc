@@ -30,12 +30,7 @@ class NewPostController extends PageController {
 			$this->processNewPost();
 
 		}
-
-
-		
-
 	}
-
 
 	// Methods (functions)
 
@@ -91,14 +86,11 @@ class NewPostController extends PageController {
 
 		}
 
-
 		// Title validation
 
 		if( strlen ( $title ) == 0 ) {
 			$this->data['titleMessage'] = '<span class="politeWarning">Required</span>';
-			$totalErrors++;
-
-			
+			$totalErrors++;		
 
 		} elseif( strlen( $title ) > 100 ) {
 			$this->data['titleMessage'] = '<span class="politeWarning">Must be less than 100 characters</span>';	
@@ -106,14 +98,11 @@ class NewPostController extends PageController {
 			
 		}
 
-
 		// Intro validation
 
 		if( strlen ( $intro ) == 0 ) {
 			$this->data['introMessage'] = '<span class="politeWarning">Required</span>';
-			$totalErrors++;
-
-			// die('title too short');
+			$totalErrors++;		
 
 		} elseif( strlen( $intro ) > 300 ) {
 			$this->data['introMessage'] = '<span class="politeWarning">Must be less than 300 characters</span>';	
@@ -149,10 +138,6 @@ class NewPostController extends PageController {
 			$totalErrors++;
 
 		} 
-
-
-
-
 
 		// If there are no errors
 		if( $totalErrors == 0 ) {
@@ -193,10 +178,6 @@ class NewPostController extends PageController {
 			$image->save("img/uploads/blogHome/{$fileName}{$fileExtension}");
 
 
-
-
-
-
 			// Filter the data
 
 			$report = $this->dbc->real_escape_string($report);
@@ -216,18 +197,19 @@ class NewPostController extends PageController {
 			$sql = "INSERT INTO posts (title, intro, article, location, type, user_id, team_id, report_id, image)
 					VALUES ('$title', '$intro', '$article', '$location', '$type', $userID, $team, $report, '$fileName$fileExtension') ";
 
-			$this->dbc->query( $sql );		
+			$this->dbc->query( $sql );
 
-			// Make sure it worked & send Success or Fail message
+			$newPostID = $this->dbc->insert_id;		
+
+			// Make sure it worked & redirect to new post OR send Fail message
 			if( $this->dbc->affected_rows ) {
-				$this->data['postMessage'] = '<span>Your post was successfully uploaded!</span>';
+				
+				header("Location: index.php?page=blogPost&postid=$newPostID");
+
 			} else {
 				$this->data['postMessage'] = '<span class="politeWarning">Your post failed to upload. Please resubmit your post.</span>';
 			}			
-
 		}
-
-
 	}
 
 	// This function part of image handling above
@@ -257,10 +239,7 @@ class NewPostController extends PageController {
 			break;
 
 		}
-
 	}
-
-
 }
 
 

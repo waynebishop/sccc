@@ -38,9 +38,7 @@
                 <small>Edit Comment</small>
             </h1> 
             <div class="well">
-                <!-- <h4>Edit your Comment:</h4>
-                <p class="politeWarning"><i class="fa fa-heart" aria-hidden="true"></i><em> Watch out, kids about!</em></p> -->
-
+                
                 <form action="index.php?page=editComment&id=<?= $_GET['id'] ?>" method="post">    
                 
                     <div class="form-group">
@@ -50,8 +48,7 @@
                     </div>
 
                     <input type="submit" name="edit-comment" value="Submit changes" class="btn btn-primary">
-                    <!-- <button type="submit" name="editComment" class="btn btn-primary">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i></button> -->
-
+                    
                 </form>
             </div>
                                     

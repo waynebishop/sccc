@@ -82,16 +82,11 @@
                 <div id="delete-post-options">
 
                     <a href="<?= $_SERVER['REQUEST_URI']?>&delete" class="btn btn-danger btn-sm">Yes please delete post.</a><button class="btn btn-primary btn-sm">No please keep the post.</button>                            
-                </div>
-
-                       
-                <!-- See alt modal below comented out-->            
-
-                               <!-- Open new php tags --> 
+                </div>       
                             <?
                         }
                     }
-                ?> <!-- /. PHP section closed -->
+                ?>  <!-- /. PHP section closed -->
 
                 <!-- Image -->
 
@@ -126,7 +121,11 @@
                         <!-- Only show Comment Submit if logged in -->
                         <?php if( isset($_SESSION['id'])) : ?>
                         <input type="submit" name="new-comment" value="Submit" class="btn btn-success">
+                                          
                         <?php endif; ?>
+
+                        <!-- Comment error message -->
+                        <?= isset($newCommentMessage) ? $newCommentMessage : '' ?>
 
                         <?php if( !isset($_SESSION['id'])) : ?>
                             <span>Hi there! <a href="index.php?page=blogLogin">Login</a> OR <a href="index.php?page=blogRegister">Sign-up </a> to make a comment. We'd love to hear from you.</span>
@@ -144,6 +143,8 @@
 
                 <?php foreach($allComments as $comment): ?>    
 
+                                          
+                    
                 <!-- Comment -->
                 <div class="media">
                     <a class="pull-left" href="#">
@@ -151,7 +152,6 @@
                     </a>
                     <div class="media-body">
                         <h4 class="media-heading">
-                            
                             <?= htmlentities($comment['author']) ?>
 
                             <small><i class="fa fa-clock-o" aria-hidden="true"></i> Created: <?= $comment['created_at'] ?></small>
@@ -211,10 +211,10 @@
 
             <hr>
 
-
-            <a class="btn btn-primary" href="#">More Comments <i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+            <!-- FUTURE DEVELOPMENT More Comments button-->
+            <!-- <a class="btn btn-primary" href="#">More Comments <i class="fa fa-arrow-down" aria-hidden="true"></i></a> -->
             
-            <hr>
+            <!-- <hr> -->
 
             <!-- back to Blog Home -->
 
@@ -252,14 +252,14 @@
         $('.delete-comment').click(function(){
             // Toggle visibility of the Delete options Yes / No
             $(this).parent().children('.delete-comment-options').toggle();
-            // console.log($(this));
+            
         });
 
 
         $('.delete-comment-options button').click(function(){
             // Toggle visibility of the Delete options Yes / No
             $(this).parent().toggle();
-            // console.log($(this));
+            
         });
     });
 

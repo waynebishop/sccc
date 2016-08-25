@@ -5,6 +5,7 @@ class BlogRegisterController extends PageController {
 	// Properties (attributes)
 	private $emailMessage;
 	private $passwordMessage;
+	private $newUserMessage;
 	
 	// Constructor
 	public function __construct($dbc) {
@@ -29,25 +30,6 @@ class BlogRegisterController extends PageController {
 
 	// Methods (functions)
 	
-	public function registerAccount() {
-
-		// Validate the users data
-
-
-		// Check the database to see if email in use
-
-
-		// Check the strength of the password
-
-
-		// Register the account or show error messages
-
-
-
-		// If successful log user in and redirect to Blog Home
-
-	}
-
 	public function buildHTML() {
 
 		// Prepare a container for data
@@ -61,6 +43,11 @@ class BlogRegisterController extends PageController {
 		// If there is a message for password
 		if($this->passwordMessage != '') {
 			$data['passwordMessage'] = $this->passwordMessage;
+		}
+
+		// If there is a message for SQL fail newUserMessage
+		if($this->passwordMessage != '') {
+			$data['newUserMessage'] = $this->newUserMessage;
 		}
 
 		echo $this->plates->render('blogRegister', $data);
@@ -80,6 +67,8 @@ class BlogRegisterController extends PageController {
 		} 
 
 		// Make sure the email is not in use
+
+		// Filter user data before using it in query
 		$filteredEmail = $this->dbc->real_escape_string( $_POST['email'] );
 		
 		$sql = "SELECT email 
@@ -106,10 +95,7 @@ class BlogRegisterController extends PageController {
 		// Is this data valid to go into database?
 		if( $totalErrors == 0) {
 
-			// Validation passed good to go!
-
-			// Filter user data before using it in query
-			
+			// Validation passed good to go!			
 
 			// Hash the password
 			$hash = password_hash( $_POST['password'], PASSWORD_BCRYPT );
@@ -123,22 +109,23 @@ class BlogRegisterController extends PageController {
 
 			// Check to make sure this worked
 
+			if( $this->dbc->affected_rows ) {
+				
+				// Log the user in - insert_id shows the latest added use ID
+				$_SESSION['id'] = $this->dbc->insert_id;
+				// Record the default privilege status user in the SESSION key
+				$_SESSION['privilege'] = 'user';  
 
-			// Log the user in - insert_id shows the latest added use ID
-			$_SESSION['id'] = $this->dbc->insert_id;
-			// Record the default privilege status user in the SESSION key
-			$_SESSION['privilege'] = 'user';  
+				// Redirect th user to the blog home page
+				header('Location: index.php?page=blogHome'); 
 
-			// Redirect th user to the blog home page
-			header('Location: index.php?page=blogHome'); 
+			} else {
 
-		
+				$this->data['newUserMessage'] = '<span class="politeWarning">Your registration failed. Please retry Sign up with acceptable data.</span>';
+			}
+
 		}
 
-
-
 	}
-
-
 
 }

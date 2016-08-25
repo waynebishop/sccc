@@ -31,9 +31,7 @@ class EditPostController extends PageController {
 		// Get post info
 		$this->getPostInfo();
 
-
 	}
-
 
 	// Methods (functions)
 
@@ -42,7 +40,6 @@ class EditPostController extends PageController {
 	echo $this->plates->render('editPost', $this->data);	
 		
 	}
-
 
 	private function getPostInfo() {
 
@@ -107,13 +104,8 @@ class EditPostController extends PageController {
 
 				$this->data['originalTitle'] = $result['title'];
 
-
-			}
-
-			
+			}		
 		}
-
-
 	}
 
 	private function processPostEdit() {
@@ -182,7 +174,6 @@ class EditPostController extends PageController {
 				$totalErrors++;
 
 			}
-
 		}
 
 		
@@ -308,10 +299,7 @@ class EditPostController extends PageController {
 			header("Location: index.php?page=blogPost&postid=$postID");
 
 			}
-
 		}
-
-
 	}
 
 	// This function part of image handling above
@@ -341,10 +329,7 @@ class EditPostController extends PageController {
 			break;
 
 		}
-
 	}
-
-
 }
 
 

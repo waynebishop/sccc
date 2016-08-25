@@ -46,10 +46,6 @@ class EditCommentController extends PageController {
 		// Get the commentdetails from the DB
 		$sql = "SELECT comment, post_id 
 				FROM comments
-
-				
-
-
 				 
 				WHERE id = $commentID ";
 
@@ -73,8 +69,6 @@ class EditCommentController extends PageController {
 			$this->data['post_id'] = $theComment['post_id'];
 
 		}
-
-
 	}
 
 	private function processComment() {
@@ -109,11 +103,7 @@ class EditCommentController extends PageController {
 			header('Location: index.php?page=blogPost&postid='.$this->data['post_id']);
 
 		}
-
-
 	}	
-
-
 }
 
 

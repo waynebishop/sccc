@@ -88,7 +88,6 @@ class BlogAdminController extends PageController {
 				$this->data['originalUserName'] = $result['email'];
 				
 			}
-
 			
 		}
 
@@ -110,25 +109,25 @@ class BlogAdminController extends PageController {
 		// validate email ( AKA username)
 		if( strlen( $email ) > 255 ) {
 			$totalErrors++;
-			$this->data['emailError'] = 'Must not exceed 255 characters. Thanks.';
+			$this->data['emailError'] = 'Username / E-Mail Must not exceed 255 characters. Thanks.';
 		}
 
 		// Validate first name
 		if( strlen( $firstName ) > 50 ) {
 			$totalErrors++;
-			$this->data['firstNameError'] = 'Must not exceed 50 characters. Thanks.';
+			$this->data['firstNameError'] = 'First name Must not exceed 50 characters. Thanks.';
 		}
 
 		// Validate last name
 		if( strlen( $lastName ) > 50 ) {
 			$totalErrors++;
-			$this->data['lastNameError'] = 'Must not exceed 50 characters. Thanks.';
+			$this->data['lastNameError'] = 'Last name must not exceed 50 characters. Thanks.';
 		}
 
 		// Validate phone
 		if( strlen( $phone ) > 50 ) {
 			$totalErrors++;
-			$this->data['phoneError'] = 'Must not exceed 50 characters. Thanks.';
+			$this->data['phoneError'] = 'Telephone number not exceed 50 characters. Thanks.';
 		}
 
 		// Validate privilege
@@ -159,46 +158,20 @@ class BlogAdminController extends PageController {
 						privilege = '$privilege'
 					WHERE id = $userID";
 			
-		}			
-	
-		// Run query
-		$this->dbc->query($sql);
+			// Run query
+			$this->dbc->query($sql);
 
-		// Validation to make sure it ran
-		if( $this->dbc->affected_rows == 0 ) {
-				$this->data['userUpdateMessage'] = 'Nothing changed. Update failed OR no changes submitted.';
-			} else {
-				$this->data['userUpdateMessage'] = 'Update successful.';
-				// Redirect user back to blogAdmin
-				return;
-				
+			// Validation to make sure it ran
+			if( $this->dbc->affected_rows == 0 ) {
+					$this->data['userUpdateMessage'] = 'Nothing changed. Update failed OR no changes submitted.';
+				} else {
+					$this->data['userUpdateMessage'] = 'Update successful.';
+					// Redirect user back to blogAdmin
+					return;
+					
+			}	
 		}	
-
 
 	}
 
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

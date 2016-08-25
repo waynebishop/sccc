@@ -4,8 +4,6 @@ class BlogHomeController extends PageController {
 
 	// Properties - specific to this page
 	
-
-
 	// Constructor
 	public function __construct($dbc) {
 
@@ -13,8 +11,6 @@ class BlogHomeController extends PageController {
 		parent::__construct(); 
 
 		$this->dbc = $dbc;
-
-
 	}
 
 
@@ -30,7 +26,6 @@ class BlogHomeController extends PageController {
 		$data['allPosts'] = $allData;
 
 		echo $this->plates->render('blogHome', $data);	
-		
 	}
 
 	private function getLatestPosts() {
@@ -47,8 +42,6 @@ class BlogHomeController extends PageController {
 		}
 
 		
-
-
 		// Prepare some SQL
 		$sql = "SELECT posts.id, title, intro, article, image, location, type, created_at, updated_at, user_id, team_id, report_id, status, first_name, last_name, purpose, reportsJrSr, team_name, grade, teamsJrSr
 				FROM posts
@@ -62,12 +55,11 @@ class BlogHomeController extends PageController {
 				JOIN teams
 				ON team_id = teams.id";
 
-
 		if( $_SESSION['privilege'] != 'admin' ) {
 
 			$sql .= " WHERE status = 'Approved' OR user_id = '$userID'
 					ORDER BY created_at DESC";
-		
+
 		} else {
 
 			$sql .= " ORDER BY created_at DESC";	
@@ -85,6 +77,4 @@ class BlogHomeController extends PageController {
 		return $allData;
 
 	}
-
-
 }

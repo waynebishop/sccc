@@ -14,22 +14,14 @@ class HomeController extends PageController {
 
 		// Save the database connection per private $dbc above
 		$this->dbc = $dbc;
-
-		
-
 	}
 
-
 	// Methods (functions)
-
 	public function buildHTML() {	
 		
 		echo $this->plates->render('home');	
-
 		
 	}
-
-
 }
 
 

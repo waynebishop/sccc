@@ -4,8 +4,6 @@ class BlogLoginController extends PageController {
 
 	// Properties
 	
-
-
 	// Constructor
 	public function __construct($dbc) {
 
@@ -22,9 +20,7 @@ class BlogLoginController extends PageController {
 		if( isset($_POST['login']) ) {
 			$this->processLoginForm();
 		}
-
 	}
-
 
 	// Methods (functions)
 
@@ -97,13 +93,7 @@ class BlogLoginController extends PageController {
 				// Credentials do not match SCCC records
 				$this->data['loginMessage'] = 'E-Mail or Password incorrect';
 
-
 			} 		
-
-
 		}
-
 	}
-
-
 }

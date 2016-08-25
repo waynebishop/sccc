@@ -70,6 +70,7 @@
 
                 <form action="index.php?page=blogAdmin" method="post">    
 
+                    <!-- This div hidden as holds ID# to put in Post and Admin can't change it. Only Admin can accewss this page -->
                     <div class="input-group userIDDiv">
                         <span class="input-group-addon" id="userID"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
                         <input type="text" class="form-control" name="userID" placeholder="UserID"
@@ -78,28 +79,31 @@
 
                     <br>
 
-
+                    <!-- Changeable fields here -->
                     <div class="input-group">
                         <span class="input-group-addon" id="email"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
                         <input type="text" class="form-control" name="email" placeholder="Username ( E-Mail )"
-                        value="<?= isset($post['email']) ? $post['email'] : 'Username ( E-Mail address )' ?>">
+                        value="<?= isset($post['email']) ? $post['email'] : 'Username ( E-Mail address )' ?>">                        
                     </div>
-
+                    <span class="politeWarning"><?= isset($emailError) ? $emailError : '' ?></span>
+                    
                     <br>
 
                     <div class="input-group">
                         <span class="input-group-addon" id="firstName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
                         <input type="text" class="form-control" name="firstName" placeholder="First name" 
-                        value="<?= isset($post['first_name']) ? $post['first_name'] : 'First name' ?>">
+                        value="<?= isset($post['first_name']) ? $post['first_name'] : 'First name' ?>">                        
                     </div>
+                    <span class="politeWarning"><?= isset($firstNameError) ? $firstNameError : '' ?></span>
 
                     <br>
 
                     <div class="input-group">
                         <span class="input-group-addon" id="lastName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
                         <input type="text" class="form-control" name="lastName" placeholder="Last name"
-                        value="<?= isset($post['last_name']) ? $post['last_name'] : 'Last name' ?>">
+                        value="<?= isset($post['last_name']) ? $post['last_name'] : 'Last name' ?>">                     
                     </div>
+                    <span class="politeWarning"><?= isset($lastNameError) ? $lastNameError : '' ?></span>
 
                     <br>
 
@@ -108,6 +112,7 @@
                         <input type="text" class="form-control" name="phone" placeholder="Contact phone number"
                          value="<?= isset($post['phone']) ? $post['phone'] : 'Phone' ?>">
                     </div>
+                    <span class="politeWarning"><?= isset($phoneError) ? $phoneError : '' ?></span>
 
                     <br>
 
@@ -121,6 +126,7 @@
                             <option value="author">Author</option>
                             <option value="admin">Administrator</option>
                         </select>
+                        <span class="politeWarning"><?= isset($privilegeError) ? $privilegeError : '' ?></span>
                     </div>
 
            

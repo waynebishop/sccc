@@ -79,11 +79,7 @@
                         <span class="politeWarning"> <?= $loginMessage ?> </span>
                     <?php endif ?> 
 
-
-
-
                 </form>
-
                      
             </div>
        
@@ -98,7 +94,6 @@
             </ul>
 
         </div>
-
 
         <!-- Insert Blog Sidebar -->
 

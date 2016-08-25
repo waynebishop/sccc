@@ -79,6 +79,8 @@
                     <div class="input-group">
                         <input type="submit" name="update-contact" class="btn btn-primary" value="Update Details">                 
                     </div>
+                    <br>
+                    <span><?= isset($accountChangeMessage) ? $accountChangeMessage : '' ?></span> 
 
                 </form>
                      
@@ -100,7 +102,6 @@
 
         <?php $this->insert('partials/blogSidebar') ?>
         
-
     </div>    <!-- /.row -->
 
 </div> <!-- /.container -->

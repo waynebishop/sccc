@@ -85,8 +85,7 @@
             <?php endif; ?>                    
 
 
-
-            <!-- Pager -->
+            <!-- Pager FUTURE ENHANCEMENT -->
             <ul class="pager">
                 <li class="previous">
                     <a href="#">&larr; Older</a>

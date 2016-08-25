@@ -70,6 +70,8 @@
 
                     <br>
                     
+                    <!-- FUTURE ENHANCEMENT - Users may have option to load name etc when signing up -->
+
                     <!-- <div class="input-group">
                         <span class="input-group-addon" id="firstName"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
                         <input type="text" class="form-control" name="firstName" placeholder="First name">
@@ -108,9 +110,13 @@
                     <br>
                                                 
                     <div class="input-group">
-                        <input type="submit" name="new-account" class="btn btn-primary" value="Sign Up">                 
-                        <!-- <button type="button" class="btn btn-success">Submit</button> -->
+                        <input type="submit" name="new-account" class="btn btn-primary" value="Sign Up">
                     </div>
+
+                    <!-- SQL failed - newUserMessage to advise fail -->
+                    <?php if( isset($newUserMessage) ) : ?>   
+                    <span class="politeWarning"> <?= $newUserMessage ?> </span>
+                    <?php endif; ?>
 
                 </form>
 

@@ -40,7 +40,8 @@
                 <!-- Second check if has admin privilege & if true show Admin buttons -->
 
                 <?php if($_SESSION['privilege'] == 'admin') : ?>
-                <!-- Post Pending Button Alert for Admin only -->    
+                
+                <!-- FUTURE ENHANCEMENT Post Pending Button Alert for Admin only -->    
                 <!-- <a class="btn btn-warning" href="index.php?page=blogPending" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Posts Pending</a> -->
 
                 <!-- Admin Maintenance Button for Admin only -->
@@ -143,15 +144,15 @@
 
             <?php endforeach ?>
 
-            <!-- Pager -->
-            <ul class="pager">
+            <!-- FUTURE ENHANCEMENT - pagination Pager -->
+            <!-- <ul class="pager">
                 <li class="previous">
                     <a href="#">&larr; Older</a>
                 </li>
                 <li class="next">
                     <a href="#">Newer &rarr;</a>
                 </li>
-            </ul>
+            </ul> -->
 
         </div>
 

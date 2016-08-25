@@ -41,7 +41,6 @@
             <p class="politeWarning"><i class="fa fa-heart" aria-hidden="true"></i><em> Watch out, kids about!</em></p>
 
 
-
             <!-- ** Start of Form ** -->
             
             <form action="index.php?page=newPost" method="post" enctype="multipart/form-data">
@@ -177,8 +176,7 @@
 
             </form>  <!-- End of Form-->
           
-
-            
+         
             <hr>
 
             <!-- back to Blog Home -->
