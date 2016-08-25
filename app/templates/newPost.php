@@ -50,7 +50,7 @@
                 <div class="form-group">                        
                     <label for="report">Report Topic / Type</label>
                     <select class="form-control" name="report" id="report">
-                        <option value="0">Choose...</option>
+                        <option <?= isset($_POST['new-post']) ? $_POST['report'] : '0' ?> ><?= isset($_POST['new-post']) ? $_POST['report'] : 'Choose...' ?></option>
                         <option value="1">Match Report - Senior</option>
                         <option value="2">Match Report - Junior</option>
                         <option value="3">Match Preview - Senior</option>
@@ -69,6 +69,7 @@
                 <div class="form-group">                        
                     <label for="team">Team</label>
                     <select class="form-control" id="team" name="team">
+                        <option <?= isset($_POST['new-post']) ? $_POST['team'] : '' ?> ><?= isset($_POST['new-post']) ? $_POST['team'] : 'Choose...' ?></option>
                         <option value="1">Senior - Premier</option>
                         <option value="2">Senior - Premier Reserve</option>
                         <option value="3">Senior - 3rd XI - Second Grade</option>
@@ -103,7 +104,7 @@
                 <div class="form-group">                        
                     <label for="location">Location</label>
                     <select class="form-control" id="location" name="location">
-                        <option>Choose...</option>
+                        <option><?= isset($_POST['new-post']) ? $_POST['location'] : 'Choose...' ?></option>
                         <option>Home</option>
                         <option>Away</option>
                         <option>Chat</option>
@@ -118,7 +119,7 @@
                 <div class="form-group">                        
                     <label for="type">Game Type</label>
                     <select class="form-control" id="type" name="type">
-                        <option>Choose...</option>
+                        <option><?= isset($_POST['new-post']) ? $_POST['type'] : 'Choose...' ?></option>
                         <option>One Day</option>
                         <option>Two Day</option>
                         <option>20/20</option>
@@ -148,7 +149,8 @@
 
                 <div class="form-group">
                     <label for="intro">Introduction</label>
-                    <textarea class="form-control" rows="3" name="intro" id="intro" placeholder="Brief post introduction appears below the image on main blog page and as the intro line to the main content."></textarea>
+                    <textarea class="form-control" rows="3" name="intro" id="intro" placeholder="Brief post introduction appears below the image on main blog page and as the intro line to the main content."><?= isset($_POST['new-post']) ? $_POST['intro'] : '' ?></textarea>
+
                     <?= isset($introMessage) ? $introMessage : '' ?>
                 </div>
 
@@ -157,7 +159,7 @@
                 <div class="form-group">
                     <label for="article">Main Content</label>
                     <!-- <input type="textarea" class="form-control" id="mainPost" placeholder="This main content follows on from post intro."> -->
-                    <textarea class="form-control" rows="10" name="article" id="article" placeholder="This main content follows on from Post Introduction above that becomes the first line of the main post."></textarea>
+                    <textarea class="form-control" rows="10" name="article" id="article" placeholder="This main content follows on from Post Introduction above that becomes the first line of the main post."><?= isset($_POST['new-post']) ? $_POST['article'] : '' ?></textarea>
                     <?= isset($articleMessage) ? $articleMessage : '' ?>
                 </div>
 
