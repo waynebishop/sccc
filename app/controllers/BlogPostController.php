@@ -51,7 +51,7 @@ class BlogPostController extends PageController {
 
 		} else {
 
-			$userID = '';
+			$userID = 0;
 
 		}
 
@@ -77,7 +77,7 @@ class BlogPostController extends PageController {
 
 		if( $_SESSION['privilege'] != 'admin' ) {
 
-		$sql .= " AND status = 'Approved' OR user_id = '$userID' ";
+		$sql .= " AND (status = 'Approved' OR user_id = '$userID') ";
 		
 		}
 
