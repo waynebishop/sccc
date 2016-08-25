@@ -150,7 +150,6 @@
                 <div class="form-group">
                     <label for="intro">Introduction</label>
                     <textarea class="form-control" rows="3" name="intro" id="intro" placeholder="Brief post introduction appears below the image on main blog page and as the intro line to the main content."><?= isset($_POST['new-post']) ? $_POST['intro'] : '' ?></textarea>
-
                     <?= isset($introMessage) ? $introMessage : '' ?>
                 </div>
 

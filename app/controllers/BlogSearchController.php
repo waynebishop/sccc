@@ -24,11 +24,13 @@ class BlogSearchController extends PageController {
 		// Set $userID as anon if not signed in, or per $_SESSION['id'] if signed in.
 		if( $_SESSION['privilege'] != 'anon' ) {
 
+			// If NOT anon then IS logged in so set userID to SESSION['id'] 
 			$userID = $_SESSION['id'];
 
 		} else {
-
-			$userID = '';
+			
+			// For this function default $userID to non-exitent user # 0 
+			$userID = 0;
 
 		}
 
