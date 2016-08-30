@@ -83,7 +83,7 @@
 
                     <a href="<?= $_SERVER['REQUEST_URI']?>&delete" class="btn btn-danger btn-sm">Yes please delete post.</a><button class="btn btn-primary btn-sm">No please keep the post.</button>                            
                 </div>       
-                            <?
+                            <?php
                         }
                     }
                 ?>  <!-- /. PHP section closed -->
